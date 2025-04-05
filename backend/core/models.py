@@ -13,6 +13,14 @@ def project_main_image_path(project: "Project", filename: str) -> pathlib.Path:
     return pathlib.Path("upload/projects/main_image/") / new_filename
 
 
+def project_image_path(instance: "ProjectImage", filename: str) -> pathlib.Path:
+    filename_suffix = pathlib.Path(filename).suffix
+    unique_id = uuid.uuid4()
+    slug_name = slugify(instance.project.name)
+    new_filename = f"{slug_name}-{unique_id}{filename_suffix}"
+    return pathlib.Path("upload/projects/gallery_image/") / new_filename
+
+
 class Tag(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
@@ -49,3 +57,15 @@ class Project(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class ProjectImage(models.Model):
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.CASCADE,
+        related_name="images"
+    )
+    image = models.ImageField(upload_to=project_image_path)
+
+    def __str__(self) -> str:
+        return f"{self.project.name} image"
