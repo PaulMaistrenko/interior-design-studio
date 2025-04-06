@@ -4,6 +4,8 @@ import uuid
 from django.db import models
 from django.utils.text import slugify
 
+from core.validators import validate_number_phone
+
 
 def project_main_image_path(project: "Project", filename: str) -> pathlib.Path:
     filename_suffix = pathlib.Path(filename).suffix
@@ -116,7 +118,7 @@ class Article(models.Model):
 
 class Consultation(models.Model):
     customer_name = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=15, validators=[validate_number_phone])
     question = models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
