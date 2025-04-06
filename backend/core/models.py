@@ -112,3 +112,17 @@ class Article(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class Consultation(models.Model):
+    customer_name = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=15)
+    question = models.TextField(null=True, blank=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-is_active", "-created_at"]
+
+    def __str__(self) -> str:
+        return f"{self.customer_name} - {self.created_at.date()}"
