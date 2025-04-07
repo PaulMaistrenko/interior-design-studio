@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.models import Tag, ProjectStyle
+from core.models import Tag, ProjectStyle, Project
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -13,3 +13,21 @@ class ProjectStyleSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectStyle
         fields = ("id", "name")
+
+
+class ProjectListSerializer(serializers.ModelSerializer):
+    style = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field="name"
+    )
+    tags = serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field="name"
+    )
+
+    class Meta:
+        model = Project
+        fields = (
+            "id", "name", "description", "style", "tags", "main_image"
+        )
