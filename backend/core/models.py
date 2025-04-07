@@ -32,7 +32,11 @@ def post_image_path(article: "Article", filename: str) -> pathlib.Path:
 
 
 class BaseNamedModel(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(
+        max_length=255,
+        unique=True,
+        help_text="Only unique names."
+    )
 
     class Meta:
         abstract = True
@@ -85,8 +89,14 @@ class Service(BaseNamedModel):
 
 
 class ProjectConfiguration(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    name = models.CharField(
+        max_length=255, unique=True, help_text="Only unique names."
+    )
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        help_text="Price per square meter."
+    )
     services = models.ManyToManyField(
         Service,
         related_name="project_configurations"
@@ -111,7 +121,9 @@ class Article(models.Model):
 
 class Consultation(models.Model):
     customer_name = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=15, validators=[validate_number_phone])
+    phone_number = models.CharField(
+        max_length=15, validators=[validate_number_phone]
+    )
     question = models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
