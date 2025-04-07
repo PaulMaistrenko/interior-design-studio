@@ -1,6 +1,10 @@
 from django.urls import path
 
-from core.views import TagListView, ProjectStyleListView
+from core.views import (
+    TagListView,
+    ProjectStyleListView,
+    ProjectListView,
+)
 
 
 urlpatterns = [
@@ -9,6 +13,11 @@ urlpatterns = [
         "project-styles/",
         ProjectStyleListView.as_view(),
         name="project-style-list"
+    ),
+    path(
+        "projects/",
+        ProjectListView.as_view(),
+        name="project-list"
     ),
 ]
 
