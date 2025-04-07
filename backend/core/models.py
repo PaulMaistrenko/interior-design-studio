@@ -31,24 +31,23 @@ def post_image_path(article: "Article", filename: str) -> pathlib.Path:
     return pathlib.Path("upload/articles/") / new_file_name
 
 
-class Tag(models.Model):
+class BaseNamedModel(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
     class Meta:
+        abstract = True
         ordering = ["name"]
 
     def __str__(self) -> str:
         return self.name
 
 
-class ProjectStyle(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+class Tag(BaseNamedModel):
+    pass
 
-    class Meta:
-        ordering = ["name"]
 
-    def __str__(self) -> str:
-        return self.name
+class ProjectStyle(BaseNamedModel):
+    pass
 
 
 class Project(models.Model):
@@ -81,14 +80,8 @@ class ProjectImage(models.Model):
         return f"{self.project.name} image"
 
 
-class Service(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-
-    class Meta:
-        ordering = ["name"]
-
-    def __str__(self) -> str:
-        return self.name
+class Service(BaseNamedModel):
+    pass
 
 
 class ProjectConfiguration(models.Model):
