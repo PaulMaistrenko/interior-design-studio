@@ -6,6 +6,7 @@ from core.serializers import (
     TagSerializer,
     ProjectStyleSerializer,
     ProjectListSerializer,
+    ProjectDetailSerializer,
 )
 
 
@@ -41,3 +42,12 @@ class ProjectListView(generics.ListAPIView):
             queryset = queryset.filter(tags__id__in=tags)
 
         return queryset.distinct()
+
+
+class ProjectDetailView(generics.RetrieveAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectDetailSerializer
+
+    def get_queryset(self) -> QuerySet:
+        return Project.objects.select_related("style").prefetch_related("tags")
+

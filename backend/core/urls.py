@@ -4,6 +4,7 @@ from core.views import (
     TagListView,
     ProjectStyleListView,
     ProjectListView,
+    ProjectDetailView,
 )
 
 
@@ -18,6 +19,11 @@ urlpatterns = [
         "projects/",
         ProjectListView.as_view(),
         name="project-list"
+    ),
+    path(
+        "projects/<int:pk>/",
+        ProjectDetailView.as_view(),
+        name="project-detail"
     ),
 ]
 
