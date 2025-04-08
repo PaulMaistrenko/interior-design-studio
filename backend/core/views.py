@@ -7,6 +7,7 @@ from core.models import (
     Project,
     ProjectConfiguration,
     Article,
+    Consultation
 )
 from core.serializers import (
     TagSerializer,
@@ -15,6 +16,7 @@ from core.serializers import (
     ProjectDetailSerializer,
     ProjectConfigurationSerializer,
     ArticleSerializer,
+    ConsultationSerializer
 )
 
 
@@ -65,3 +67,8 @@ class ProjectConfigurationListView(generics.ListAPIView):
 class ArticleListView(generics.ListAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+
+
+class ConsultationCreateView(generics.CreateAPIView):
+    queryset = Consultation.objects.all()
+    serializer_class = ConsultationSerializer

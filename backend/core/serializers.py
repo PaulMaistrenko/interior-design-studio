@@ -8,6 +8,7 @@ from core.models import (
     Project,
     ProjectConfiguration,
     Article,
+    Consultation,
 )
 
 
@@ -80,3 +81,9 @@ class ArticleSerializer(serializers.ModelSerializer):
         day, month, year = formatted.split(" ")
         month = month.capitalize()
         return f"{day} {month} {year}"
+
+
+class ConsultationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Consultation
+        fields = ("customer_name", "phone_number", "question")
