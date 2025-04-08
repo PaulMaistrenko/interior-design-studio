@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.models import Tag, ProjectStyle, Project
+from core.models import Tag, ProjectStyle, Project, ProjectImage
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -31,3 +31,17 @@ class ProjectListSerializer(serializers.ModelSerializer):
         fields = (
             "id", "name", "description", "style", "tags", "main_image"
         )
+
+
+class ProjectDetailSerializer(ProjectListSerializer):
+    gallery = serializers.SerializerMethodField()
+
+    class Meta(ProjectListSerializer.Meta):
+        fields = ProjectListSerializer.Meta.fields + ("gallery",)
+
+    def get_gallery(self, obj):
+        request = self.context.get("request")
+        return [
+            request.build_absolute_uri(img.image.url)
+            for img in obj.gallery.all()
+        ]
