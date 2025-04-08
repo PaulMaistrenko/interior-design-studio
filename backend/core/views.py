@@ -18,16 +18,19 @@ from core.serializers import (
     ArticleSerializer,
     ConsultationSerializer
 )
+from core.pagination import TagStylePagination
 
 
 class TagListView(generics.ListAPIView):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
+    pagination_class = TagStylePagination
 
 
 class ProjectStyleListView(generics.ListAPIView):
     queryset = ProjectStyle.objects.all()
     serializer_class = ProjectStyleSerializer
+    pagination_class = TagStylePagination
 
 
 class ProjectListView(generics.ListAPIView):
