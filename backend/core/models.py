@@ -76,7 +76,7 @@ class ProjectImage(models.Model):
     project = models.ForeignKey(
         Project,
         on_delete=models.CASCADE,
-        related_name="images"
+        related_name="gallery"
     )
     image = models.ImageField(upload_to=project_image_path)
 
