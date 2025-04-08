@@ -1,13 +1,20 @@
 from django.db.models import QuerySet
 from rest_framework import generics
 
-from core.models import Tag, ProjectStyle, Project, ProjectConfiguration
+from core.models import (
+    Tag,
+    ProjectStyle,
+    Project,
+    ProjectConfiguration,
+    Article,
+)
 from core.serializers import (
     TagSerializer,
     ProjectStyleSerializer,
     ProjectListSerializer,
     ProjectDetailSerializer,
     ProjectConfigurationSerializer,
+    ArticleSerializer,
 )
 
 
@@ -53,3 +60,8 @@ class ProjectDetailView(generics.RetrieveAPIView):
 class ProjectConfigurationListView(generics.ListAPIView):
     queryset = ProjectConfiguration.objects.prefetch_related("services")
     serializer_class = ProjectConfigurationSerializer
+
+
+class ArticleListView(generics.ListAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
