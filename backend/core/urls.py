@@ -5,6 +5,7 @@ from core.views import (
     ProjectStyleListView,
     ProjectListView,
     ProjectDetailView,
+    ProjectConfigurationListView,
 )
 
 
@@ -25,6 +26,11 @@ urlpatterns = [
         ProjectDetailView.as_view(),
         name="project-detail"
     ),
+    path(
+        "project-configurations/",
+        ProjectConfigurationListView.as_view(),
+        name="project-configuration-list"
+    )
 ]
 
 app_name = "core"
