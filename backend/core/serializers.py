@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.models import Tag, ProjectStyle, Project, ProjectImage
+from core.models import Tag, ProjectStyle, Project, ProjectConfiguration
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -45,3 +45,15 @@ class ProjectDetailSerializer(ProjectListSerializer):
             request.build_absolute_uri(img.image.url)
             for img in obj.gallery.all()
         ]
+
+
+class ProjectConfigurationSerializer(serializers.ModelSerializer):
+    services = serializers.SlugRelatedField(
+        read_only=True,
+        many=True,
+        slug_field="name"
+    )
+
+    class Meta:
+        model = ProjectConfiguration
+        fields = ("id", "name", "price", "services")
