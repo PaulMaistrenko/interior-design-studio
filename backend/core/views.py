@@ -1,5 +1,6 @@
 from django.db.models import QuerySet
 from rest_framework import generics
+from drf_spectacular.utils import extend_schema
 
 from core.models import (
     Tag,
@@ -21,12 +22,22 @@ from core.serializers import (
 from core.pagination import TagStylePagination
 
 
+@extend_schema(
+    summary="List of tags",
+    description="Returns all available tags for filtering projects. "
+                "Each tag includes its unique ID and name."
+)
 class TagListView(generics.ListAPIView):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
     pagination_class = TagStylePagination
 
 
+@extend_schema(
+    summary="List of project styles",
+    description="Returns all available project styles for filtering projects. "
+                "Each style includes its unique ID and name."
+)
 class ProjectStyleListView(generics.ListAPIView):
     queryset = ProjectStyle.objects.all()
     serializer_class = ProjectStyleSerializer
