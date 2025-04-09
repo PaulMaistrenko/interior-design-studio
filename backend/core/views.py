@@ -1,6 +1,7 @@
 from django.db.models import QuerySet
 from rest_framework import generics
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import extend_schema, OpenApiParameter
+from drf_spectacular.types import OpenApiTypes
 
 from core.models import (
     Tag,
@@ -44,6 +45,29 @@ class ProjectStyleListView(generics.ListAPIView):
     pagination_class = TagStylePagination
 
 
+@extend_schema(
+        summary="List of projects",
+        description="Returns a list of projects. "
+                    "You can filter projects by passing a comma-separated list of style IDs "
+                    "with the 'styles' parameter and tag IDs with the 'tags' parameter. "
+                    "Example: api/core/projects/?styles=1,2&tags=3,4",
+        parameters=[
+            OpenApiParameter(
+                name="styles",
+                type=OpenApiTypes.STR,
+                description="Comma-separated list of style IDs to filter projects, "
+                            "e.g., 'styles=1,2'.",
+                required=False
+            ),
+            OpenApiParameter(
+                name="tags",
+                type=OpenApiTypes.STR,
+                description="Comma-separated list of tag IDs to filter projects, "
+                            "e.g., 'tags=3,4'.",
+                required=False
+            ),
+        ]
+    )
 class ProjectListView(generics.ListAPIView):
     serializer_class = ProjectListSerializer
 
