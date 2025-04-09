@@ -144,7 +144,32 @@ class ProjectListView(generics.ListAPIView):
     summary="Retrieve project details",
     description="Returns detailed information about a single project, "
                 "including its main data, style, tags, and a gallery of images "
-                "with absolute URLs."
+                "with absolute URLs.",
+    responses={
+        200: OpenApiExample(
+            "Successful Response",
+            value={
+                "count": 2,
+                "next": None,
+                "previous": None,
+                "results": [
+                    {
+                        "id": 1,
+                        "name": "project sample",
+                        "description": "description sample",
+                        "style": "style sample",
+                        "tags": ["tag 1", "tag 2", "tag 3"],
+                        "main_image": "https://localhost:8000/media/projects/main_image/image.jpg",
+                        "gallery": [
+                            "https://localhost:8000/media/projects/main_image/image1.jpg",
+                            "https://localhost:8000/media/projects/main_image/image1.jpg",
+                            "https://localhost:8000/media/projects/main_image/image1.jpg"
+                        ]
+                    }
+                ]
+            }
+        )
+    }
 )
 class ProjectDetailView(generics.RetrieveAPIView):
     queryset = Project.objects.select_related("style").prefetch_related("tags")
