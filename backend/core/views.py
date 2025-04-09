@@ -114,11 +114,23 @@ class ProjectConfigurationListView(generics.ListAPIView):
     serializer_class = ProjectConfigurationSerializer
 
 
+@extend_schema(
+    summary="List of articles",
+    description="Returns a list of articles about design trends. "
+                "Each article includes its title, content, image, "
+                "and creation date."
+)
 class ArticleListView(generics.ListAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
 
 
+@extend_schema(
+    summary="Create a new consultation request",
+    description="Allows users to submit a consultation request by "
+                "providing their name, phone number, and a brief "
+                "description of their question."
+)
 class ConsultationCreateView(generics.CreateAPIView):
     queryset = Consultation.objects.all()
     serializer_class = ConsultationSerializer
