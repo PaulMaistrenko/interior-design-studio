@@ -51,7 +51,21 @@ class TagListView(generics.ListAPIView):
 @extend_schema(
     summary="List of project styles",
     description="Returns all available project styles for filtering projects. "
-                "Each style includes its unique ID and name."
+                "Each style includes its unique ID and name.",
+    responses={
+        200: OpenApiExample(
+            "Successful Response",
+            value={
+                "count": 2,
+                "next": None,
+                "previous": None,
+                "results": [
+                    {"id": 1, "name": "style sample 1"},
+                    {"id": 2, "name": "style sample 2"}
+                ]
+            }
+        )
+    }
 )
 class ProjectStyleListView(generics.ListAPIView):
     queryset = ProjectStyle.objects.all()
