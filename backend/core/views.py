@@ -92,11 +92,23 @@ class ProjectListView(generics.ListAPIView):
         return queryset.distinct()
 
 
+@extend_schema(
+    summary="Retrieve project details",
+    description="Returns detailed information about a single project, "
+                "including its main data, style, tags, and a gallery of images "
+                "with absolute URLs."
+)
 class ProjectDetailView(generics.RetrieveAPIView):
     queryset = Project.objects.select_related("style").prefetch_related("tags")
     serializer_class = ProjectDetailSerializer
 
 
+@extend_schema(
+    summary="List of project configurations",
+    description="Returns a list of available project configurations with "
+                "pricing details and associated services. Used to display "
+                "pricing options based on various service combinations."
+)
 class ProjectConfigurationListView(generics.ListAPIView):
     queryset = ProjectConfiguration.objects.prefetch_related("services")
     serializer_class = ProjectConfigurationSerializer
