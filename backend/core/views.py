@@ -74,28 +74,48 @@ class ProjectStyleListView(generics.ListAPIView):
 
 
 @extend_schema(
-        summary="List of projects",
-        description="Returns a list of projects. "
-                    "You can filter projects by passing a comma-separated list of style IDs "
-                    "with the 'styles' parameter and tag IDs with the 'tags' parameter. "
-                    "Example: api/core/projects/?styles=1,2&tags=3,4",
-        parameters=[
-            OpenApiParameter(
-                name="styles",
-                type=OpenApiTypes.STR,
-                description="Comma-separated list of style IDs to filter projects, "
-                            "e.g., 'styles=1,2'.",
-                required=False
-            ),
-            OpenApiParameter(
-                name="tags",
-                type=OpenApiTypes.STR,
-                description="Comma-separated list of tag IDs to filter projects, "
-                            "e.g., 'tags=3,4'.",
-                required=False
-            ),
-        ]
-    )
+    summary="List of projects",
+    description="Returns a list of projects. "
+                "You can filter projects by passing a comma-separated list of style IDs "
+                "with the 'styles' parameter and tag IDs with the 'tags' parameter. "
+                "Example: api/core/projects/?styles=1,2&tags=3,4",
+    parameters=[
+        OpenApiParameter(
+            name="styles",
+            type=OpenApiTypes.STR,
+            description="Comma-separated list of style IDs to filter projects, "
+                        "e.g., 'styles=1,2'.",
+            required=False
+        ),
+        OpenApiParameter(
+            name="tags",
+            type=OpenApiTypes.STR,
+            description="Comma-separated list of tag IDs to filter projects, "
+                        "e.g., 'tags=3,4'.",
+            required=False
+        ),
+    ],
+    responses={
+        200: OpenApiExample(
+            "Successful Response",
+            value={
+                "count": 1,
+                "next": None,
+                "previous": None,
+                "results": [
+                    {
+                        "id": 1,
+                        "name": "project sample",
+                        "description": "description sample",
+                        "style": "style sample",
+                        "tags": ["tag 1", "tag 2", "tag 3"],
+                        "main_image": "https://localhost:8000/media/projects/main_image/image.jpg"
+                    }
+                ]
+            }
+        )
+    }
+)
 class ProjectListView(generics.ListAPIView):
     serializer_class = ProjectListSerializer
 
