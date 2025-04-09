@@ -1,6 +1,6 @@
 from django.db.models import QuerySet
 from rest_framework import generics
-from drf_spectacular.utils import extend_schema, OpenApiParameter
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
 from drf_spectacular.types import OpenApiTypes
 
 from core.models import (
@@ -26,7 +26,21 @@ from core.pagination import TagStylePagination
 @extend_schema(
     summary="List of tags",
     description="Returns all available tags for filtering projects. "
-                "Each tag includes its unique ID and name."
+                "Each tag includes its unique ID and name.",
+    responses={
+        200: OpenApiExample(
+            "Successful Response",
+            value={
+                "count": 2,
+                "next": None,
+                "previous": None,
+                "results": [
+                    {"id": 1, "name": "tag sample 1"},
+                    {"id": 2, "name": "tag sample 2"}
+                ]
+            }
+        )
+    }
 )
 class TagListView(generics.ListAPIView):
     queryset = Tag.objects.all()
