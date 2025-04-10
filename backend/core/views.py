@@ -27,20 +27,7 @@ from core.pagination import TagStylePagination
     summary="List of tags",
     description="Returns all available tags for filtering projects. "
                 "Each tag includes its unique ID and name.",
-    responses={
-        200: OpenApiExample(
-            "Successful Response",
-            value={
-                "count": 2,
-                "next": None,
-                "previous": None,
-                "results": [
-                    {"id": 1, "name": "tag sample 1"},
-                    {"id": 2, "name": "tag sample 2"}
-                ]
-            }
-        )
-    }
+    responses=TagSerializer
 )
 class TagListView(generics.ListAPIView):
     queryset = Tag.objects.all()
@@ -52,20 +39,7 @@ class TagListView(generics.ListAPIView):
     summary="List of project styles",
     description="Returns all available project styles for filtering projects. "
                 "Each style includes its unique ID and name.",
-    responses={
-        200: OpenApiExample(
-            "Successful Response",
-            value={
-                "count": 2,
-                "next": None,
-                "previous": None,
-                "results": [
-                    {"id": 1, "name": "style sample 1"},
-                    {"id": 2, "name": "style sample 2"}
-                ]
-            }
-        )
-    }
+    responses=ProjectStyleSerializer
 )
 class ProjectStyleListView(generics.ListAPIView):
     queryset = ProjectStyle.objects.all()
@@ -95,26 +69,7 @@ class ProjectStyleListView(generics.ListAPIView):
             required=False
         ),
     ],
-    responses={
-        200: OpenApiExample(
-            "Successful Response",
-            value={
-                "count": 1,
-                "next": None,
-                "previous": None,
-                "results": [
-                    {
-                        "id": 1,
-                        "name": "project sample",
-                        "description": "description sample",
-                        "style": "style sample",
-                        "tags": ["tag 1", "tag 2", "tag 3"],
-                        "main_image": "https://localhost:8000/media/projects/main_image/image.jpg"
-                    }
-                ]
-            }
-        )
-    }
+    responses=ProjectListSerializer
 )
 class ProjectListView(generics.ListAPIView):
     serializer_class = ProjectListSerializer
@@ -145,31 +100,7 @@ class ProjectListView(generics.ListAPIView):
     description="Returns detailed information about a single project, "
                 "including its main data, style, tags, and a gallery of images "
                 "with absolute URLs.",
-    responses={
-        200: OpenApiExample(
-            "Successful Response",
-            value={
-                "count": 2,
-                "next": None,
-                "previous": None,
-                "results": [
-                    {
-                        "id": 1,
-                        "name": "project sample",
-                        "description": "description sample",
-                        "style": "style sample",
-                        "tags": ["tag 1", "tag 2", "tag 3"],
-                        "main_image": "https://localhost:8000/media/projects/main_image/image.jpg",
-                        "gallery": [
-                            "https://localhost:8000/media/projects/main_image/image1.jpg",
-                            "https://localhost:8000/media/projects/main_image/image1.jpg",
-                            "https://localhost:8000/media/projects/main_image/image1.jpg"
-                        ]
-                    }
-                ]
-            }
-        )
-    }
+    responses=ProjectDetailSerializer
 )
 class ProjectDetailView(generics.RetrieveAPIView):
     queryset = Project.objects.select_related("style").prefetch_related("tags")
@@ -180,7 +111,8 @@ class ProjectDetailView(generics.RetrieveAPIView):
     summary="List of project configurations",
     description="Returns a list of available project configurations with "
                 "pricing details and associated services. Used to display "
-                "pricing options based on various service combinations."
+                "pricing options based on various service combinations.",
+    responses=ProjectConfigurationSerializer,
 )
 class ProjectConfigurationListView(generics.ListAPIView):
     queryset = ProjectConfiguration.objects.prefetch_related("services")
@@ -191,7 +123,8 @@ class ProjectConfigurationListView(generics.ListAPIView):
     summary="List of articles",
     description="Returns a list of articles about design trends. "
                 "Each article includes its title, content, image, "
-                "and creation date."
+                "and creation date.",
+    responses=ArticleSerializer
 )
 class ArticleListView(generics.ListAPIView):
     queryset = Article.objects.all()
@@ -202,7 +135,8 @@ class ArticleListView(generics.ListAPIView):
     summary="Create a new consultation request",
     description="Allows users to submit a consultation request by "
                 "providing their name, phone number, and a brief "
-                "description of their question."
+                "description of their question.",
+    responses=ConsultationSerializer
 )
 class ConsultationCreateView(generics.CreateAPIView):
     queryset = Consultation.objects.all()
