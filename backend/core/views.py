@@ -1,7 +1,10 @@
+import logging
+
 from django.db.models import QuerySet
 from rest_framework import generics
-from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 from drf_spectacular.types import OpenApiTypes
+from smtplib import SMTPException
 
 from core.models import (
     Tag,
@@ -21,6 +24,7 @@ from core.serializers import (
     ConsultationSerializer
 )
 from core.pagination import TagStylePagination
+from core.notifications import send_admin_consultation_notification
 
 
 @extend_schema(
@@ -131,6 +135,9 @@ class ArticleListView(generics.ListAPIView):
     serializer_class = ArticleSerializer
 
 
+logger = logging.getLogger(__name__)
+
+
 @extend_schema(
     summary="Create a new consultation request",
     description="Allows users to submit a consultation request by "
@@ -141,3 +148,16 @@ class ArticleListView(generics.ListAPIView):
 class ConsultationCreateView(generics.CreateAPIView):
     queryset = Consultation.objects.all()
     serializer_class = ConsultationSerializer
+
+    def perform_create(self, serializer):
+        consultation = serializer.save()
+
+        try:
+            send_admin_consultation_notification(
+                name=consultation.customer_name,
+                number_phone=consultation.phone_number,
+                created_at=consultation.created_at,
+                question=consultation.question
+            )
+        except SMTPException as e:
+            logger.warning(f"Email not sent: {e}")
