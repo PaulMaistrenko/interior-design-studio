@@ -11,7 +11,6 @@ from core.models import (
     ProjectStyle,
     Project,
     ProjectConfiguration,
-    Article,
     Consultation
 )
 from core.serializers import (
@@ -20,7 +19,6 @@ from core.serializers import (
     ProjectListSerializer,
     ProjectDetailSerializer,
     ProjectConfigurationSerializer,
-    ArticleSerializer,
     ConsultationSerializer
 )
 from core.pagination import TagStylePagination
@@ -121,18 +119,6 @@ class ProjectDetailView(generics.RetrieveAPIView):
 class ProjectConfigurationListView(generics.ListAPIView):
     queryset = ProjectConfiguration.objects.prefetch_related("services")
     serializer_class = ProjectConfigurationSerializer
-
-
-@extend_schema(
-    summary="List of articles",
-    description="Returns a list of articles about design trends. "
-                "Each article includes its title, content, image, "
-                "and creation date.",
-    responses=ArticleSerializer
-)
-class ArticleListView(generics.ListAPIView):
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
 
 
 logger = logging.getLogger(__name__)

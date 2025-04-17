@@ -6,7 +6,6 @@ from core.views import (
     ProjectListView,
     ProjectDetailView,
     ProjectConfigurationListView,
-    ArticleListView,
     ConsultationCreateView
 )
 
@@ -29,7 +28,6 @@ urlpatterns = [
         ProjectConfigurationListView.as_view(),
         name="project-configuration-list"
     ),
-    path("articles/", ArticleListView.as_view(), name="article-list"),
     path(
         "consultations/",
         ConsultationCreateView.as_view(),
