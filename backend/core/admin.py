@@ -7,7 +7,6 @@ from core.models import (
     ProjectImage,
     Service,
     ProjectConfiguration,
-    Article,
     Consultation,
 )
 
@@ -18,5 +17,4 @@ admin.site.register(ProjectStyle)
 admin.site.register(ProjectImage)
 admin.site.register(Service)
 admin.site.register(ProjectConfiguration)
-admin.site.register(Article)
 admin.site.register(Consultation)
