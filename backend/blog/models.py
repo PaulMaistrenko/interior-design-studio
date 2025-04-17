@@ -13,6 +13,16 @@ def post_image_path(article: "Article", filename: str) -> pathlib.Path:
     return pathlib.Path("upload/articles/") / new_file_name
 
 
+def component_image_path(
+        component: "ArticleComponent", filename: str
+) -> pathlib.Path:
+    filename_suffix = pathlib.Path(filename).suffix
+    unique_id = uuid.uuid4()
+    slug_name = slugify(component.title)
+    new_file_name = f"{slug_name}-{unique_id}{filename_suffix}"
+    return pathlib.Path("upload/articles/components/") / new_file_name
+
+
 class Article(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
@@ -21,6 +31,24 @@ class Article(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
+
+    def __str__(self) -> str:
+        return self.title
+
+
+class ArticleComponent(models.Model):
+    article = models.ForeignKey(
+        Article,
+        related_name="components",
+        on_delete=models.CASCADE
+    )
+    number = models.PositiveIntegerField(help_text="Position in the article (1,2,3..)")
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to=component_image_path, blank=True, null=True)
+
+    class Meta:
+        ordering = ["number"]
 
     def __str__(self) -> str:
         return self.title
