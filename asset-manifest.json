@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/interior-design-studio/static/css/main.45d6a920.css",
+    "main.js": "/interior-design-studio/static/js/main.93b2ea43.js",
+    "index.html": "/interior-design-studio/index.html",
+    "main.45d6a920.css.map": "/interior-design-studio/static/css/main.45d6a920.css.map",
+    "main.93b2ea43.js.map": "/interior-design-studio/static/js/main.93b2ea43.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45d6a920.css",
+    "static/js/main.93b2ea43.js"
+  ]
+}
