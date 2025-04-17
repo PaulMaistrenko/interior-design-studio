@@ -52,3 +52,15 @@ class ArticleComponent(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class ComponentAdvantage(models.Model):
+    component = models.ForeignKey(
+        ArticleComponent,
+        related_name="advantages",
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(max_length=255)
+
+    def __str__(self) -> str:
+        return self.name
