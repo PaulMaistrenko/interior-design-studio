@@ -2,10 +2,10 @@ from rest_framework import serializers
 from babel.dates import format_datetime
 from django.utils import timezone
 
-from blog.models import Article
+from blog.models import Article, ArticleComponent
 
 
-class ArticleSerializer(serializers.ModelSerializer):
+class ArticleListSerializer(serializers.ModelSerializer):
     created_at = serializers.SerializerMethodField()
 
     class Meta:
@@ -18,3 +18,26 @@ class ArticleSerializer(serializers.ModelSerializer):
         day, month, year = formatted.split(" ")
         month = month.capitalize()
         return f"{day} {month} {year}"
+
+
+class ArticleComponentSerializer(serializers.ModelSerializer):
+    advantages = serializers.SerializerMethodField()
+    features = serializers.SerializerMethodField()
+
+    class Meta:
+        model = ArticleComponent
+        fields = (
+            "id",
+            "number",
+            "title",
+            "description",
+            "advantages",
+            "features",
+            "image"
+        )
+
+    def get_advantages(self, obj):
+        return [adv.name for adv in obj.advantages.all()]
+
+    def get_features(self, obj):
+        return [feat.name for feat in obj.features.all()]
