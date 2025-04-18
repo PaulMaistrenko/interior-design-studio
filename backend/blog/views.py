@@ -17,6 +17,13 @@ class ArticleListView(generics.ListAPIView):
     serializer_class = ArticleListSerializer
 
 
+@extend_schema(
+    summary="Retrieve article details",
+    description="Returns detailed information about a single article, "
+                "including its main data and components such as title, "
+                "description, advantages, features, and absolute URLs.",
+    responses=ArticleDetailSerializer
+)
 class ArticleDetailView(generics.RetrieveAPIView):
     queryset = Article.objects.prefetch_related(
         "components__features", "components__advantages"
