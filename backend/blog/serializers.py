@@ -41,3 +41,12 @@ class ArticleComponentSerializer(serializers.ModelSerializer):
 
     def get_features(self, obj):
         return [feat.name for feat in obj.features.all()]
+
+
+class ArticleDetailSerializer(ArticleListSerializer):
+    components = ArticleComponentSerializer(read_only=True, many=True)
+
+    class Meta(ArticleListSerializer.Meta):
+        fields = ArticleListSerializer.Meta.fields + (
+            "components",
+        )
