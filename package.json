@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build --prefix frontend",
+    "deploy": "gh-pages -d frontend/build"
+  }
+}
