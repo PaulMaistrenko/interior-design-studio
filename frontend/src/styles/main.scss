@@ -1,7 +1,7 @@
 @import './base/_reset';
+@import './base/_variables';
+@import './base/_mixins';
 
 body {
-  font-family: 'Comfortaa', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  @include text-style($fs-main, 400, $lh-150);
 }

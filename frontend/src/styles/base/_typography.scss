@@ -1,41 +1,48 @@
-h1.bold {
-  font-size: 48;
-  font-weight: 700;
-  line-height: 135%;
+@import './_mixins';
+@import './_variables';
+
+.h1--bold {
+  @include heading($fs-h1, 700, $lh-135);
 }
 
-h1.medium {
-  font-size: 48;
-  font-weight: 500;
-  line-height: 120%;
+.h1--medium {
+  @include heading($fs-h1, 500, $lh-120);
 }
 
-h2 {
-  font-size: 40;
-  font-weight: 500;
-  line-height: 120%;
+.h2--medium {
+  @include heading($fs-h2, 500, $lh-120);
 }
 
-h3 {
-  font-size: 32;
-  font-weight: 600;
-  line-height: 130%;
+.h3--semibold {
+  @include heading($fs-h3, 600, $lh-130);
 }
 
-h4.bold {
-  font-size: 24;
-  font-weight: 700;
-  line-height: 130%;
+.h4--bold {
+  @include heading($fs-h4, 700, $lh-130);
 }
 
-h4.regular {
-  font-size: 24;
-  font-weight: 400;
-  line-height: 130%;
+.h4--regular {
+  @include heading($fs-h4, 400, $lh-130);
 }
 
-.main-text.regular {
-  font-size: 18;
-  font-weight: 400;
-  line-height: 150%;
+.button--text {
+  @include heading($fs-button, 700, $lh-120);
+}
+
+.button--text-underline {
+  @include heading($fs-button, 700, $lh-120);
+  text-decoration: underline;
+}
+
+.h4--underline {
+  @include text-style($fs-h4, 400, $lh-150);
+  text-decoration: underline;
+}
+
+.text-main--extrabold {
+  @include text-style($fs-main, 800, $lh-150);
+}
+
+.text-secondary--regular {
+  @include text-style($fs-secondary, 400, $lh-150);
 }
