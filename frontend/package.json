@@ -1,6 +1,6 @@
 {
   "name": "interior-design-studio",
-  "homepage": "https://PaulMaistrenko.github.io/interior-design-studio/",
+  "homepage": "https://PaulMaistrenko.github.io/interior-design-studio/frontend",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -32,7 +32,8 @@
     "eslint-plugin-react": "^7.37.5",
     "jest": "^27.5.1",
     "prettier": "^3.5.3",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "gh-pages": "^6.3.0"
   },
   "browserslist": {
     "production": [
