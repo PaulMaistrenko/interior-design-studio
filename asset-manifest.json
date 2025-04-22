@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.2b6f9388.css",
-    "main.js": "/interior-design-studio/static/js/main.6af03652.js",
-    "index.html": "/interior-design-studio/index.html",
-    "main.2b6f9388.css.map": "/interior-design-studio/static/css/main.2b6f9388.css.map",
-    "main.6af03652.js.map": "/interior-design-studio/static/js/main.6af03652.js.map"
+    "main.css": "/interior-design-studio/frontend/static/css/main.2b6f9388.css",
+    "main.js": "/interior-design-studio/frontend/static/js/main.6af03652.js",
+    "index.html": "/interior-design-studio/frontend/index.html",
+    "main.2b6f9388.css.map": "/interior-design-studio/frontend/static/css/main.2b6f9388.css.map",
+    "main.6af03652.js.map": "/interior-design-studio/frontend/static/js/main.6af03652.js.map"
   },
   "entrypoints": [
     "static/css/main.2b6f9388.css",
