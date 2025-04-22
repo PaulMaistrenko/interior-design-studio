@@ -71,7 +71,7 @@ class ProjectConfigurationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProjectConfiguration
-        fields = ("id", "name", "price", "services")
+        fields = ("id", "name", "price", "min_price", "services")
 
 
 class ConsultationSerializer(serializers.ModelSerializer):

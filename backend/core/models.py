@@ -1,6 +1,7 @@
 import pathlib
 import uuid
 
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.text import slugify
 
@@ -85,10 +86,17 @@ class ProjectConfiguration(models.Model):
     name = models.CharField(
         max_length=255, unique=True, help_text="Only unique names."
     )
+    min_price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0)],
+        help_text="Price for 20 square meters."
+    )
     price = models.DecimalField(
         max_digits=10,
         decimal_places=2,
-        help_text="Price per square meter."
+        validators=[MinValueValidator(0)],
+        help_text="Price per 1 square meter."
     )
     services = models.ManyToManyField(
         Service,
@@ -96,7 +104,7 @@ class ProjectConfiguration(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"{self.name} ({self.price} UAH)"
+        return f"{self.name} ({self.price} USD)"
 
 
 class Consultation(models.Model):
