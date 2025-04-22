@@ -35,15 +35,24 @@ class ProjectListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = (
-            "id", "name", "description", "style", "tags", "main_image"
+            "id", "name", "short_description", "style", "tags", "main_image"
         )
 
 
 class ProjectDetailSerializer(ProjectListSerializer):
     gallery = serializers.SerializerMethodField()
 
-    class Meta(ProjectListSerializer.Meta):
-        fields = ProjectListSerializer.Meta.fields + ("gallery",)
+    class Meta:
+        model = Project
+        fields = (
+            "id",
+            "name",
+            "full_description",
+            "style",
+            "tags",
+            "main_image",
+            "gallery"
+        )
 
     def get_gallery(self, obj):
         request = self.context.get("request")

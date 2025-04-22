@@ -48,7 +48,8 @@ class ProjectStyle(BaseNamedModel):
 
 class Project(models.Model):
     name = models.CharField(max_length=255)
-    description = models.TextField()
+    short_description = models.CharField(max_length=255)
+    full_description = models.TextField()
     style = models.ForeignKey(
         ProjectStyle,
         on_delete=models.CASCADE,
