@@ -6,6 +6,7 @@ from django.db import models
 from django.utils.text import slugify
 
 from core.validators import validate_number_phone
+from utils.image_utils import optimize_image_to_webp
 
 
 def project_main_image_path(project: "Project", filename: str) -> pathlib.Path:
@@ -13,7 +14,7 @@ def project_main_image_path(project: "Project", filename: str) -> pathlib.Path:
     unique_id = uuid.uuid4()
     slug_name = slugify(project.name)
     new_filename = f"{slug_name}-{unique_id}{filename_suffix}"
-    return pathlib.Path("upload/projects/main_image/") / new_filename
+    return pathlib.Path("upload/projects/main_images/") / new_filename
 
 
 def project_image_path(instance: "ProjectImage", filename: str) -> pathlib.Path:
@@ -21,7 +22,7 @@ def project_image_path(instance: "ProjectImage", filename: str) -> pathlib.Path:
     unique_id = uuid.uuid4()
     slug_name = slugify(instance.project.name)
     new_filename = f"{slug_name}-{unique_id}{filename_suffix}"
-    return pathlib.Path("upload/projects/gallery_image/") / new_filename
+    return pathlib.Path("upload/projects/gallery_images/") / new_filename
 
 
 class BaseNamedModel(models.Model):
@@ -65,6 +66,18 @@ class Project(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    def save(
+        self,
+        *args,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+    ):
+        self.main_image = optimize_image_to_webp(self.main_image)
+
+        return super().save(force_insert, force_update, using, update_fields)
+
 
 class ProjectImage(models.Model):
     project = models.ForeignKey(
@@ -76,6 +89,18 @@ class ProjectImage(models.Model):
 
     def __str__(self) -> str:
         return f"{self.project.name} image"
+
+    def save(
+        self,
+        *args,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+    ):
+        self.image = optimize_image_to_webp(self.image)
+
+        return super().save(force_insert, force_update, using, update_fields)
 
 
 class Service(BaseNamedModel):
