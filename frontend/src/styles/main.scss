@@ -2,7 +2,8 @@
 @import './base/_variables';
 @import './base/_mixins';
 
-@import '../components/UI/MainLogo/MainLogo.module.scss';
+@import '../components/Header/Header';
+@import '../components/UI/MainLogo/MainLogo';
 
 body {
   @include text-style($fs-main, 400, $lh-150);

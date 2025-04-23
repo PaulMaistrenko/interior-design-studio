@@ -1,5 +1,16 @@
-import styles from './MainLogo.module.scss';
+import './MainLogo';
+import PropTypes from 'prop-types';
 
-export const MainLogo = () => {
-  return <a href="/" className={styles.mainLogo} />;
+export const MainLogo = ({ className = '' }) => {
+  return (
+    <a
+      href="/"
+      className={`main-logo ${className}`}
+      aria-label="Перейти на головну"
+    />
+  );
+};
+
+MainLogo.propTypes = {
+  className: PropTypes.string,
 };
