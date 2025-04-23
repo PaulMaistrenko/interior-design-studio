@@ -16,8 +16,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
         local_time = timezone.localtime(obj.created_at)
         formatted = format_datetime(local_time, "dd MMM y", locale="uk")
         day, month, year = formatted.split(" ")
-        month = month.capitalize()
-        return f"{day} {month} {year}"
+        return f"{day} {month} {year}р."
 
 
 class ArticleComponentSerializer(serializers.ModelSerializer):

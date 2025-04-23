@@ -4,13 +4,15 @@ import uuid
 from django.db import models
 from django.utils.text import slugify
 
+from utils.image_utils import optimize_image_to_webp
+
 
 def post_image_path(article: "Article", filename: str) -> pathlib.Path:
     filename_suffix = pathlib.Path(filename).suffix
     unique_id = uuid.uuid4()
     slug_name = slugify(article.title)
     new_file_name = f"{slug_name}-{unique_id}{filename_suffix}"
-    return pathlib.Path("upload/articles/") / new_file_name
+    return pathlib.Path("upload/articles/main_images/") / new_file_name
 
 
 def component_image_path(
@@ -35,6 +37,18 @@ class Article(models.Model):
     def __str__(self) -> str:
         return self.title
 
+    def save(
+        self,
+        *args,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+    ):
+        self.image = optimize_image_to_webp(self.image)
+
+        return super().save(force_insert, force_update, using, update_fields)
+
 
 class ArticleComponent(models.Model):
     article = models.ForeignKey(
@@ -52,6 +66,18 @@ class ArticleComponent(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+    def save(
+            self,
+            *args,
+            force_insert=False,
+            force_update=False,
+            using=None,
+            update_fields=None,
+    ):
+        self.image = optimize_image_to_webp(self.image)
+
+        return super().save(force_insert, force_update, using, update_fields)
 
 
 class ComponentAdvantage(models.Model):
