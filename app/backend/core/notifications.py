@@ -12,7 +12,7 @@ def send_admin_consultation_notification(
     to_email = settings.ADMIN_NOTIFICATION_EMAIL
 
     html_content = render_to_string(
-        "notification.html",
+        "../templates/notification.html",
         {
             "name": name,
             "number_phone": number_phone,

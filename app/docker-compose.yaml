@@ -1,8 +1,8 @@
 services:
   studio:
     build:
-      context: .
-      dockerfile: backend/Dockerfile
+      context: ..
+      dockerfile: app/backend/Dockerfile
     ports:
       - "8001:8000"
     volumes:
