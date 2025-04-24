@@ -25,4 +25,4 @@ env/
 venv/
 
 # PyCharm project settings
-.idea/
+../.idea/
