@@ -3,20 +3,20 @@ LABEL maintainer="danilsivkovic@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR app/
+# Set working directory
+WORKDIR /app
 
-COPY app/backend/requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+# Copy requirements and install dependencies
+COPY app/backend/requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-RUN mkdir -p /files/media
+# Copy backend source code
+COPY app/backend/ .
 
-RUN adduser \
-    --disabled-password \
-    --no-create-home \
-    my_user
-
-RUN chown -R my_user /files/media
-RUN chmod -R 755 /files/media
+# Media directory
+RUN mkdir -p /files/media \
+    && adduser --disabled-password --no-create-home my_user \
+    && chown -R my_user /files/media \
+    && chmod -R 755 /files/media
 
 USER my_user
