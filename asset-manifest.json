@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.16f855f2.css",
-    "main.js": "/interior-design-studio/static/js/main.dba692be.js",
-    "static/media/header-bg.png": "/interior-design-studio/static/media/header-bg.4f8d9835be10a9f50204.png",
+    "main.css": "/interior-design-studio/static/css/main.ed0bb476.css",
+    "main.js": "/interior-design-studio/static/js/main.1d2348ab.js",
+    "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.4f8d9835be10a9f50204.png",
     "static/media/main-logo-header.svg": "/interior-design-studio/static/media/main-logo-header.08c14dba122329ed68ca.svg",
+    "static/media/main-logo-footer.svg": "/interior-design-studio/static/media/main-logo-footer.02ae7f7b3c5adf587090.svg",
     "index.html": "/interior-design-studio/index.html",
-    "main.16f855f2.css.map": "/interior-design-studio/static/css/main.16f855f2.css.map",
-    "main.dba692be.js.map": "/interior-design-studio/static/js/main.dba692be.js.map"
+    "main.ed0bb476.css.map": "/interior-design-studio/static/css/main.ed0bb476.css.map",
+    "main.1d2348ab.js.map": "/interior-design-studio/static/js/main.1d2348ab.js.map"
   },
   "entrypoints": [
-    "static/css/main.16f855f2.css",
-    "static/js/main.dba692be.js"
+    "static/css/main.ed0bb476.css",
+    "static/js/main.1d2348ab.js"
   ]
 }
