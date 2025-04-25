@@ -1,0 +1,23 @@
+.footer {
+  background-color: #132323;
+}
+
+.footer__content {
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__contacts {
+  gap: 8px;
+}
+
+.footer__socials {
+  gap: 21px;
+}
+
+.footer__contacts, .footer__socials {
+  display: flex;
+  align-items: center;
+}
