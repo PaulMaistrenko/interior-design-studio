@@ -1,0 +1,16 @@
+.grid {
+  @include design-screen {
+    column-gap: 25px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @for $start from 1 through 12 {
+    @for $end from $start through 16 {
+      &--design-#{$start}-#{$end} {
+        @include design-screen {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}
