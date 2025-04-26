@@ -1,4 +1,3 @@
-import './MainLogo';
 import PropTypes from 'prop-types';
 
 export const MainLogo = ({ className = '' }) => {

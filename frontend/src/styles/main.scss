@@ -10,6 +10,7 @@
 
 body {
   @include text-style($fs-main, 400, $lh-150);
+  background-color: #FAFAFA;
 }
 
 .container {

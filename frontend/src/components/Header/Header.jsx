@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import { MainLogo } from '../UI/MainLogo';
-import './Header';
 
 export const Header = () => {
   return (

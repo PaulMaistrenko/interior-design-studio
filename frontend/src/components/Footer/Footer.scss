@@ -11,13 +11,29 @@
 
 .footer__contacts {
   gap: 8px;
+
+  & p {
+    color: #FAFAFA;
+  }
+
+  & a.email {
+    text-decoration: underline;
+  }
 }
 
 .footer__socials {
   gap: 21px;
+
+  & a {
+    text-decoration: underline;
+  }
 }
 
 .footer__contacts, .footer__socials {
   display: flex;
   align-items: center;
+}
+
+.footer__contact, .footer__social {
+  color: #FAFAFA;
 }
