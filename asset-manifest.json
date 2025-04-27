@@ -1,16 +1,25 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.ed0bb476.css",
-    "main.js": "/interior-design-studio/static/js/main.1d2348ab.js",
-    "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.4f8d9835be10a9f50204.png",
+    "main.css": "/interior-design-studio/static/css/main.324e04f4.css",
+    "main.js": "/interior-design-studio/static/js/main.6ebd01e1.js",
+    "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
+    "static/media/projects-poster-soft-minimal.png": "/interior-design-studio/static/media/projects-poster-soft-minimal.115ffba5fcfd0312a980.png",
+    "static/media/projects-poster-natural-flow.png": "/interior-design-studio/static/media/projects-poster-natural-flow.d9c4c0080400520ac38c.png",
+    "static/media/about-poster-2.png": "/interior-design-studio/static/media/about-poster-2.5c75db5c0dea7136c97f.png",
+    "static/media/about-poster-1.png": "/interior-design-studio/static/media/about-poster-1.008e6e7cd179c4a2c31d.png",
+    "static/media/service-1.png": "/interior-design-studio/static/media/service-1.92a9f23b5709603596fc.png",
+    "static/media/service-2.png": "/interior-design-studio/static/media/service-2.e74c6c805fd343264f8e.png",
     "static/media/main-logo-header.svg": "/interior-design-studio/static/media/main-logo-header.08c14dba122329ed68ca.svg",
     "static/media/main-logo-footer.svg": "/interior-design-studio/static/media/main-logo-footer.02ae7f7b3c5adf587090.svg",
     "index.html": "/interior-design-studio/index.html",
-    "main.ed0bb476.css.map": "/interior-design-studio/static/css/main.ed0bb476.css.map",
-    "main.1d2348ab.js.map": "/interior-design-studio/static/js/main.1d2348ab.js.map"
+    "static/media/phone-icon.svg": "/interior-design-studio/static/media/phone-icon.dff5e5f3dcefa1ede1bf.svg",
+    "static/media/arrow-narrow-right-big-white.svg": "/interior-design-studio/static/media/arrow-narrow-right-big-white.3e468bc7a22d68e18f87.svg",
+    "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
+    "main.324e04f4.css.map": "/interior-design-studio/static/css/main.324e04f4.css.map",
+    "main.6ebd01e1.js.map": "/interior-design-studio/static/js/main.6ebd01e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed0bb476.css",
-    "static/js/main.1d2348ab.js"
+    "static/css/main.324e04f4.css",
+    "static/js/main.6ebd01e1.js"
   ]
 }
