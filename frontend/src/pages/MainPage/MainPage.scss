@@ -19,3 +19,40 @@
   color: #fff;
   background-color: #8E3A1B;
 }
+
+.about {
+  padding: 80px 0 40px;
+}
+
+.about__top {
+  margin-bottom: 48px;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #D9D9D9 ;
+}
+
+.about__tagline {
+  color: #344040;
+}
+
+.about__subtitle {
+  margin-bottom: 72px;
+  grid-row: 1/1;
+}
+
+.about__text {
+  padding-block: 106px;
+  text-align: center;
+}
+
+.about__poster-1 {
+  background-image: url('../../assets/images/main-page/about-poster-1.png');
+  grid-row: 1/4;
+}
+
+.about__poster-2 {
+  background-image: url('../../assets/images/main-page/about-poster-2.png');
+  grid-row: 2/4;
+}
