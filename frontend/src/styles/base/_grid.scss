@@ -7,7 +7,7 @@
 
   @for $start from 1 through 12 {
     @for $end from $start through 16 {
-      &--design-#{$start}-#{$end} {
+      &--onDesktop-#{$start}-#{$end} {
         @include onDesktop {
           grid-column: #{$start} / #{$end + 1};
         }
