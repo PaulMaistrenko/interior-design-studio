@@ -7,7 +7,10 @@
 @import '../components/Header/Header';
 @import '../components/Footer/Footer';
 @import '../components/UI/MainLogo/MainLogo';
+@import '../components/UI/Breadcrumb/Breadcrumb';
 @import '../pages/MainPage/MainPage';
+@import '../pages/ProjectsPage/ProjectsPage';
+@import '../pages/ServicesPage/ServicesPage';
 
 body {
   @include text-style($fs-main, 400, $lh-150);
