@@ -3,6 +3,7 @@ import { App } from './App';
 import { MainPage } from './pages/MainPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ProjectsPage } from './pages/ProjectsPage';
+import { ContactsPage } from './pages/ContactsPage';
 
 export const Root = () => (
   <Router>
@@ -11,6 +12,7 @@ export const Root = () => (
         <Route index element={<MainPage />} />
         <Route path="services" element={<ServicesPage />} />
         <Route path="projects" element={<ProjectsPage />} />
+        <Route path="contacts" element={<ContactsPage />} />
       </Route>
     </Routes>
   </Router>

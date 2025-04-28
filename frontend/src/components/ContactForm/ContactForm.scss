@@ -1,0 +1,24 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.form-group {
+  & input, textarea {
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+.name-input {
+  height: 56px;
+}
+
+.phone-input {
+  height: 56px;
+}
+
+.message-input {
+  height: 254px;
+}

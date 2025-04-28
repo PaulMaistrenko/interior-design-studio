@@ -6,11 +6,14 @@
 
 @import '../components/Header/Header';
 @import '../components/Footer/Footer';
+@import '../components/ContactForm/ContactForm';
 @import '../components/UI/MainLogo/MainLogo';
 @import '../components/UI/Breadcrumb/Breadcrumb';
+@import '../components/UI/SectionTop/SectionTop';
 @import '../pages/MainPage/MainPage';
 @import '../pages/ProjectsPage/ProjectsPage';
 @import '../pages/ServicesPage/ServicesPage';
+@import '../pages/ContactsPage/ContactsPage';
 
 body {
   @include text-style($fs-main, 400, $lh-150);

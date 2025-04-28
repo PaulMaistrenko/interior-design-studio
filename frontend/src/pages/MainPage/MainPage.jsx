@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { SectionTop } from '../../components/UI/SectionTop';
 
 export const MainPage = () => {
   return (
@@ -19,12 +20,7 @@ export const MainPage = () => {
       </section>
       <section className="about">
         <div className="container">
-          <div className="about__top">
-            <h4 className="about__title h4--regular">Про нас</h4>
-            <h1 className="about__tagline h1--bold">
-              “Наші корені — наша сила”
-            </h1>
-          </div>
+          <SectionTop title="Про нас" tagline="“Наші корені — наша сила”" />
           <div className="about__content grid">
             <div className="about__subtitle grid--onDesktop-5-12 h4--bold">
               Tavr Design House — це не просто студія інтер’єру. Це історія,
@@ -83,12 +79,10 @@ export const MainPage = () => {
       </section>
       <section className="services">
         <div className="container">
-          <div className="services__top">
-            <h4 className="services__title h4--regular">Послуги</h4>
-            <h1 className="services__tagline h1--bold">
-              “Перший крок до інтер’єру мрії”
-            </h1>
-          </div>
+          <SectionTop
+            title="Послуги"
+            tagline="“Перший крок до інтер’єру мрії”"
+          />
           <ul className="services__list">
             <li className="services__item">
               <article className="service__article">
@@ -138,12 +132,7 @@ export const MainPage = () => {
       </section>
       <section className="projects">
         <div className="container">
-          <div className="projects__top">
-            <h4 className="projects__title h4--regular">Проєкти</h4>
-            <h1 className="projects__tagline h1--bold">
-              “Інтер’єр, що живе з вами”
-            </h1>
-          </div>
+          <SectionTop title="Проєкти" tagline="“Інтер’єр, що живе з вами”" />
           <ul className="projects__list grid">
             <li className="projects__item natural-flow bg-image grid--onDesktop-1-6">
               <Link to="/" className="project__link">
