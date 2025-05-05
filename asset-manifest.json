@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.e66b3503.css",
-    "main.js": "/interior-design-studio/static/js/main.cab57d59.js",
+    "main.css": "/interior-design-studio/static/css/main.ee897a8c.css",
+    "main.js": "/interior-design-studio/static/js/main.dd5e0ce6.js",
     "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
     "static/media/projects-poster-soft-minimal.png": "/interior-design-studio/static/media/projects-poster-soft-minimal.115ffba5fcfd0312a980.png",
     "static/media/projects-poster-natural-flow.png": "/interior-design-studio/static/media/projects-poster-natural-flow.d9c4c0080400520ac38c.png",
@@ -12,15 +12,18 @@
     "static/media/main-logo-header.svg": "/interior-design-studio/static/media/main-logo-header.08c14dba122329ed68ca.svg",
     "static/media/main-logo-footer.svg": "/interior-design-studio/static/media/main-logo-footer.02ae7f7b3c5adf587090.svg",
     "index.html": "/interior-design-studio/index.html",
+    "static/media/phone-icon-dark.svg": "/interior-design-studio/static/media/phone-icon-dark.1dd97aff635db3179333.svg",
     "static/media/phone-icon.svg": "/interior-design-studio/static/media/phone-icon.dff5e5f3dcefa1ede1bf.svg",
     "static/media/arrow-narrow-right-big-white.svg": "/interior-design-studio/static/media/arrow-narrow-right-big-white.3e468bc7a22d68e18f87.svg",
+    "static/media/chevron-down-default.svg": "/interior-design-studio/static/media/chevron-down-default.252f4cf5e550291ecf0e.svg",
+    "static/media/chevron-down-hover.svg": "/interior-design-studio/static/media/chevron-down-hover.a557475d44e39d0997b4.svg",
     "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
     "static/media/breadcrumb-separator.svg": "/interior-design-studio/static/media/breadcrumb-separator.e8fdd1b9a09db1b3340b.svg",
-    "main.e66b3503.css.map": "/interior-design-studio/static/css/main.e66b3503.css.map",
-    "main.cab57d59.js.map": "/interior-design-studio/static/js/main.cab57d59.js.map"
+    "main.ee897a8c.css.map": "/interior-design-studio/static/css/main.ee897a8c.css.map",
+    "main.dd5e0ce6.js.map": "/interior-design-studio/static/js/main.dd5e0ce6.js.map"
   },
   "entrypoints": [
-    "static/css/main.e66b3503.css",
-    "static/js/main.cab57d59.js"
+    "static/css/main.ee897a8c.css",
+    "static/js/main.dd5e0ce6.js"
   ]
 }
