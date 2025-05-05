@@ -1,5 +1,9 @@
 .contacts-page {
-  padding: 220px 0 65px;
+  padding: 220px 0 0;
+}
+
+.contacts-page__details {
+  padding-block: 80px;
 }
 
 .contacts-page__title {
@@ -10,4 +14,9 @@
 .contacts-page__text {
   margin-bottom: 48px;
   color: #344040;
+}
+
+.details__title {
+  margin-bottom: 56px;
+  text-align: center;
 }

@@ -1,3 +1,18 @@
 .projects-page {
   padding: 220px 0 65px;
 }
+
+.selectors {
+  display: flex;
+  gap: 16px;
+}
+
+.filters-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset-selectors__button {
+  padding: 8px 16px;
+  color: #8E3A1B;
+}

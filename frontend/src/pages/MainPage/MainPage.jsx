@@ -12,7 +12,7 @@ export const MainPage = () => {
           </div>
           <Link
             to="/contacts"
-            className="hero-section__button button button--text"
+            className="hero-section__button primary-button button button--text"
           >
             Зв’язатися з нами
           </Link>

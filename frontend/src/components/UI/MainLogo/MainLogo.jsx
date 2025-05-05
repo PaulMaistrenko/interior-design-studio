@@ -6,7 +6,7 @@ export const MainLogo = ({ className = '' }) => {
       href="/"
       className={`main-logo ${className}`}
       aria-label="Перейти на головну"
-    />
+    ></a>
   );
 };
 

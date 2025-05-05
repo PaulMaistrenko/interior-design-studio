@@ -1,4 +1,5 @@
 import { ContactForm } from '../../components/ContactForm/ContactForm';
+import { ContactInfo } from '../../components/ContactInfo/ContactInfo';
 import { Breadcrumb } from '../../components/UI/Breadcrumb';
 
 export const ContactsPage = () => {
@@ -19,6 +20,10 @@ export const ContactsPage = () => {
           <div className="contact-form__wrapper grid--onDesktop-2-11">
             <ContactForm />
           </div>
+        </div>
+        <div className="contacts-page__details">
+          <h3 className="details__title h3--semibold">або напишіть нам</h3>
+          <ContactInfo />
         </div>
       </div>
     </div>

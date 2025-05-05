@@ -1,0 +1,33 @@
+.dropdown-button {
+  width: 100%;
+  width: 208px;
+  height: 40px;
+  padding: 8px 16px;
+  line-height: 0;
+  border-radius: 2px;
+  border: 2px solid #677171;
+  color: #132323;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../../assets/icons/chevron-down-default.svg');
+  }
+
+  &:hover {
+    background-color: #FFF;
+    border-color: #422318;
+  }
+
+  &:hover::after {
+    background-image: url('../../../assets/icons/chevron-down-hover.svg');
+  }
+}
+
+button {
+  &.dropdown-button {
+    justify-content: space-between;
+  }
+}
