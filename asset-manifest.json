@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.ee897a8c.css",
-    "main.js": "/interior-design-studio/static/js/main.dd5e0ce6.js",
+    "main.css": "/interior-design-studio/static/css/main.9923b821.css",
+    "main.js": "/interior-design-studio/static/js/main.7620ae54.js",
     "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
     "static/media/projects-poster-soft-minimal.png": "/interior-design-studio/static/media/projects-poster-soft-minimal.115ffba5fcfd0312a980.png",
     "static/media/projects-poster-natural-flow.png": "/interior-design-studio/static/media/projects-poster-natural-flow.d9c4c0080400520ac38c.png",
@@ -19,11 +19,11 @@
     "static/media/chevron-down-hover.svg": "/interior-design-studio/static/media/chevron-down-hover.a557475d44e39d0997b4.svg",
     "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
     "static/media/breadcrumb-separator.svg": "/interior-design-studio/static/media/breadcrumb-separator.e8fdd1b9a09db1b3340b.svg",
-    "main.ee897a8c.css.map": "/interior-design-studio/static/css/main.ee897a8c.css.map",
-    "main.dd5e0ce6.js.map": "/interior-design-studio/static/js/main.dd5e0ce6.js.map"
+    "main.9923b821.css.map": "/interior-design-studio/static/css/main.9923b821.css.map",
+    "main.7620ae54.js.map": "/interior-design-studio/static/js/main.7620ae54.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee897a8c.css",
-    "static/js/main.dd5e0ce6.js"
+    "static/css/main.9923b821.css",
+    "static/js/main.7620ae54.js"
   ]
 }
