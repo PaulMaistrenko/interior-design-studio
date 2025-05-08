@@ -1,9 +1,38 @@
 import { NavLink } from 'react-router-dom';
 import { MainLogo } from '../UI/MainLogo';
+import { useEffect, useRef, useState } from 'react';
 
 export const Header = () => {
+  const [topOffset, setTopOffset] = useState(48);
+  const [transitionEnabled, setTransitionEnabled] = useState(false);
+  const prevScrollY = useRef(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY.current) {
+        setTransitionEnabled(true);
+        setTopOffset(0);
+      } else if (currentScrollY < prevScrollY.current) {
+        setTransitionEnabled(false);
+        setTopOffset(48);
+      }
+
+      prevScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <header className="header">
+    <header
+      className="header"
+      style={{
+        top: `${topOffset}px`,
+        transition: transitionEnabled ? 'top 0.2s ease' : 'none',
+      }}
+    >
       <div className="container">
         <div className="header__content">
           <MainLogo className={'main-logo--header'} />
