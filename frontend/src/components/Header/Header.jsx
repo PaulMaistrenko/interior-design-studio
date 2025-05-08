@@ -30,7 +30,7 @@ export const Header = () => {
       className="header"
       style={{
         top: `${topOffset}px`,
-        transition: transitionEnabled ? 'top 0.2s ease' : 'none',
+        transition: 'top 0.2s ease',
       }}
     >
       <div className="container">

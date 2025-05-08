@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SectionTop } from '../../components/UI/SectionTop';
+import { ProjectCard } from '../../components/ProjectCard/ProjectCard';
 
 export const MainPage = () => {
   return (
@@ -134,18 +135,11 @@ export const MainPage = () => {
         <div className="container">
           <SectionTop title="Проєкти" tagline="“Інтер’єр, що живе з вами”" />
           <ul className="projects__list grid">
-            <li className="projects__item natural-flow bg-image grid--onDesktop-1-6">
-              <Link to="/" className="project__link">
-                <h3 className="project__title h3--semibold">Natural Flow</h3>
-                <div className="right__arrow-icon bg-image"></div>
-              </Link>
-            </li>
-            <li className="projects__item soft-minimal bg-image grid--onDesktop-7-12">
-              <Link to="/" className="project__link">
-                <h3 className="project__title h3--semibold">Soft Minimal</h3>
-                <div className="right__arrow-icon bg-image"></div>
-              </Link>
-            </li>
+            <ProjectCard title="Natural Flow" className="grid--onDesktop-1-6" />
+            <ProjectCard
+              title="Soft minimal"
+              className="grid--onDesktop-7-12"
+            />
           </ul>
           <Link
             to="/projects"
