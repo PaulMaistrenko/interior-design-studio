@@ -1,0 +1,21 @@
+.projects-cta {
+  padding-block: 32px;
+  background-color: #e5e6e6;
+}
+
+.cta__title {
+  margin-bottom: 24px;
+}
+
+.cta__text {
+  margin-bottom: 137px;
+}
+
+.cta__poster {
+  grid-row: 1/4;
+  background-image: url('../../assets/images/projects-page/cta-poster.png');
+}
+
+.cta__button {
+  height: 56px;
+}

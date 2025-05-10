@@ -3,7 +3,7 @@ import { Breadcrumb } from '../../components/UI/Breadcrumb';
 import { SectionTop } from '../../components/UI/SectionTop';
 import { Selector } from '../../components/Selector/Selector';
 import { ProjectCard } from '../../components/ProjectCard/ProjectCard';
-import { Link } from 'react-router-dom';
+import { ProjectsCta } from '../../components/ProjectsCta';
 
 export const ProjectsPage = () => {
   const currentPage = 'Портфоліо';
@@ -70,25 +70,7 @@ export const ProjectsPage = () => {
           </ul>
         </section>
       </div>
-      <section className="projects-cta">
-        <div className="container">
-          <div className="cta__content grid">
-            <div className="cta__poster bg-image grid--onDesktop-1-5" />
-            <h1 className="cta__title h1--medium grid--onDesktop-7-12">
-              Створіть дім своєї мрії
-            </h1>
-            <h4 className="cta__text h4--bold grid--onDesktop-7-12">
-              Розкажіть нам про свій проєкт
-            </h4>
-            <Link
-              to="/contacts"
-              className="cta__button button primary-button button--text grid--onDesktop-10-12"
-            >
-              Зв’язатися з нами
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProjectsCta />
     </div>
   );
 };

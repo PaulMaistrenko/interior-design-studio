@@ -10,6 +10,8 @@
 @import '../components/ContactInfo/ContactInfo';
 @import '../components/Selector/Selector';
 @import '../components/ProjectCard/ProjectCard';
+@import '../components/ProjectsCta/ProjectsCta';
+@import '../pages/ProjectPage/ProjectPage';
 @import '../components/UI/MainLogo/MainLogo';
 @import '../components/UI/Breadcrumb/Breadcrumb';
 @import '../components/UI/SectionTop/SectionTop';
@@ -21,7 +23,7 @@
 
 body {
   @include text-style($fs-main, 400, $lh-150);
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .container {

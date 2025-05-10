@@ -13,7 +13,7 @@
   gap: 8px;
 
   & p {
-    color: #FAFAFA;
+    color: #fafafa;
   }
 
   & a.email {
@@ -29,13 +29,15 @@
   }
 }
 
-.footer__contacts, .footer__socials {
+.footer__contacts,
+.footer__socials {
   display: flex;
   align-items: center;
 }
 
-.footer__contact, .footer__social {
-  color: #FAFAFA;
+.footer__contact,
+.footer__social {
+  color: #fafafa;
 }
 
 .mobile {
@@ -45,7 +47,7 @@
   line-height: 0;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     background-image: url('../../assets/icons/phone-icon.svg');
     height: 24px;
