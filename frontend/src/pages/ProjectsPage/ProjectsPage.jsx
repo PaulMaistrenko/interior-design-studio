@@ -27,7 +27,12 @@ export const ProjectsPage = () => {
   return (
     <div className="page projects-page">
       <div className="container">
-        <Breadcrumb currentPage={currentPage} />
+        <Breadcrumb
+          items={[
+            { title: 'Головна', href: '/' },
+            { title: currentPage, href: '/projects' },
+          ]}
+        />
         <SectionTop title="Портфоліо" tagline="“Дім - це більше,ніж стіни”" />
         <section className="filters-block" aria-label="Фільтри проєктів">
           <div className="selectors">

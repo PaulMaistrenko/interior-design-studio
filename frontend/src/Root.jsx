@@ -1,4 +1,4 @@
-import { Route, HashRouter as Router, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { App } from './App';
 import { MainPage } from './pages/MainPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -7,7 +7,7 @@ import { ContactsPage } from './pages/ContactsPage';
 import { ProjectPage } from './pages/ProjectPage/ProjectPage';
 
 export const Root = () => (
-  <Router>
+  <BrowserRouter basename="/interior-design-studio">
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<MainPage />} />
@@ -17,5 +17,5 @@ export const Root = () => (
         <Route path="contacts" element={<ContactsPage />} />
       </Route>
     </Routes>
-  </Router>
+  </BrowserRouter>
 );

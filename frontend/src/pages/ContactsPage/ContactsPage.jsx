@@ -8,7 +8,12 @@ export const ContactsPage = () => {
   return (
     <div className="page contacts-page">
       <div className="container">
-        <Breadcrumb currentPage={currentPage} />
+        <Breadcrumb
+          items={[
+            { title: 'Головна', href: '/' },
+            { title: currentPage, href: '/contacts' },
+          ]}
+        />
         <div className="contacts-page__content grid">
           <h1 className="contacts-page__title h1--bold grid--onDesktop-2-11">
             Кожен простір має свою історію. Давай напишемо твою разом.

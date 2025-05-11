@@ -8,7 +8,7 @@ export const ProjectCard = ({ title, className = '' }) => {
     <li
       className={`projects__item ${className} ${formattedToClassTitle} bg-image`}
     >
-      <Link to={`/${formattedToClassTitle}`} className="project__link">
+      <Link to={`/projects/${formattedToClassTitle}`} className="project__link">
         <h3 className="project__title h3--semibold">{title}</h3>
         <div className="right__arrow-icon bg-image"></div>
       </Link>

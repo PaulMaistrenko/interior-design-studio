@@ -10,6 +10,11 @@
   color: #677171;
 }
 
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+}
+
 .breadcrumb__separator {
   width: 24px;
   height: 24px;

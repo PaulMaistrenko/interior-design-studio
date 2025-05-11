@@ -5,7 +5,12 @@ export const ServicesPage = () => {
   return (
     <div className="page services-page">
       <div className="container">
-        <Breadcrumb currentPage={currentPage} />
+        <Breadcrumb
+          items={[
+            { title: 'Головна', href: '/' },
+            { title: currentPage, href: '/services' },
+          ]}
+        />
       </div>
     </div>
   );
