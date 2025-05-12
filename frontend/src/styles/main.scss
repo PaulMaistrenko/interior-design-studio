@@ -11,11 +11,15 @@
 @import '../components/Selector/Selector';
 @import '../components/ProjectCard/ProjectCard';
 @import '../components/ProjectsCta/ProjectsCta';
-@import '../pages/ProjectPage/ProjectPage';
+@import '../components/ServiceList/ServiceList';
+@import '../components/ServiceItem/ServiceItem';
+@import '../components/ServiceContentList/ServiceContentList';
+@import '../components/ServiceContentItem/ServiceContentItem';
 @import '../components/UI/MainLogo/MainLogo';
 @import '../components/UI/Breadcrumb/Breadcrumb';
 @import '../components/UI/SectionTop/SectionTop';
 @import '../components/UI/DropdownButton/DropdownButton';
+@import '../pages/ProjectPage/ProjectPage';
 @import '../pages/MainPage/MainPage';
 @import '../pages/ProjectsPage/ProjectsPage';
 @import '../pages/ServicesPage/ServicesPage';
