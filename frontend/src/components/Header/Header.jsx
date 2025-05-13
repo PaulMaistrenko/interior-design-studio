@@ -42,7 +42,9 @@ export const Header = () => {
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? 'nav__link nav__link--active' : 'nav__link'
+                    isActive
+                      ? 'nav__link nav__link--active text-main--extrabold'
+                      : 'nav__link'
                   }
                 >
                   Головна
@@ -52,7 +54,9 @@ export const Header = () => {
                 <NavLink
                   to="/services"
                   className={({ isActive }) =>
-                    isActive ? 'nav__link nav__link--active' : 'nav__link'
+                    isActive
+                      ? 'nav__link nav__link--active text-main--extrabold'
+                      : 'nav__link'
                   }
                 >
                   Послуги
@@ -62,7 +66,9 @@ export const Header = () => {
                 <NavLink
                   to="/projects"
                   className={({ isActive }) =>
-                    isActive ? 'nav__link nav__link--active' : 'nav__link'
+                    isActive
+                      ? 'nav__link nav__link--active text-main--extrabold'
+                      : 'nav__link'
                   }
                 >
                   Портфоліо
@@ -72,7 +78,9 @@ export const Header = () => {
                 <NavLink
                   to="/blog"
                   className={({ isActive }) =>
-                    isActive ? 'nav__link nav__link--active' : 'nav__link'
+                    isActive
+                      ? 'nav__link nav__link--active text-main--extrabold'
+                      : 'nav__link'
                   }
                 >
                   Блог
@@ -82,7 +90,9 @@ export const Header = () => {
                 <NavLink
                   to="/contacts"
                   className={({ isActive }) =>
-                    isActive ? 'nav__link nav__link--active' : 'nav__link'
+                    isActive
+                      ? 'nav__link nav__link--active text-main--extrabold'
+                      : 'nav__link'
                   }
                 >
                   Контакти
