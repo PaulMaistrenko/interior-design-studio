@@ -3,14 +3,14 @@ import { ServiceContentItem } from '../ServiceContentItem/ServiceContentItem';
 
 export const ServiceContentList = ({ contentNote, serviceContent }) => {
   return (
-    <>
+    <div className="grid-wrapper grid--onDesktop-8-12">
       <p className="content-note">{contentNote}</p>
       <ul className="service-content__list">
         {serviceContent.map((item, index) => (
           <ServiceContentItem key={index} content={item} />
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

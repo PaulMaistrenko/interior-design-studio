@@ -1,6 +1,7 @@
 import { Breadcrumb } from '../../components/UI/Breadcrumb';
 import { SectionTop } from '../../components/UI/SectionTop';
 import { ServiceList } from '../../components/ServiceList';
+import { ServicesCta } from '../../components/ServicesCta/ServicesCta';
 
 export const ServicesPage = () => {
   const currentPage = 'Послуги';
@@ -14,9 +15,12 @@ export const ServicesPage = () => {
           ]}
         />
         <SectionTop title="Послуги" tagline="“Краса,що працює на вас”" />
-        <section className="services-page__content">
-          <ServiceList />
-        </section>
+      </div>
+      <section className="services-page__content">
+        <ServiceList />
+      </section>
+      <div className="container">
+        <ServicesCta />
       </div>
     </div>
   );

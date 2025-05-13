@@ -1,0 +1,38 @@
+.services__item {
+  padding-block: 16px;
+}
+
+.service__top {
+  padding-block: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(44, 29, 23, 0.25);
+}
+
+.service .service__top {
+  margin-bottom: 32px;
+}
+
+.service-price__button {
+  height: 56px;
+  width: 320px;
+  color: #132323;
+  border-radius: 2px;
+  border: 3px solid #8e3a1b;
+  background: #fff;
+}
+
+.service__title {
+  color: #344040;
+}
+
+.service-price, .service-min-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-price {
+  margin-bottom: 16px;
+}

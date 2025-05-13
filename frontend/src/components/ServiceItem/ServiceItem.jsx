@@ -8,24 +8,30 @@ export const ServiceItem = ({ service }) => {
   return (
     <li className="services__item">
       <article className="service">
-        <div className="service__top">
-          <h2 className="service__title">{title}</h2>
+        <div className="service__top container">
+          <h2 className="service__title h2--medium">{title}</h2>
           <Link
             to={href}
-            className="service-price__button"
+            className="service-price__button button button--text"
             aria-label="Розрахувати вартість"
           >
             Розрахувати вартість
           </Link>
         </div>
-        <div className="service-content">
-          <div className="service-price">
-            <p className="service-price__title">Вартість:</p>
-            <p className="service-price__value">{`$${price.value}/ м²`}</p>
-          </div>
-          <div className="service-min-price">
-            <p className="service-min-price__title">*мінімальна вартість:</p>
-            <p className="service-min-price__value">{`$${minPrice.value}`}</p>
+        <div className="service-content grid container">
+          <div className="service-prices grid--onDesktop-1-7">
+            <div className="service-price">
+              <p className="service-price__title text-main--extrabold">
+                Вартість:
+              </p>
+              <p className="service-price__value">{`$${price.value}/ м²`}</p>
+            </div>
+            <div className="service-min-price">
+              <p className="service-min-price__title text-main--extrabold">
+                *мінімальна вартість:
+              </p>
+              <p className="service-min-price__value">{`$${minPrice.value}`}</p>
+            </div>
           </div>
           <ServiceContentList
             contentNote={contentNote}

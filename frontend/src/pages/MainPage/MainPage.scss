@@ -71,7 +71,8 @@
   padding-block: 40px;
 }
 
-.service__title {
+.main-page .service__title {
+  margin-bottom: 16px;
   color: #8e3a1b;
 }
 
@@ -85,10 +86,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.service__title {
-  margin-bottom: 16px;
 }
 
 .service__article {

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SectionTop } from '../../components/UI/SectionTop';
 import { ProjectCard } from '../../components/ProjectCard/ProjectCard';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 export const MainPage = () => {
   return (
@@ -14,6 +15,7 @@ export const MainPage = () => {
           <Link
             to="/contacts"
             className="hero-section__button primary-button button button--text"
+            onClick={() => scrollToTop()}
           >
             Зв’язатися з нами
           </Link>
@@ -124,8 +126,9 @@ export const MainPage = () => {
             </li>
           </ul>
           <Link
-            to="/contacts"
+            to="/services"
             className="service-section__button button button--text"
+            onClick={() => scrollToTop()}
           >
             <span>Всі послуги</span>
           </Link>
@@ -144,6 +147,7 @@ export const MainPage = () => {
           <Link
             to="/projects"
             className="projects-section__button button button--text"
+            onClick={() => scrollToTop()}
           >
             <span>Портфоліо</span>
           </Link>

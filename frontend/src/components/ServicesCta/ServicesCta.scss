@@ -1,0 +1,23 @@
+.services-cta {
+  & .cta__text {
+    color: #919898;
+  }
+
+  & .cta__poster {
+    grid-row: 1/5;
+    background-image: url('../../assets/images/services-page/services-cta-poster.png');
+  }
+
+  & .cta__title {
+    margin: 128px 0 16px;
+  }
+
+  & .cta__text {
+    margin-bottom: 150px;
+  }
+
+  & .cta__button {
+    margin-bottom: 56px;
+    height: 56px;
+  }
+}
