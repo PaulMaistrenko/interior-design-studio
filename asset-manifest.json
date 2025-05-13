@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.96b0fbe2.css",
-    "main.js": "/interior-design-studio/static/js/main.72f85be7.js",
+    "main.css": "/interior-design-studio/static/css/main.7a4af744.css",
+    "main.js": "/interior-design-studio/static/js/main.123810b0.js",
     "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
     "static/media/soft-minimal.jpg": "/interior-design-studio/static/media/soft-minimal.c8b1de1058af4e9842b5.jpg",
+    "static/media/services-cta-poster.png": "/interior-design-studio/static/media/services-cta-poster.c94ab5a288033440a605.png",
     "static/media/stone-&-wood.png": "/interior-design-studio/static/media/stone-&-wood.3ba160e1f5bbf8f920f9.png",
     "static/media/cta-poster.png": "/interior-design-studio/static/media/cta-poster.65d50eb83073c5786d36.png",
     "static/media/dark-balance.png": "/interior-design-studio/static/media/dark-balance.61edeb45e2386084fb39.png",
@@ -23,11 +24,11 @@
     "static/media/chevron-down-hover.svg": "/interior-design-studio/static/media/chevron-down-hover.a557475d44e39d0997b4.svg",
     "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
     "static/media/breadcrumb-separator.svg": "/interior-design-studio/static/media/breadcrumb-separator.e8fdd1b9a09db1b3340b.svg",
-    "main.96b0fbe2.css.map": "/interior-design-studio/static/css/main.96b0fbe2.css.map",
-    "main.72f85be7.js.map": "/interior-design-studio/static/js/main.72f85be7.js.map"
+    "main.7a4af744.css.map": "/interior-design-studio/static/css/main.7a4af744.css.map",
+    "main.123810b0.js.map": "/interior-design-studio/static/js/main.123810b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.96b0fbe2.css",
-    "static/js/main.72f85be7.js"
+    "static/css/main.7a4af744.css",
+    "static/js/main.123810b0.js"
   ]
 }
