@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.7a4af744.css",
-    "main.js": "/interior-design-studio/static/js/main.a0366f19.js",
+    "main.css": "/interior-design-studio/static/css/main.027931b9.css",
+    "main.js": "/interior-design-studio/static/js/main.88256836.js",
     "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
     "static/media/soft-minimal.jpg": "/interior-design-studio/static/media/soft-minimal.c8b1de1058af4e9842b5.jpg",
     "static/media/services-cta-poster.png": "/interior-design-studio/static/media/services-cta-poster.c94ab5a288033440a605.png",
@@ -9,6 +9,7 @@
     "static/media/cta-poster.png": "/interior-design-studio/static/media/cta-poster.65d50eb83073c5786d36.png",
     "static/media/dark-balance.png": "/interior-design-studio/static/media/dark-balance.61edeb45e2386084fb39.png",
     "static/media/eco-horizon.png": "/interior-design-studio/static/media/eco-horizon.24097e8a4e59823ea02d.png",
+    "static/media/image-1.jpg": "/interior-design-studio/static/media/image-1.1f08d70f827f881c3ed7.jpg",
     "static/media/natural-flow .png": "/interior-design-studio/static/media/natural-flow .d9c4c0080400520ac38c.png",
     "static/media/about-poster-2.png": "/interior-design-studio/static/media/about-poster-2.5c75db5c0dea7136c97f.png",
     "static/media/about-poster-1.png": "/interior-design-studio/static/media/about-poster-1.008e6e7cd179c4a2c31d.png",
@@ -19,16 +20,17 @@
     "index.html": "/interior-design-studio/index.html",
     "static/media/phone-icon-dark.svg": "/interior-design-studio/static/media/phone-icon-dark.1dd97aff635db3179333.svg",
     "static/media/phone-icon.svg": "/interior-design-studio/static/media/phone-icon.dff5e5f3dcefa1ede1bf.svg",
+    "static/media/arrow-narrow-right-dark.svg": "/interior-design-studio/static/media/arrow-narrow-right-dark.7434c0fffc02bff7c6d5.svg",
     "static/media/arrow-narrow-right-big-white.svg": "/interior-design-studio/static/media/arrow-narrow-right-big-white.3e468bc7a22d68e18f87.svg",
     "static/media/chevron-down-default.svg": "/interior-design-studio/static/media/chevron-down-default.252f4cf5e550291ecf0e.svg",
     "static/media/chevron-down-hover.svg": "/interior-design-studio/static/media/chevron-down-hover.a557475d44e39d0997b4.svg",
     "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
     "static/media/breadcrumb-separator.svg": "/interior-design-studio/static/media/breadcrumb-separator.e8fdd1b9a09db1b3340b.svg",
-    "main.7a4af744.css.map": "/interior-design-studio/static/css/main.7a4af744.css.map",
-    "main.a0366f19.js.map": "/interior-design-studio/static/js/main.a0366f19.js.map"
+    "main.027931b9.css.map": "/interior-design-studio/static/css/main.027931b9.css.map",
+    "main.88256836.js.map": "/interior-design-studio/static/js/main.88256836.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a4af744.css",
-    "static/js/main.a0366f19.js"
+    "static/css/main.027931b9.css",
+    "static/js/main.88256836.js"
   ]
 }
