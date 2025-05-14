@@ -16,6 +16,8 @@
 @import '../components/ServiceItem/ServiceItem';
 @import '../components/ServiceContentList/ServiceContentList';
 @import '../components/ServiceContentItem/ServiceContentItem';
+@import '../components/BlogCard/BlogCard';
+@import '../components/BlogList/BlogList';
 @import '../components/UI/MainLogo/MainLogo';
 @import '../components/UI/Breadcrumb/Breadcrumb';
 @import '../components/UI/SectionTop/SectionTop';
@@ -30,6 +32,10 @@
 body {
   @include text-style($fs-main, 400, $lh-150);
   background-color: #fafafa;
+}
+
+.page {
+  padding: 220px 0 80px;
 }
 
 .container {
