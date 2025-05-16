@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.027931b9.css",
-    "main.js": "/interior-design-studio/static/js/main.88256836.js",
+    "main.css": "/interior-design-studio/static/css/main.3c43775c.css",
+    "main.js": "/interior-design-studio/static/js/main.c18ffaca.js",
     "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
     "static/media/soft-minimal.jpg": "/interior-design-studio/static/media/soft-minimal.c8b1de1058af4e9842b5.jpg",
     "static/media/services-cta-poster.png": "/interior-design-studio/static/media/services-cta-poster.c94ab5a288033440a605.png",
@@ -9,8 +9,15 @@
     "static/media/cta-poster.png": "/interior-design-studio/static/media/cta-poster.65d50eb83073c5786d36.png",
     "static/media/dark-balance.png": "/interior-design-studio/static/media/dark-balance.61edeb45e2386084fb39.png",
     "static/media/eco-horizon.png": "/interior-design-studio/static/media/eco-horizon.24097e8a4e59823ea02d.png",
+    "static/media/main-poster.png": "/interior-design-studio/static/media/main-poster.7b9ff0a93a70f7342396.png",
+    "static/media/soft minimal-3.png": "/interior-design-studio/static/media/soft minimal-3.b7f85cf9a33678f92094.png",
+    "static/media/soft minimal-6.png": "/interior-design-studio/static/media/soft minimal-6.f308357a53a8ee0d11fe.png",
+    "static/media/soft minimal-2.png": "/interior-design-studio/static/media/soft minimal-2.115ffba5fcfd0312a980.png",
     "static/media/image-1.jpg": "/interior-design-studio/static/media/image-1.1f08d70f827f881c3ed7.jpg",
+    "static/media/soft minimal-4.png": "/interior-design-studio/static/media/soft minimal-4.81e5219c05873b9abccf.png",
+    "static/media/soft minimal-1.png": "/interior-design-studio/static/media/soft minimal-1.b744aea5578350b246d3.png",
     "static/media/natural-flow .png": "/interior-design-studio/static/media/natural-flow .d9c4c0080400520ac38c.png",
+    "static/media/soft minimal-5.png": "/interior-design-studio/static/media/soft minimal-5.830383abe90bb49875b1.png",
     "static/media/about-poster-2.png": "/interior-design-studio/static/media/about-poster-2.5c75db5c0dea7136c97f.png",
     "static/media/about-poster-1.png": "/interior-design-studio/static/media/about-poster-1.008e6e7cd179c4a2c31d.png",
     "static/media/service-1.png": "/interior-design-studio/static/media/service-1.92a9f23b5709603596fc.png",
@@ -26,11 +33,11 @@
     "static/media/chevron-down-hover.svg": "/interior-design-studio/static/media/chevron-down-hover.a557475d44e39d0997b4.svg",
     "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
     "static/media/breadcrumb-separator.svg": "/interior-design-studio/static/media/breadcrumb-separator.e8fdd1b9a09db1b3340b.svg",
-    "main.027931b9.css.map": "/interior-design-studio/static/css/main.027931b9.css.map",
-    "main.88256836.js.map": "/interior-design-studio/static/js/main.88256836.js.map"
+    "main.3c43775c.css.map": "/interior-design-studio/static/css/main.3c43775c.css.map",
+    "main.c18ffaca.js.map": "/interior-design-studio/static/js/main.c18ffaca.js.map"
   },
   "entrypoints": [
-    "static/css/main.027931b9.css",
-    "static/js/main.88256836.js"
+    "static/css/main.3c43775c.css",
+    "static/js/main.c18ffaca.js"
   ]
 }
