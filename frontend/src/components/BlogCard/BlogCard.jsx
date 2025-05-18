@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 
 export const BlogCard = () => {
+  const link = 'top10-most-popular-styles-2025';
+
   return (
     <div className="blog-card bg-image">
       <div className="blog-card__date button--text">7 квіт. 2025 р.</div>
@@ -14,7 +16,7 @@ export const BlogCard = () => {
             способу життя, поєднуючи естетику...
           </p>
           <Link
-            to="#"
+            to={`/blog/${link}`}
             className="blog-card__full-text-link button--text-underline"
           >
             Читати більше

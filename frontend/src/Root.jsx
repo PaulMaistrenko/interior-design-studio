@@ -6,6 +6,7 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { ContactsPage } from './pages/ContactsPage';
 import { ProjectPage } from './pages/ProjectPage/ProjectPage';
 import { BlogPage } from './pages/BlogPage/BlogPage';
+import { BlogCardPage } from './pages/BlogCardPage';
 
 export const Root = () => (
   <BrowserRouter basename="/interior-design-studio">
@@ -16,6 +17,7 @@ export const Root = () => (
         <Route path="projects" element={<ProjectsPage />} />
         <Route path="projects/:projectSlug" element={<ProjectPage />} />
         <Route path="blog" element={<BlogPage />} />
+        <Route path="blog/:blogSlug" element={<BlogCardPage />} />
         <Route path="contacts" element={<ContactsPage />} />
       </Route>
     </Routes>

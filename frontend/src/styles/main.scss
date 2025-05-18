@@ -18,6 +18,7 @@
 @import '../components/ServiceContentItem/ServiceContentItem';
 @import '../components/BlogCard/BlogCard';
 @import '../components/BlogList/BlogList';
+@import '../components/BlogCardSection/BlogCardSection';
 @import '../components/UI/MainLogo/MainLogo';
 @import '../components/UI/Breadcrumb/Breadcrumb';
 @import '../components/UI/SectionTop/SectionTop';
@@ -28,6 +29,7 @@
 @import '../pages/ServicesPage/ServicesPage';
 @import '../pages/BlogPage/BlogPage';
 @import '../pages/ContactsPage/ContactsPage';
+@import '../pages/BlogCardPage/BlogCardPage';
 
 body {
   @include text-style($fs-main, 400, $lh-150);
