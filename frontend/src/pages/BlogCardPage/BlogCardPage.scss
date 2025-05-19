@@ -9,3 +9,9 @@
 .blog-card-page__title {
   margin-bottom: 16px;
 }
+
+.blog-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}

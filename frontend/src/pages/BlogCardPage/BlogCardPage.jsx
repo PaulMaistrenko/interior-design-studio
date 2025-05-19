@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { Breadcrumb } from '../../components/UI/Breadcrumb';
 import { BlogCardSection } from '../../components/BlogCardSection/BlogCardSection';
 import mainPoster from '../../assets/images/blog-page/blog-card-page/main-poster.png';
+import { BlogCardPageCta } from '../../components/BlogCardPageCta/BlogCardPageCta';
 
 export const BlogCardPage = () => {
   const { blogSlug } = useParams();
@@ -37,8 +38,22 @@ export const BlogCardPage = () => {
             невеликих просторів.
           </p>
         </article>
-        <BlogCardSection />
+        <ul className="blog-card__list">
+          <li className="blog-card__item">
+            <BlogCardSection />
+          </li>
+          <li className="blog-card__item">
+            <BlogCardSection />
+          </li>
+          <li className="blog-card__item">
+            <BlogCardSection />
+          </li>
+          <li className="blog-card__item">
+            <BlogCardSection />
+          </li>
+        </ul>
       </div>
+      <BlogCardPageCta />
     </div>
   );
 };
