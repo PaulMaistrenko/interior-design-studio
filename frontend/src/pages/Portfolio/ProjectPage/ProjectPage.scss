@@ -1,0 +1,57 @@
+.project-page__gallery-list {
+  padding-block: 56px;
+  row-gap: 24px;
+}
+
+.project__main-image {
+  height: 596px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.project__title {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.project-attributes {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #919898;
+}
+
+.project__description {
+  color: #132323;
+}
+
+.project-page__gallery-item {
+  height: 437px;
+}
+
+.gallery-item-1 {
+  background-image: url('../../../assets/images/portfolio/project-page/soft-minimal/soft minimal-1.png');
+}
+
+.gallery-item-2 {
+  background-image: url('../../../assets/images/portfolio/project-page/soft-minimal/soft minimal-2.png');
+}
+
+.gallery-item-3 {
+  background-image: url('../../../assets/images/portfolio/project-page/soft-minimal/soft minimal-3.png');
+}
+
+.gallery-item-4 {
+  background-image: url('../../../assets/images/portfolio/project-page/soft-minimal/soft minimal-4.png');
+}
+
+.gallery-item-5 {
+  background-image: url('../../../assets/images/portfolio/project-page/soft-minimal/soft minimal-5.png');
+}
+
+.gallery-item-6 {
+  background-image: url('../../../assets/images/portfolio/project-page/soft-minimal/soft minimal-6.png');
+}

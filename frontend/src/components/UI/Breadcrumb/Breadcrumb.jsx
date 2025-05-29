@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export const Breadcrumb = ({ items }) => {
+export const BreadCrumb = ({ items }) => {
   return (
     <div className="breadcrumb">
       {items.map((item, index) => {
@@ -27,7 +27,7 @@ export const Breadcrumb = ({ items }) => {
   );
 };
 
-Breadcrumb.propTypes = {
+BreadCrumb.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
