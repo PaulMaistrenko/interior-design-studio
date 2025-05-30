@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.1e34f118.css",
-    "main.js": "/interior-design-studio/static/js/main.63cf2e3c.js",
+    "main.css": "/interior-design-studio/static/css/main.e2de2a67.css",
+    "main.js": "/interior-design-studio/static/js/main.dc43f2c2.js",
     "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
     "static/media/main-poster.png": "/interior-design-studio/static/media/main-poster.7b9ff0a93a70f7342396.png",
     "static/media/soft-minimal.jpg": "/interior-design-studio/static/media/soft-minimal.c8b1de1058af4e9842b5.jpg",
@@ -17,7 +17,7 @@
     "static/media/image-1.jpg": "/interior-design-studio/static/media/image-1.1f08d70f827f881c3ed7.jpg",
     "static/media/soft minimal-4.png": "/interior-design-studio/static/media/soft minimal-4.81e5219c05873b9abccf.png",
     "static/media/soft minimal-1.png": "/interior-design-studio/static/media/soft minimal-1.b744aea5578350b246d3.png",
-    "static/media/natural-flow .png": "/interior-design-studio/static/media/natural-flow .d9c4c0080400520ac38c.png",
+    "static/media/natural-flow.png": "/interior-design-studio/static/media/natural-flow.d9c4c0080400520ac38c.png",
     "static/media/soft minimal-5.png": "/interior-design-studio/static/media/soft minimal-5.830383abe90bb49875b1.png",
     "static/media/about-poster-2.png": "/interior-design-studio/static/media/about-poster-2.5c75db5c0dea7136c97f.png",
     "static/media/about-poster-1.png": "/interior-design-studio/static/media/about-poster-1.008e6e7cd179c4a2c31d.png",
@@ -28,17 +28,21 @@
     "index.html": "/interior-design-studio/index.html",
     "static/media/phone-icon-dark.svg": "/interior-design-studio/static/media/phone-icon-dark.1dd97aff635db3179333.svg",
     "static/media/phone-icon.svg": "/interior-design-studio/static/media/phone-icon.dff5e5f3dcefa1ede1bf.svg",
+    "static/media/survey-status-dot-active.svg": "/interior-design-studio/static/media/survey-status-dot-active.23b9d8deada6d5b92f7d.svg",
+    "static/media/survey-status-dot-completed.svg": "/interior-design-studio/static/media/survey-status-dot-completed.0d023727a65dc07bc095.svg",
+    "static/media/arrow-narrow-left.svg": "/interior-design-studio/static/media/arrow-narrow-left.35dc1ab85587e85cc43d.svg",
     "static/media/arrow-narrow-right-dark.svg": "/interior-design-studio/static/media/arrow-narrow-right-dark.7434c0fffc02bff7c6d5.svg",
     "static/media/arrow-narrow-right-big-white.svg": "/interior-design-studio/static/media/arrow-narrow-right-big-white.3e468bc7a22d68e18f87.svg",
     "static/media/chevron-down-default.svg": "/interior-design-studio/static/media/chevron-down-default.252f4cf5e550291ecf0e.svg",
     "static/media/chevron-down-hover.svg": "/interior-design-studio/static/media/chevron-down-hover.a557475d44e39d0997b4.svg",
     "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
+    "static/media/survey-status-dot.svg": "/interior-design-studio/static/media/survey-status-dot.762569dd039c8658f542.svg",
     "static/media/breadcrumb-separator.svg": "/interior-design-studio/static/media/breadcrumb-separator.e8fdd1b9a09db1b3340b.svg",
-    "main.1e34f118.css.map": "/interior-design-studio/static/css/main.1e34f118.css.map",
-    "main.63cf2e3c.js.map": "/interior-design-studio/static/js/main.63cf2e3c.js.map"
+    "main.e2de2a67.css.map": "/interior-design-studio/static/css/main.e2de2a67.css.map",
+    "main.dc43f2c2.js.map": "/interior-design-studio/static/js/main.dc43f2c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e34f118.css",
-    "static/js/main.63cf2e3c.js"
+    "static/css/main.e2de2a67.css",
+    "static/js/main.dc43f2c2.js"
   ]
 }
