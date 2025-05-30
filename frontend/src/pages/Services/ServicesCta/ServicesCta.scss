@@ -1,23 +1,67 @@
 .services-cta {
-  & .cta__text {
-    color: #919898;
-  }
-
   & .cta__poster {
+    height: 576px;
     grid-row: 1/5;
     background-image: url('../../../assets/images/services/services-cta-poster.png');
   }
 
-  & .cta__title {
-    margin: 128px 0 16px;
-  }
-
-  & .cta__text {
-    margin-bottom: 150px;
-  }
-
   & .cta__button {
+    width: 320px;
     margin-bottom: 56px;
     height: 56px;
+    align-self: flex-end;
+  }
+}
+
+.services-survey-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.services-survey-block__title {
+  margin: 128px 0 16px;
+}
+
+.services-survey-block__text {
+  margin-bottom: 150px;
+  color: #919898;
+}
+
+.survey-next-step__button {
+  height: 48px;
+  width: 208px;
+  align-self: flex-end;
+}
+
+.survey-status-bar {
+  margin-top: 24px;
+  margin-bottom: 56px;
+  position: relative;
+  display: flex;
+}
+
+.survey-prev-step__button {
+  position: absolute;
+  left: -90px;
+  width: 32px;
+  height: 32px;
+  background-image: url('../../../assets/icons/arrow-narrow-left.svg');
+}
+
+.survey-steps-status__list {
+  display: flex;
+}
+
+.survey-steps-status__dot {
+  width: 62px;
+  height: 32px;
+  background-image: url('../../../assets/icons/survey-status-dot.svg');
+
+  &.active {
+    background-image: url('../../../assets/icons/survey-status-dot-active.svg');
+  }
+
+  &.completed {
+    background-image: url('../../../assets/icons/survey-status-dot-completed.svg');
   }
 }
