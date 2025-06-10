@@ -13,6 +13,10 @@
   }
 }
 
+.cta__content {
+  position: relative;
+}
+
 .services-survey-block {
   display: flex;
   flex-direction: column;
@@ -28,9 +32,11 @@
 }
 
 .survey-next-step__button {
+  position: absolute;
+  bottom: 64px;
+  right: 0;
   height: 48px;
   width: 208px;
-  align-self: flex-end;
 }
 
 .survey-status-bar {
@@ -63,5 +69,11 @@
 
   &.completed {
     background-image: url('../../../assets/icons/survey-status-dot-completed.svg');
+  }
+
+  &:last-child {
+    background-size: contain;
+    width: 20px;
+    background-image: url('../../../assets/icons/survey-status-dot-last.svg');
   }
 }

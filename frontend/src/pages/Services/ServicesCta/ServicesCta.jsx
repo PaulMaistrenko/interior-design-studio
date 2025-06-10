@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SurveyList } from '../SurveyList/SurveyList';
 
 export const ServicesCta = () => {
-  const surveySteps = 7;
+  const surveySteps = 8;
   const [currentSurveyStep, setCurrentSurveyStep] = useState(1);
   const [isSurveyListOpen, setIsSurveyListOpen] = useState(false);
 
@@ -28,7 +28,7 @@ export const ServicesCta = () => {
                     onClick={() => handleSurveyStep('prev')}
                   />
                   <ul className="survey-steps-status__list">
-                    {Array.from({ length: surveySteps }, (_, i) => (
+                    {Array.from({ length: surveySteps - 1 }, (_, i) => (
                       <li
                         key={i}
                         className={`survey-steps-status__dot bg-image ${

@@ -3,6 +3,7 @@
   "homepage": "https://PaulMaistrenko.github.io/interior-design-studio",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://tavrdesing.com.ua",
   "type": "module",
   "dependencies": {
     "react": "^19.1.0",

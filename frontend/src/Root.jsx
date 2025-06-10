@@ -9,7 +9,11 @@ import { BlogPostPage } from './pages/Blog/BlogPostPage/BlogPostPage';
 import { ContactsPage } from './pages/Contacts/ContactsPage/ContactsPage';
 
 export const Root = () => (
-  <BrowserRouter basename="/interior-design-studio">
+  <BrowserRouter
+    basename={
+      process.env.NODE_ENV === 'production' ? '/interior-design-studio' : ''
+    }
+  >
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<HomePage />} />
