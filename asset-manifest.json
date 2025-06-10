@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.e2de2a67.css",
-    "main.js": "/interior-design-studio/static/js/main.dc43f2c2.js",
+    "main.css": "/interior-design-studio/static/css/main.739dfcd1.css",
+    "main.js": "/interior-design-studio/static/js/main.019316b6.js",
     "static/media/hero-section.png": "/interior-design-studio/static/media/hero-section.a18b23ce2ce3c7f5b46b.png",
     "static/media/main-poster.png": "/interior-design-studio/static/media/main-poster.7b9ff0a93a70f7342396.png",
     "static/media/soft-minimal.jpg": "/interior-design-studio/static/media/soft-minimal.c8b1de1058af4e9842b5.jpg",
@@ -14,7 +14,6 @@
     "static/media/soft minimal-3.png": "/interior-design-studio/static/media/soft minimal-3.b7f85cf9a33678f92094.png",
     "static/media/soft minimal-6.png": "/interior-design-studio/static/media/soft minimal-6.f308357a53a8ee0d11fe.png",
     "static/media/soft minimal-2.png": "/interior-design-studio/static/media/soft minimal-2.115ffba5fcfd0312a980.png",
-    "static/media/image-1.jpg": "/interior-design-studio/static/media/image-1.1f08d70f827f881c3ed7.jpg",
     "static/media/soft minimal-4.png": "/interior-design-studio/static/media/soft minimal-4.81e5219c05873b9abccf.png",
     "static/media/soft minimal-1.png": "/interior-design-studio/static/media/soft minimal-1.b744aea5578350b246d3.png",
     "static/media/natural-flow.png": "/interior-design-studio/static/media/natural-flow.d9c4c0080400520ac38c.png",
@@ -38,11 +37,12 @@
     "static/media/arrow-narrow-right.svg": "/interior-design-studio/static/media/arrow-narrow-right.7932e904bb0bcd932a0e.svg",
     "static/media/survey-status-dot.svg": "/interior-design-studio/static/media/survey-status-dot.762569dd039c8658f542.svg",
     "static/media/breadcrumb-separator.svg": "/interior-design-studio/static/media/breadcrumb-separator.e8fdd1b9a09db1b3340b.svg",
-    "main.e2de2a67.css.map": "/interior-design-studio/static/css/main.e2de2a67.css.map",
-    "main.dc43f2c2.js.map": "/interior-design-studio/static/js/main.dc43f2c2.js.map"
+    "static/media/survey-status-dot-last.svg": "/interior-design-studio/static/media/survey-status-dot-last.075868f9a93676e07e55.svg",
+    "main.739dfcd1.css.map": "/interior-design-studio/static/css/main.739dfcd1.css.map",
+    "main.019316b6.js.map": "/interior-design-studio/static/js/main.019316b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2de2a67.css",
-    "static/js/main.dc43f2c2.js"
+    "static/css/main.739dfcd1.css",
+    "static/js/main.019316b6.js"
   ]
 }
