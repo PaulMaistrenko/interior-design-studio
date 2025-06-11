@@ -1,6 +1,3 @@
-@import './_mixins';
-@import './_variables';
-
 .h1--bold {
   @include heading($fs-h1, 700, $lh-135);
 }

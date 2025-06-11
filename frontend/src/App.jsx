@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import './App.scss';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { Header } from './components/layouts/Header';
+/*import { Footer } from './components/Footer';*/
 
 export const App = () => {
   return (
     <div className="App">
       <Header />
       <Outlet />
-      <Footer />
+      {/*<Footer />*/}
     </div>
   );
 };

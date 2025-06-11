@@ -27,12 +27,6 @@ export default [
         version: 'detect',
       },
     },
-    ignores: [
-      'node_modules/',
-      'build/',
-      'dist/',
-    ],
+    ignores: ['node_modules/', 'build/', 'dist/'],
   },
 ];
-
-
