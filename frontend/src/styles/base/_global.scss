@@ -2,3 +2,20 @@ body {
   @include text-style($fs-main, 400, $lh-150);
   background-color: $gray-10;
 }
+
+.container {
+  padding-inline: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include onDesktop {
+    padding-inline: 56px;
+  }
+}
+
+.bg-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+

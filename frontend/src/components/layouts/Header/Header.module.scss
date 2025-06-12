@@ -1,0 +1,49 @@
+@import '../../../styles/abstracts/_variables';
+@import '../../../styles/abstracts/_mixins';
+
+.header {
+  padding-block: 10px;
+  background-color: $header-background-color;
+
+  @include onDesktop {
+    padding-block: 11px;
+  }
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navList {
+  display: none;
+  padding-inline: 24px;
+  gap: 16px;
+
+  @include onDesktop {
+    display: flex;
+  }
+}
+
+.navLink {
+  padding: 4px 8px;
+  color: $gray-100;
+}
+
+.active {
+  color: $accent-color;
+  font-weight: 800;
+  border: 1px solid $accent-color;
+  border-left: 0;
+}
+
+.menuOpenButton {
+  width: 44px;
+  height: 44px;
+  background-image: url('../../../assets/icons/menu-open-button.svg');
+
+  @include onDesktop {
+    display: none;
+  }
+}
