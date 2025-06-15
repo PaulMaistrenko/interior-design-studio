@@ -1,0 +1,12 @@
+@import '../../../styles/abstracts/_variables';
+
+.ctaButton {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 320px;
+  background-color: $accent-color;
+  color: $white;
+}

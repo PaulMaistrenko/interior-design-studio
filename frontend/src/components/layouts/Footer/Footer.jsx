@@ -21,7 +21,7 @@ export const Footer = () => {
                 >
                   {label}
                 </a>
-                {id < 3 && (
+                {index < 2 && (
                   <div className={`${styles.separator} button--text`}></div>
                 )}
               </li>

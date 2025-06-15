@@ -1,0 +1,16 @@
+.heroSection {
+  padding: 243px 0 397px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../../assets/images/HomePage/main-poster.png');
+}
+
+.heroSectionTitle {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 64px;
+  line-height: 135%;
+  font-weight: 800;
+}
