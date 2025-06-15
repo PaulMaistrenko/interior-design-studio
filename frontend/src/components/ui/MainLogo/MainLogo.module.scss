@@ -1,6 +1,6 @@
 @import '../../../styles/abstracts/_mixins';
 
-.mainLogo {
+.headerLogo {
   display: block;
   height: 40px;
   width: 40px;
@@ -9,5 +9,17 @@
   @include onDesktop {
     height: 60px;
     width: 60px;
+  }
+}
+
+.footerLogo {
+  display: block;
+  height: 40px;
+  width: 40px;
+  background-image: url('../../../assets/icons/main-logo-footer.svg');
+
+  @include onDesktop {
+    height: 98px;
+    width: 98px;
   }
 }

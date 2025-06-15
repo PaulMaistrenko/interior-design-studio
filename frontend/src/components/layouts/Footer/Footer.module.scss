@@ -1,0 +1,45 @@
+@import '../../../styles/abstracts/_variables';
+@import '../../../styles/abstracts/_mixins';
+
+.footer {
+  padding-block: 24px;
+  background-color: $gray-100;
+
+  @include onDesktop {
+    padding-block: 24px;
+  }
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactList {
+  display: flex;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navLink {
+  padding: 11px 16px;
+}
+
+.navLink, .separator {
+  color: $gray-10;
+}
+
+.separator {
+  width: 1px;
+  height: 40px;
+  background-color: $gray-10;
+}
+
+.underline {
+  text-decoration: underline !important;
+}

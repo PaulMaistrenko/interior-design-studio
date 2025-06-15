@@ -8,7 +8,7 @@ export const Header = () => {
     <header className={styles.header}>
       <div className="container">
         <nav className={styles.navBar}>
-          <MainLogo />
+          <MainLogo className={'header'} />
           <ul className={styles.navList}>
             {navLinks.map(({ id, to, label }) => (
               <li key={id} className={styles.navItem}>
