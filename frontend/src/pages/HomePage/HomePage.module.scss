@@ -1,5 +1,8 @@
+@import '../../styles/abstracts/_variables';
+
 .heroSection {
   padding: 243px 0 397px;
+  margin-bottom: 80px;
   height: 900px;
   display: flex;
   flex-direction: column;
@@ -13,4 +16,39 @@
   font-size: 64px;
   line-height: 135%;
   font-weight: 800;
+  color: $gray-100;
+}
+
+.aboutSection {
+  margin-bottom: 80px;
+  color: $gray-80;
+}
+
+.aboutTop {
+  margin-bottom: 80px;
+}
+
+.aboutBottom {
+  row-gap: 40px;
+}
+
+.aboutPoster1 {
+  height: 508px;
+  background-image: url('../../assets/images/HomePage/about-section/poster-1.png');
+  grid-row: 1/5;
+}
+
+.aboutPoster2 {
+  background-image: url('../../assets/images/HomePage/about-section/poster-2.png');
+  grid-row: 2/5;
+}
+
+.articleTitle {
+  margin-bottom: 8px;
+}
+
+.text {
+  padding-inline: 56px;
+  text-align: center;
+  grid-row: 3/5;
 }
