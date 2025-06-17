@@ -52,3 +52,21 @@
   text-align: center;
   grid-row: 3/5;
 }
+
+.home__services-section {
+  margin-bottom: 80px;
+}
+
+.home__projects-section {
+  margin-bottom: 80px;
+}
+
+.home__projects-list {
+  margin-bottom: 48px;
+  display: flex;
+  gap: 16px;
+}
+
+.projects-item {
+  flex: 1;
+}

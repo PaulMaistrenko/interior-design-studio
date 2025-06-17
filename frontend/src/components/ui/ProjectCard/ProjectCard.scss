@@ -1,0 +1,39 @@
+.project-card {
+  position: relative;
+  height: 437px;
+}
+
+.project-card__link {
+  padding: 16px 32px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(3px);
+}
+
+.natural-flow {
+  background-image: url('../../../assets/images/HomePage/projects/natural-flow.png');
+}
+
+.soft-minimal {
+  background-image: url('../../../assets/images/HomePage/projects/soft-minimal.png');
+}
+
+.project-card__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../assets/icons/project-link-arrow-right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

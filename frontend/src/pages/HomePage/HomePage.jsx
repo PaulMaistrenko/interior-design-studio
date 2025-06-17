@@ -1,7 +1,9 @@
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { CtaButtonPrimary } from '../../components/ui/CtaButtonPrimary';
+import { CtaButtonSecondary } from '../../components/ui/CtaButtonSecondary';
 import { HomeServiceItem } from './components/HomeServiceItem';
 import { homeServicesData } from '../../data/homeServicesData';
+import { ProjectCard } from '../../components/ui/ProjectCard';
 
 export const HomePage = () => {
   return (
@@ -83,6 +85,21 @@ export const HomePage = () => {
               <HomeServiceItem key={service.id} service={service} />
             ))}
           </ul>
+          <CtaButtonSecondary title="Всі послуги" link="/services" />
+        </div>
+      </section>
+      <section className="home__projects-section">
+        <SectionHeader title="Проєкти" slogan="“Інтер’єр, що живе з вами”" />
+        <div className="container">
+          <ul className="home__projects-list">
+            <li className="projects-item">
+              <ProjectCard title="Natural Flow" />
+            </li>
+            <li className="projects-item">
+              <ProjectCard title="Soft Minimal" />
+            </li>
+          </ul>
+          <CtaButtonSecondary title="Портфоліо" link="/projects" />
         </div>
       </section>
     </div>
