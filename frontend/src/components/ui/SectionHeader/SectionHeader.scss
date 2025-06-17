@@ -1,17 +1,17 @@
 @import '../../../styles/abstracts/_variables';
 
-.sectionHeader {
+.section-header {
   margin-bottom: 50px;
   color: $gray-80;
 }
 
-.contentWrapper {
+.section-header__content-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $gray-40;
 }
 
-.title {
+.section-header__title {
   color: $gray-100;
 }

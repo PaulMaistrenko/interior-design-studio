@@ -1,15 +1,16 @@
-import styles from './HomeServiceItem.module.scss';
 import PropTypes from 'prop-types';
 
 export const HomeServiceItem = ({ service }) => {
-  const { title, description } = service;
+  const { title, description, id } = service;
   return (
-    <li className={styles.homeServicesItem}>
-      <article className={styles.serviceArticle}>
-        <h4 className={`${styles.serviceTitle} h4--bold`}>{title}</h4>
-        <p className={styles.serviceDescription}>{description}</p>
+    <li className="home-services-item">
+      <article className="service-article">
+        <h4 className="service-article__title h4--bold">{title}</h4>
+        <p className="service-article__description">{description}</p>
       </article>
-      <div className={`${styles.servicePoster1} bg-image`}></div>
+      <div
+        className={`home-services__poster service-article__poster-${id} bg-image`}
+      ></div>
     </li>
   );
 };
@@ -18,5 +19,6 @@ HomeServiceItem.propTypes = {
   service: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
+    id: PropTypes.number,
   }).isRequired,
 };

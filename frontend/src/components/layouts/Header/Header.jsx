@@ -1,23 +1,22 @@
 import { NavLink } from 'react-router-dom';
-import styles from './Header.module.scss';
 import { navLinks } from '../../../data/navLinks.js';
 import { MainLogo } from '../../ui/MainLogo';
 
 export const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className="header">
       <div className="container">
-        <nav className={styles.navBar}>
-          <MainLogo className={'header'} />
-          <ul className={styles.navList}>
+        <nav className="header__nav-bar">
+          <MainLogo className={'header__logo'} />
+          <ul className="header__nav-list">
             {navLinks.map(({ id, to, label }) => (
-              <li key={id} className={styles.navItem}>
+              <li key={id} className="header__nav-item">
                 <NavLink
                   to={to}
                   className={({ isActive }) =>
                     isActive
-                      ? `${styles.navLink} ${styles.active}`
-                      : styles.navLink
+                      ? 'header__nav-link header__nav-link--active'
+                      : 'header__nav-link'
                   }
                 >
                   {label}
@@ -27,7 +26,7 @@ export const Header = () => {
           </ul>
           <button
             type="button"
-            className={`${styles.menuOpenButton} bg-image`}
+            className="header__menu-open-button bg-image"
             aria-label="Відкрити меню"
           ></button>
         </nav>

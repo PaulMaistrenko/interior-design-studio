@@ -1,28 +1,29 @@
 import { MainLogo } from '../../ui/MainLogo';
-import styles from './Footer.module.scss';
 import { contactLinks } from '../../../data/contactLinks';
 
 export const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className="footer">
       <div className="container">
-        <nav className={styles.navBar}>
-          <MainLogo className="footer" />
-          <ul className={styles.contactList}>
+        <nav className="footer__nav-bar">
+          <MainLogo className="footer__logo" />
+          <ul className="footer__contact-list">
             {contactLinks.map(({ id, to, label }, index) => (
-              <li key={id} className={`${styles.navItem} button--text`}>
+              <li key={id} className="footer__nav-item button--text">
                 <a
                   href={to}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${styles.navLink} ${
-                    index >= 2 && index <= 4 ? styles.underline : ''
+                  className={`footer__nav-link ${
+                    index >= 2 && index <= 4
+                      ? 'footer__nav-link--underline'
+                      : ''
                   }`}
                 >
                   {label}
                 </a>
                 {index < 2 && (
-                  <div className={`${styles.separator} button--text`}></div>
+                  <div className="footer__contacts-separator button--text"></div>
                 )}
               </li>
             ))}

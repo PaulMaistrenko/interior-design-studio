@@ -1,6 +1,6 @@
 @import '../../styles/abstracts/_variables';
 
-.heroSection {
+.home__hero-section {
   padding: 243px 0 397px;
   margin-bottom: 80px;
   height: 900px;
@@ -10,7 +10,7 @@
   background-image: url('../../assets/images/HomePage/main-poster.png');
 }
 
-.heroSectionTitle {
+.home__hero-section-title {
   margin-bottom: 40px;
   text-align: center;
   font-size: 64px;
@@ -19,35 +19,35 @@
   color: $gray-100;
 }
 
-.aboutSection {
+.home__about-section {
   margin-bottom: 80px;
   color: $gray-80;
 }
 
-.aboutTop {
+.about-section__top {
   margin-bottom: 80px;
 }
 
-.aboutBottom {
+.about-section__bottom {
   row-gap: 40px;
 }
 
-.aboutPoster1 {
+.about-poster-1 {
   height: 508px;
   background-image: url('../../assets/images/HomePage/about-section/poster-1.png');
   grid-row: 1/5;
 }
 
-.aboutPoster2 {
+.about-poster-2 {
   background-image: url('../../assets/images/HomePage/about-section/poster-2.png');
   grid-row: 2/5;
 }
 
-.articleTitle {
+.article__title {
   margin-bottom: 8px;
 }
 
-.text {
+.about-section__top .about-section__text {
   padding-inline: 56px;
   text-align: center;
   grid-row: 3/5;

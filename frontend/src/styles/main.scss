@@ -4,3 +4,13 @@
 @import './base/_typography';
 @import './base/_global';
 @import './layout/_grid';
+
+@import '../pages/HomePage/HomePage.scss';
+@import '../pages/HomePage/components/HomeServiceItem/HomeServiceItem.scss';
+
+@import '../components/layouts/Header/Header.scss';
+@import '../components/layouts/Footer/Footer.scss';
+@import '../components/ui/MainLogo/MainLogo.scss';
+@import '../components/ui/SectionHeader/SectionHeader.scss';
+@import '../components/ui/CtaButtonPrimary/CtaButtonPrimary.scss';
+@import '../components/ui/CtaButtonSecondary/CtaButtonSecondary.scss';

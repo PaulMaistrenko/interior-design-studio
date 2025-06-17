@@ -14,13 +14,13 @@
   }
 }
 
-.navBar {
+.header__nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.navList {
+.header__nav-list {
   display: none;
   padding-inline: 24px;
   gap: 16px;
@@ -30,20 +30,20 @@
   }
 }
 
-.navLink {
+.header__nav-item {
   padding: 4px 8px;
   color: $gray-100;
   border: 1px solid transparent;
 }
 
-.active {
+.header__nav-link--active {
   color: $accent-color;
   font-weight: 800;
   border: 1px solid $accent-color;
   border-left: 0;
 }
 
-.menuOpenButton {
+.header__menu-open-button {
   width: 44px;
   height: 44px;
   background-image: url('../../../assets/icons/menu-open-button.svg');

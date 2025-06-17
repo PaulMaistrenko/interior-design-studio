@@ -10,36 +10,36 @@
   }
 }
 
-.navBar {
+.footer__nav-bar {
   display: flex;
   justify-content: space-between;
 }
 
-.contactList {
+.footer__contact-list {
   display: flex;
   gap: 8px;
 }
 
-.navItem {
+.footer__nav-item {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.navLink {
+.footer__nav-link {
   padding: 11px 16px;
 }
 
-.navLink, .separator {
+.footer__nav-link, .footer__contacts-separator {
   color: $gray-10;
 }
 
-.separator {
+.footer__contacts-separator {
   width: 1px;
   height: 40px;
   background-color: $gray-10;
 }
 
-.underline {
+.footer__nav-link--underline {
   text-decoration: underline !important;
 }

@@ -1,6 +1,6 @@
 @import '../../../styles/abstracts/_variables';
 
-.ctaButton {
+.cta-button-primary {
   display: block;
   display: flex;
   align-items: center;
@@ -9,4 +9,5 @@
   width: 320px;
   background-color: $accent-color;
   color: $white;
+  border-radius: 2px;
 }

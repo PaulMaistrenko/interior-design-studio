@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-import styles from './SectionHeader.module.scss';
 
 export const SectionHeader = ({ title, slogan }) => {
   return (
-    <div className={styles.sectionHeader}>
+    <div className="section-header">
       <div className="container">
-        <div className={styles.contentWrapper}>
-          <h4 className={`${styles.title} h4--regular`}>{title}</h4>
-          <p className={`${styles.slogan} h1--bold`}>{slogan}</p>
+        <div className="section-header__content-wrapper">
+          <h4 className="section-header__title h4--regular">{title}</h4>
+          <p className="section-header__slogan h1--bold">{slogan}</p>
         </div>
       </div>
     </div>

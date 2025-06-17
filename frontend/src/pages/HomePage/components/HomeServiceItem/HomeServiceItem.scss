@@ -1,0 +1,42 @@
+.home-services-item {
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid $gray-40;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.service-article {
+  width: 432px;
+}
+
+.service-article__title {
+  margin-bottom: 16px;
+  color: $accent-color;
+}
+
+.service-article__description {
+  color: $gray-80;
+}
+
+.home-services__poster {
+  height: 243px;
+  width: 432px;
+}
+
+.service-article__poster-1 {
+  background-image: url('../../../../assets/images/HomePage/services-section/poster-1.png');
+}
+
+.service-article__poster-2 {
+  background-image: url('../../../../assets/images/HomePage/services-section/poster-2.png');
+}
+
+.service-article__poster-3 {
+  background-image: url('../../../../assets/images/HomePage/services-section/poster-3.png');
+}

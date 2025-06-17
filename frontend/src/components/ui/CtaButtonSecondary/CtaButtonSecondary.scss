@@ -1,0 +1,24 @@
+.cta-button-secondary {
+  width: 207px;
+  height: 48px;
+  margin: 0 auto;
+  border: 2px solid $accent-color;
+  color: $gray-100;
+
+  & span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  & span::after {
+    content: '';
+    display: flex;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../../assets/icons/secondary-button-arrow-right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
