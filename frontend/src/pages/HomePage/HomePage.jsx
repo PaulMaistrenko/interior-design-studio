@@ -85,7 +85,14 @@ export const HomePage = () => {
               <HomeServiceItem key={service.id} service={service} />
             ))}
           </ul>
-          <CtaButtonSecondary title="Всі послуги" link="/services" />
+          <div className="centered-block">
+            <CtaButtonSecondary
+              title="Всі послуги"
+              link="/services"
+              type="with-arrow"
+              size="small"
+            />
+          </div>
         </div>
       </section>
       <section className="home__projects-section">
@@ -99,7 +106,14 @@ export const HomePage = () => {
               <ProjectCard title="Soft Minimal" />
             </li>
           </ul>
-          <CtaButtonSecondary title="Портфоліо" link="/projects" />
+          <div className="centered-block">
+            <CtaButtonSecondary
+              title="Портфоліо"
+              link="/projects"
+              type="with-arrow"
+              size="small"
+            />
+          </div>
         </div>
       </section>
     </div>

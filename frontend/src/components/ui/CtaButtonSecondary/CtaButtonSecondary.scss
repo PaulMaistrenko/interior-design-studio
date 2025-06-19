@@ -2,27 +2,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 207px;
-  height: 48px;
-  margin: 0 auto;
   border: 2px solid $accent-color;
   border-radius: 2px;
   color: $gray-100;
+
+  &__arrow-type {
+    & span::after {
+      content: '';
+      display: flex;
+      width: 24px;
+      height: 24px;
+      background-image: url('../../../assets/icons/secondary-button-arrow-right.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
 
   & span {
     display: flex;
     align-items: center;
     gap: 8px;
   }
+}
 
-  & span::after {
-    content: '';
-    display: flex;
-    width: 24px;
-    height: 24px;
-    background-image: url('../../../assets/icons/secondary-button-arrow-right.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+.small-button {
+  width: 207px;
+  height: 48px;
+}
+
+.large-button {
+  width: 320px;
+  height: 56px;
 }

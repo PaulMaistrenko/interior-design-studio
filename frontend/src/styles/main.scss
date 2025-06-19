@@ -8,6 +8,12 @@
 @import '../pages/HomePage/HomePage.scss';
 @import '../pages/HomePage/components/HomeServiceItem/HomeServiceItem.scss';
 
+@import '../pages/Services/Services.scss';
+@import '../pages/Services/components/ServiceContentList/ServiceContentList.scss';
+@import '../pages/Services/components/ServiceContetnItem/ServiceCintentItem.scss';
+@import '../pages/Services/components/ServicesItem/ServicesItem.scss';
+@import '../pages/Services/components/ServicesList/ServicesList.scss';
+
 @import '../components/layouts/Header/Header.scss';
 @import '../components/layouts/Footer/Footer.scss';
 @import '../components/ui/MainLogo/MainLogo.scss';
@@ -15,3 +21,4 @@
 @import '../components/ui/CtaButtonPrimary/CtaButtonPrimary.scss';
 @import '../components/ui/CtaButtonSecondary/CtaButtonSecondary.scss';
 @import '../components/ui/ProjectCard/ProjectCard.scss';
+@import '../components/ui/BreadCrumb/BreadCrumb.scss';
