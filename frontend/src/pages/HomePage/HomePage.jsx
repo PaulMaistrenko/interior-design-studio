@@ -7,13 +7,13 @@ import { ProjectCard } from '../../components/ui/ProjectCard';
 
 export const HomePage = () => {
   return (
-    <div className="page home-page">
+    <main className="page home-page">
       <section className="home__hero-section bg-image">
         <p className="home__hero-section-title">
           МИ СТВОРЮЄМО ІНТЕР’ЄРИ,
           <br /> В ЯКИХ ХОЧЕТЬСЯ ЖИТИ
         </p>
-        <CtaButtonPrimary />
+        <CtaButtonPrimary title={`Зв'язатися з нами`} link="/contact" />
       </section>
       <section className="home__about-section">
         <SectionHeader title="Про нас" slogan="“Наші корені — наша сила ”" />
@@ -116,6 +116,6 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 };

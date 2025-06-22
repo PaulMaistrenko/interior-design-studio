@@ -1,12 +1,13 @@
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { ServicesList } from './components/ServicesList';
+import { ServicesSurvey } from './components/ServicesSurvey';
 
 export const Services = () => {
   const currentPage = 'Послуги';
 
   return (
-    <div className="page services-page">
+    <main className="page services-page">
       <div className="container">
         <BreadCrumb
           items={[
@@ -16,7 +17,12 @@ export const Services = () => {
         />
       </div>
       <SectionHeader title="Послуги" slogan={`"Краса,що працює на вас"`} />
-      <ServicesList />
-    </div>
+      <section>
+        <ServicesList />
+      </section>
+      <section className="services-survey-section container">
+        <ServicesSurvey />
+      </section>
+    </main>
   );
 };
