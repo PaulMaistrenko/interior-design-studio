@@ -1,0 +1,22 @@
+.services-survey__start-form {
+  display: flex;
+  flex-direction: column;
+  padding: 128px 0 56px;
+}
+
+.start-form__title {
+  margin-bottom: 20px;
+  color: $gray-100;
+}
+
+.start-form__text {
+  margin-bottom: 150px;
+  color: $gray-60;
+}
+
+.survey-start__button {
+  padding: 19px 32px;
+  align-self: self-end;
+  color: $white;
+  background-color: $accent-color;
+}
