@@ -6,3 +6,8 @@
   height: 576px;
   background-image: url('../../../../assets/images/Services/survey-poster.png');
 }
+
+.services-survey__info {
+  display: flex;
+  flex-direction: column;
+}
