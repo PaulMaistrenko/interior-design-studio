@@ -2,6 +2,7 @@ export const servicesData = [
   {
     id: 'planning',
     title: 'Розробка планування',
+    type: 'Планування',
     href: '#',
     price: {
       value: 9,
@@ -26,6 +27,7 @@ export const servicesData = [
   {
     id: 'visual',
     title: 'Проєкт "Візуальний"',
+    type: 'Візуальний',
     href: '#',
     price: {
       value: 22,
@@ -56,6 +58,7 @@ export const servicesData = [
   {
     id: 'tech',
     title: 'Проєкт "Технічний"',
+    type: 'Технічний',
     href: '#',
     price: {
       value: 14,
@@ -76,6 +79,7 @@ export const servicesData = [
   {
     id: 'worked',
     title: 'Дизайн-проєкт "Робочий"',
+    type: 'Робочий',
     href: '#',
     price: {
       value: 26,
@@ -101,6 +105,7 @@ export const servicesData = [
   {
     id: 'full',
     title: 'Дизайн-проєкт "Повний"',
+    type: 'Повний',
     href: '#',
     price: {
       value: 32,
