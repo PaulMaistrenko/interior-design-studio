@@ -22,7 +22,7 @@ export const SurveyStep3 = () => {
             <label>
               <input
                 type="radio"
-                name="projectType"
+                name="areaToDesign"
                 className="survey-step-3__input"
                 value={area}
                 checked={selectedArea === area}

@@ -1,0 +1,48 @@
+.contact-form {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.form-group {
+  & input,
+  textarea {
+    padding-left: 16px;
+    width: 100%;
+    background-color: $white;
+  }
+
+  & textarea {
+    padding-top: 8px;
+    resize: none;
+  }
+}
+
+input::placeholder {
+  color: $gray-60;
+}
+
+textarea::placeholder {
+  color: $gray-60;
+}
+
+.name-input {
+  height: 56px;
+}
+
+.phone-input {
+  height: 56px;
+}
+
+.message-input {
+  height: 254px;
+}
+
+.submit-button {
+  margin-left: auto;
+  height: 48px;
+  width: 208px;
+  background-color: $accent-color;
+  color: $white;
+}

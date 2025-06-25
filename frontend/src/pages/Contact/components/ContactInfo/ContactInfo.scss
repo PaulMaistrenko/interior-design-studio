@@ -1,0 +1,39 @@
+.contact-info__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  & a {
+    color: $gray-80;
+  }
+}
+
+.contact-info__link {
+  padding-inline: 16px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    background-image: url('../../../../assets/icons/phone-icon-dark.svg');
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.contact-info__socials {
+  display: flex;
+  justify-content: space-between;
+  gap: 21px;
+}
+
+.contact-info__social {
+  padding-inline: 16px;
+}

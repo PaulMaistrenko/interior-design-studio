@@ -31,9 +31,12 @@
 }
 
 .header__nav-item {
-  padding: 4px 8px;
   color: $gray-100;
   border: 1px solid transparent;
+}
+
+.header__nav-link {
+  padding: 4px 8px;
 }
 
 .header__nav-link--active {
