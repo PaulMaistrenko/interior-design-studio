@@ -14,7 +14,7 @@ export const Footer = () => {
                   href={to}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`footer__nav-link ${
+                  className={`footer__nav-link ${id === 2 ? 'phone' : ''} ${
                     index >= 2 && index <= 4
                       ? 'footer__nav-link--underline'
                       : ''
