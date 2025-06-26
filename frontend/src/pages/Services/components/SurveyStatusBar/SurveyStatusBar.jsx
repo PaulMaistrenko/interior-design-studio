@@ -31,6 +31,7 @@ export const SurveyStatusBar = ({
           />
         ))}
       </ul>
+      {currentSurveyStep === 6 && <div className="grey-point bg-image"></div>}
     </div>
   );
 };

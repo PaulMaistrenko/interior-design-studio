@@ -3,6 +3,7 @@ import { SurveyStartForm } from '../SurveyStartForm/SurveyStartForm';
 import { SurveyQuestionsList } from '../SurveyQuestionsList';
 import { SurveyStatusBar } from '../SurveyStatusBar';
 import { NextSurveyStepButton } from '../NextSurveyStepButton';
+import { ResultActions } from '../ResultActions';
 
 export const ServicesSurvey = () => {
   const [isSurveyStarted, setIsSurveyStarted] = useState(false);
@@ -14,15 +15,21 @@ export const ServicesSurvey = () => {
       <div className="services-survey__info grid--onDesktop-8-11">
         {isSurveyStarted ? (
           <>
-            <SurveyStatusBar
-              currentSurveyStep={currentSurveyStep}
-              setCurrentSurveyStep={setCurrentSurveyStep}
-            />
+            {currentSurveyStep <= 8 && (
+              <SurveyStatusBar
+                currentSurveyStep={currentSurveyStep}
+                setCurrentSurveyStep={setCurrentSurveyStep}
+              />
+            )}
             <SurveyQuestionsList currentSurveyStep={currentSurveyStep} />
-            <NextSurveyStepButton
-              currentSurveyStep={currentSurveyStep}
-              setCurrentSurveyStep={setCurrentSurveyStep}
-            />
+            {currentSurveyStep < 6 ? (
+              <NextSurveyStepButton
+                currentSurveyStep={currentSurveyStep}
+                setCurrentSurveyStep={setCurrentSurveyStep}
+              />
+            ) : (
+              <ResultActions setCurrentSurveyStep={setCurrentSurveyStep} />
+            )}
           </>
         ) : (
           <SurveyStartForm setIsSurveyStarted={setIsSurveyStarted} />
