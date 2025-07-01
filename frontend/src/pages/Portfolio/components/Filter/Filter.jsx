@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useRef, useEffect } from 'react';
 
 export const Filter = ({
   title,
@@ -8,6 +9,8 @@ export const Filter = ({
   selected,
   onSelect,
 }) => {
+  const ref = useRef(null);
+
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleCheckboxChange = (option) => {
@@ -18,8 +21,24 @@ export const Filter = ({
     }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen, setIsOpen]);
+
   return (
-    <div className="filter-wrapper">
+    <div className="filter-wrapper" ref={ref}>
       <button
         className={`filter__toggle ${isOpen ? 'filter__toggle--is-open' : ''} button button--text`}
         onClick={toggleDropdown}

@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = 'https://tavrdesing.com.ua/api';
 
 export async function getArticleList() {
   try {
@@ -22,5 +22,30 @@ export async function getArticleList() {
   } catch (error) {
     console.error('Fetch error:', error);
     throw new Error('Не вдалося завантажити статті. Спробуйте пізніше.');
+  }
+}
+
+export async function getProjectsList() {
+  try {
+    const response = await fetch(`${API_BASE}/core/projects/`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      credentials: 'same-origin',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(
+        errorData?.message || `HTTP error! status: ${response.status}`
+      );
+    }
+
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw new Error('Не вдалося завантажити проекти. Спробуйте пізніше.');
   }
 }

@@ -1,0 +1,25 @@
+.cta-section {
+  padding-block: 32px;
+  background-color: $gray-20;
+}
+
+.cta-section__poster {
+  height: 306px;
+  background-image: url('../../../assets/images/components/cta-poster.png');
+}
+
+.cta-section__text-content, .cta-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cta-section__title {
+  margin-bottom: 24px;
+  color: $primary-color;
+}
+
+.cta-section__text {
+  margin-bottom: 137px;
+  color: $gray-80;
+}
