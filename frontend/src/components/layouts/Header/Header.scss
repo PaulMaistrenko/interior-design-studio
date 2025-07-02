@@ -8,6 +8,7 @@
   right: 0;
   padding-block: 10px;
   background-color: $header-background-color;
+  z-index: 100;
 
   @include onDesktop {
     padding-block: 11px;

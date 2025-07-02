@@ -1,15 +1,15 @@
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { Filters } from './components/Filters';
-import { ProjectCard } from '../../components/ui/ProjectCard';
 import { getProjectsList } from '../../utils/api';
 import { useEffect, useState } from 'react';
 import { CtaSection } from '../../components/ui/CtaSection';
+import { ProjectsList } from './components/ProjectsList';
 
 export const Portfolio = () => {
   const currentPage = 'Портфоліо';
   const [projects, setProjects] = useState([]);
-  const [loading, setLoadig] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const Portfolio = () => {
         setError(err.message);
         console.error('Помилка завантаження:', err);
       } finally {
-        setLoadig(false);
+        setLoading(false);
       }
     };
     loadProjects();
@@ -44,23 +44,9 @@ export const Portfolio = () => {
         <Filters />
 
         <div className="portfolio-page__content">
-          <ul className="projects-list grid">
-            <li className="projects-item grid--onDesktop-1-6">
-              <ProjectCard title="Soft minimal" />
-            </li>
-            <li className="projects-item grid--onDesktop-7-12">
-              <ProjectCard title="Natural flow" />
-            </li>
-            <li className="projects-item grid--onDesktop-1-12">
-              <ProjectCard title="Dark balance" />
-            </li>
-            <li className="projects-item grid--onDesktop-1-6">
-              <ProjectCard title="Eco horizon" />
-            </li>
-            <li className="projects-item grid--onDesktop-7-12">
-              <ProjectCard title="Stone and Wood" />
-            </li>
-          </ul>
+          {projects && (
+            <ProjectsList projects={projects} parentName="Портфоліо" />
+          )}
         </div>
       </div>
       <CtaSection />

@@ -1,9 +1,32 @@
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getArticleList } from '../../utils/api';
+import { BlogList } from './components/BlogList';
 
 export const Blog = () => {
   const currentPage = 'Блог';
+
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoadig] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadArticles = async () => {
+      try {
+        const data = await getArticleList();
+        setArticles(data);
+      } catch (err) {
+        setError(err.message);
+        console.error('Помилка завантаження:', err);
+      } finally {
+        setLoadig(false);
+      }
+    };
+    loadArticles();
+  }, []);
+
+  console.log(articles);
 
   return (
     <div className="page blog-page">
@@ -17,96 +40,7 @@ export const Blog = () => {
       </div>
       <SectionHeader title="Блог" slogan={`“Натхнення починається зі слова”`} />
       <div className="container">
-        <ul className="blogs-list">
-          <li className="blogs-list__item">
-            <div className="blog-card bg-image">
-              <div className="blog-card__date button--text">{`7 квіт. 2025р.`}</div>
-              <div className="blog-card__bottom">
-                <div className="blog-card__content">
-                  <h4 className="blog-card__title h4--bold">
-                    ТОП-10 популярних стилів інтер’єру 2025
-                  </h4>
-                  <p className="blog-card__short-text">
-                    У 2025 році інтер’єрні стилі продовжують адаптуватися до
-                    сучасного способу життя, поєднуючи естетику...
-                  </p>
-                  <Link
-                    to={`/blog`}
-                    className="blog-card__full-text-link button--text-underline"
-                  >
-                    Читати більше
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li className="blogs-list__item">
-            <div className="blog-card bg-image">
-              <div className="blog-card__date button--text">{`7 квіт. 2025р.`}</div>
-              <div className="blog-card__bottom">
-                <div className="blog-card__content">
-                  <h4 className="blog-card__title h4--bold">
-                    ТОП-10 популярних стилів інтер’єру 2025
-                  </h4>
-                  <p className="blog-card__short-text">
-                    У 2025 році інтер’єрні стилі продовжують адаптуватися до
-                    сучасного способу життя, поєднуючи естетику...
-                  </p>
-                  <Link
-                    to={`/blog`}
-                    className="blog-card__full-text-link button--text-underline"
-                  >
-                    Читати більше
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li className="blogs-list__item">
-            <div className="blog-card bg-image">
-              <div className="blog-card__date button--text">{`7 квіт. 2025р.`}</div>
-              <div className="blog-card__bottom">
-                <div className="blog-card__content">
-                  <h4 className="blog-card__title h4--bold">
-                    ТОП-10 популярних стилів інтер’єру 2025
-                  </h4>
-                  <p className="blog-card__short-text">
-                    У 2025 році інтер’єрні стилі продовжують адаптуватися до
-                    сучасного способу життя, поєднуючи естетику...
-                  </p>
-                  <Link
-                    to={`/blog`}
-                    className="blog-card__full-text-link button--text-underline"
-                  >
-                    Читати більше
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li className="blogs-list__item">
-            <div className="blog-card bg-image">
-              <div className="blog-card__date button--text">{`7 квіт. 2025р.`}</div>
-              <div className="blog-card__bottom">
-                <div className="blog-card__content">
-                  <h4 className="blog-card__title h4--bold">
-                    ТОП-10 популярних стилів інтер’єру 2025
-                  </h4>
-                  <p className="blog-card__short-text">
-                    У 2025 році інтер’єрні стилі продовжують адаптуватися до
-                    сучасного способу життя, поєднуючи естетику...
-                  </p>
-                  <Link
-                    to={`/blog`}
-                    className="blog-card__full-text-link button--text-underline"
-                  >
-                    Читати більше
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <BlogList articles={articles} />
       </div>
     </div>
   );

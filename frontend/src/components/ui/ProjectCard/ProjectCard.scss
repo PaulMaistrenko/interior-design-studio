@@ -12,27 +12,7 @@
   backdrop-filter: blur(3px);
 }
 
-.natural-flow {
-  background-image: url('../../../assets/images/Portfolio/projects/natural-flow.png');
-}
-
-.soft-minimal {
-  background-image: url('../../../assets/images/Portfolio/projects/soft-minimal.png');
-}
-
-.dark-balance {
-  background-image: url('../../../assets/images/Portfolio/projects/dark-balance.png');
-}
-
-.eco-horizon {
-  background-image: url('../../../assets/images/Portfolio/projects/eco-horizon.png');
-}
-
-.stone-and-wood {
-  background-image: url('../../../assets/images/Portfolio/projects/stone-&-wood.png');
-}
-
-.project-card__title {
+.project-card__text-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,4 +28,9 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
+}
+
+.project-card__short-description {
+  margin-top: 4px;
+  color: $white;
 }

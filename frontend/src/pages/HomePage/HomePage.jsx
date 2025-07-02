@@ -100,10 +100,10 @@ export const HomePage = () => {
         <div className="container">
           <ul className="home__projects-list">
             <li className="projects-item">
-              <ProjectCard title="Natural Flow" />
+              {/*<ProjectCard name="Natural Flow" parentName="Головна" />*/}
             </li>
             <li className="projects-item">
-              <ProjectCard title="Soft Minimal" />
+              {/*<ProjectCard name="Soft Minimal" parentName="Головна" />*/}
             </li>
           </ul>
           <div className="centered-block">
