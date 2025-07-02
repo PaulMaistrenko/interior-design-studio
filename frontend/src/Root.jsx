@@ -6,18 +6,21 @@ import { Portfolio } from './pages/Portfolio';
 import { Blog } from './pages/Blog';
 import { Contact } from './pages/Contact';
 import { Project } from './pages/Project';
+import { MainProvider } from './context';
 
 export const Root = () => (
   <BrowserRouter basename="/interior-design-studio">
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<HomePage />} />
-        <Route path="services" element={<Services />} />
-        <Route path="projects" element={<Portfolio />} />
-        <Route path="projects/:projectSlug" element={<Project />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-    </Routes>
+    <MainProvider>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<HomePage />} />
+          <Route path="services" element={<Services />} />
+          <Route path="projects" element={<Portfolio />} />
+          <Route path="projects/:projectSlug" element={<Project />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </MainProvider>
   </BrowserRouter>
 );

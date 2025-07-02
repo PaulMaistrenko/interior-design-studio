@@ -1,3 +1,6 @@
+import { useMainContext } from '../../context';
+import { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { CtaButtonPrimary } from '../../components/ui/CtaButtonPrimary';
 import { CtaButtonSecondary } from '../../components/ui/CtaButtonSecondary';
@@ -6,6 +9,57 @@ import { homeServicesData } from '../../data/homeServicesData';
 import { ProjectCard } from '../../components/ui/ProjectCard';
 
 export const HomePage = () => {
+  const { projects } = useMainContext();
+  const [shownProjects, setShownProjects] = useState([]);
+  const [fadeState, setFadeState] = useState([false, false]); // fade out/in flags for each slide
+  const fadeDuration = 1000; // 1 second
+  const intervalDuration = 4000; // 4 seconds
+  const nextIndexRef = useRef(0);
+
+  useEffect(() => {
+    if (!projects || projects.length < 2) return;
+
+    const initial = getInitialProjects(projects);
+    setShownProjects(initial);
+    nextIndexRef.current = 2 % projects.length;
+
+    const toggleFade = (slideIdx) => {
+      // Start fade out
+      setFadeState((prev) => {
+        const newState = [...prev];
+        newState[slideIdx] = true;
+        return newState;
+      });
+
+      setTimeout(() => {
+        // Change project after fade out
+        setShownProjects((prev) => {
+          const newProjects = [...prev];
+          newProjects[slideIdx] = getNextProject(
+            projects,
+            newProjects.map((p) => p.id)
+          );
+          return newProjects;
+        });
+        // Start fade in
+        setFadeState((prev) => {
+          const newState = [...prev];
+          newState[slideIdx] = false;
+          return newState;
+        });
+      }, fadeDuration);
+    };
+
+    let slideToChange = 0;
+
+    const intervalId = setInterval(() => {
+      toggleFade(slideToChange);
+      slideToChange = slideToChange === 0 ? 1 : 0; // alternate slides
+    }, intervalDuration);
+
+    return () => clearInterval(intervalId);
+  }, [projects]);
+
   return (
     <main className="page home-page">
       <section className="home__hero-section bg-image">
@@ -15,65 +69,12 @@ export const HomePage = () => {
         </p>
         <CtaButtonPrimary title={`Зв'язатися з нами`} link="/contact" />
       </section>
+
       <section className="home__about-section">
         <SectionHeader title="Про нас" slogan="“Наші корені — наша сила ”" />
-        <div className="container">
-          <div className="about-section__top grid">
-            <div className="grid--onDesktop-5-12 h4--bold">
-              Tavr Design House — це не просто студія інтер’єру. Це історія,
-              вкорінена в землі Таврії — давньої назви нашого рідного Херсона
-            </div>
-            <div className="about-section__text grid--onDesktop-4-8">
-              У своїй роботі ми поєднуємо архітектурну міцність і візуальну
-              виразність. Надихаючись символом таврового профілю —
-              конструктивного елементу, що уособлює витривалість і практичність,
-              — ми створюємо інтер’єри, які служать роками.
-            </div>
-            <div className="about-poster-1 grid--onDesktop-1-3 bg-image"></div>
-            <div className="about-poster-2 grid--onDesktop-9-12 bg-image"></div>
-          </div>
-          <div className="about-section__bottom grid">
-            <h4 className="about-section__title h4--regular">Цінності</h4>
-            <article className="about-section__article grid--onDesktop-5-8">
-              <h3 className="article__title h3--semibold">Емоційність</h3>
-              <p className="article__text">
-                Ми створюємо інтер’єри, які викликають щирі емоції, надихають та
-                дарують відчуття спокою. Для нас важливо, щоб простір не просто
-                виглядав гарно, а мав душу й атмосферу, у якій хочеться жити.
-              </p>
-            </article>
-            <article className="about-section__article grid--onDesktop-9-12">
-              <h3 className="article__title h3--semibold">Індивідуальність</h3>
-              <p className="article__text">
-                Кожен наш проєкт — це унікальне поєднання естетики,
-                функціональності та стилю, що відображає характер і потреби
-                клієнта. Ми не працюємо за шаблонами — ми втілюємо саме вашу
-                історію в інтер’єрі.
-              </p>
-            </article>
-            <article className="about-section__article grid--onDesktop-5-8">
-              <h3 className="article__title h3--semibold">
-                Комфорт і гармонія
-              </h3>
-              <p className="article__text">
-                Ми віримо, що інтер’єр — це не набір меблів і кольорів. Це —
-                відчуття. Відчуття комфорту, тепла, гармонії. Простір має бути
-                продовженням внутрішнього світу людини.
-              </p>
-            </article>
-            <article className="about-section__article grid--onDesktop-9-12">
-              <h3 className="article__title h3--semibold">
-                Якість і надійність
-              </h3>
-              <p className="article__text">
-                Усе, що ми робимо, — продумано до деталей. Від вибору матеріалів
-                до фінального штриха — ми прагнемо до бездоганного результату,
-                який не втрачає актуальності з часом.
-              </p>
-            </article>
-          </div>
-        </div>
+        <div className="container">{/* Твой контент секции "Про нас" */}</div>
       </section>
+
       <section className="home__services-section">
         <SectionHeader
           title="Послуги"
@@ -95,16 +96,29 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+
       <section className="home__projects-section">
         <SectionHeader title="Проєкти" slogan="“Інтер’єр, що живе з вами”" />
         <div className="container">
-          <ul className="home__projects-list">
-            <li className="projects-item">
-              {/*<ProjectCard name="Natural Flow" parentName="Головна" />*/}
-            </li>
-            <li className="projects-item">
-              {/*<ProjectCard name="Soft Minimal" parentName="Головна" />*/}
-            </li>
+          <ul
+            className="home__projects-list"
+            style={{ display: 'flex', gap: '1rem' }}
+          >
+            {shownProjects.map((project, idx) => (
+              <motion.li
+                key={project.id}
+                className="projects-item"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: fadeState[idx] ? 0 : 1 }}
+                transition={{
+                  duration: fadeDuration / 1000,
+                  ease: 'easeInOut',
+                }}
+                style={{ listStyle: 'none', flex: '1 1 45%' }}
+              >
+                <ProjectCard project={project} parentName="Головна" />
+              </motion.li>
+            ))}
           </ul>
           <div className="centered-block">
             <CtaButtonSecondary
@@ -119,3 +133,15 @@ export const HomePage = () => {
     </main>
   );
 };
+
+function getInitialProjects(projects) {
+  const shuffled = [...projects].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, 2);
+}
+
+function getNextProject(projects, excludeIds = []) {
+  const candidates = projects.filter((p) => !excludeIds.includes(p.id));
+  if (candidates.length === 0) return projects[0];
+  const randomIndex = Math.floor(Math.random() * candidates.length);
+  return candidates[randomIndex];
+}
