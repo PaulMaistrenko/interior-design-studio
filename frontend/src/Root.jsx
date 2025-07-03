@@ -7,9 +7,11 @@ import { Blog } from './pages/Blog';
 import { Contact } from './pages/Contact';
 import { Project } from './pages/Project';
 import { MainProvider } from './context';
+import { ScrollToTop } from './components/routing/ScrollToTop';
 
 export const Root = () => (
   <BrowserRouter basename="/interior-design-studio">
+    <ScrollToTop />
     <MainProvider>
       <Routes>
         <Route path="/" element={<App />}>

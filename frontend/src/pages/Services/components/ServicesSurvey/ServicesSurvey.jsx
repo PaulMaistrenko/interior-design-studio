@@ -4,6 +4,7 @@ import { SurveyQuestionsList } from '../SurveyQuestionsList';
 import { SurveyStatusBar } from '../SurveyStatusBar';
 import { NextSurveyStepButton } from '../NextSurveyStepButton';
 import { ResultActions } from '../ResultActions';
+import { BookingButton } from '../BookingButton';
 
 export const ServicesSurvey = () => {
   const [isSurveyStarted, setIsSurveyStarted] = useState(false);
@@ -21,14 +22,21 @@ export const ServicesSurvey = () => {
                 setCurrentSurveyStep={setCurrentSurveyStep}
               />
             )}
-            <SurveyQuestionsList currentSurveyStep={currentSurveyStep} />
-            {currentSurveyStep < 6 ? (
+            <SurveyQuestionsList
+              currentSurveyStep={currentSurveyStep}
+              setCurrentSurveyStep={setCurrentSurveyStep}
+            />
+            {currentSurveyStep < 6 && (
               <NextSurveyStepButton
                 currentSurveyStep={currentSurveyStep}
                 setCurrentSurveyStep={setCurrentSurveyStep}
               />
-            ) : (
+            )}
+            {currentSurveyStep === 6 && (
               <ResultActions setCurrentSurveyStep={setCurrentSurveyStep} />
+            )}
+            {currentSurveyStep === 7 && (
+              <BookingButton setCurrentSurveyStep={setCurrentSurveyStep} />
             )}
           </>
         ) : (

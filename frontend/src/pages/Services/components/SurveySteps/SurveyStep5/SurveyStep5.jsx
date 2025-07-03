@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { surveyStepsList } from '../../../../../data/surveyStepsList';
 
 export const SurveyStep5 = () => {
   const [selectedStartDate, setSelectedStartDate] = useState('');
@@ -9,9 +10,9 @@ export const SurveyStep5 = () => {
     { id: 4, startDate: 'Тільки планую' },
   ];
   return (
-    <div className="survey-step-5">
+    <div className="survey-step survey-step-5">
       <h4 className="survey-step__title h4--bold">
-        Бажані терміни старту робіт
+        {surveyStepsList[4].title}
       </h4>
       <ul className="survey-step-5__start-list">
         {startDates.map(({ id, startDate }) => (

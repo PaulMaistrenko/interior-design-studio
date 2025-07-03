@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { servicesData } from '../../../../../data/servicesData';
+import { surveyStepsList } from '../../../../../data/surveyStepsList';
 
 export const SurveyStep2 = () => {
   const [selectedStyle, setSelectedStyle] = useState('');
   return (
-    <div className="survey-step-2">
+    <div className="survey-step survey-step-2">
       <h4 className="survey-step__title h4--bold">
-        Який тип проєкту потрібен?
+        {surveyStepsList[1].title}
       </h4>
       <ul className="survey-step-2__types-list">
         {servicesData.map(({ id, type }) => (

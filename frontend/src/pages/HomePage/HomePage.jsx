@@ -72,7 +72,58 @@ export const HomePage = () => {
 
       <section className="home__about-section">
         <SectionHeader title="Про нас" slogan="“Наші корені — наша сила ”" />
-        <div className="container">{/* Твой контент секции "Про нас" */}</div>
+        <div className="container">
+          <div className="about-section__top grid">
+            <div className="grid--onDesktop-5-12 h4--bold">
+              Tavr Design House — це не просто студія інтер’єру. Це історія,
+              вкорінена в землі Таврії — давньої назви нашого рідного Херсона
+            </div>
+            <div className="about-section__text grid--onDesktop-4-8">
+              У своїй роботі ми поєднуємо архітектурну міцність і візуальну
+              виразність. Надихаючись символом таврового профілю —
+              конструктивного елементу, що уособлює витривалість і практичність,
+              — ми створюємо інтер’єри, які служать роками.
+            </div>
+            <div className="about-poster-1 grid--onDesktop-1-3 bg-image"></div>
+            <div className="about-poster-2 grid--onDesktop-9-12 bg-image"></div>
+          </div>
+
+          <div className="about-section__bottom grid">
+            <h4 className="about-section__title h4--regular">Цінності</h4>
+            <article className="about-section__article grid--onDesktop-5-8">
+              <h3 className="article__title h3--semibold">Емоційність</h3>
+              <p className="article__text">
+                Ми створюємо інтер’єри, які викликають щирі емоції, надихають та
+                дарують відчуття спокою. Простір має душу й атмосферу.
+              </p>
+            </article>
+            <article className="about-section__article grid--onDesktop-9-12">
+              <h3 className="article__title h3--semibold">Індивідуальність</h3>
+              <p className="article__text">
+                Кожен наш проєкт — унікальний. Ми не працюємо за шаблонами — ми
+                втілюємо саме вашу історію в інтер’єрі.
+              </p>
+            </article>
+            <article className="about-section__article grid--onDesktop-5-8">
+              <h3 className="article__title h3--semibold">
+                Комфорт і гармонія
+              </h3>
+              <p className="article__text">
+                Інтер’єр — це не набір меблів. Це — відчуття комфорту, тепла,
+                гармонії. Простір має бути продовженням вашого світу.
+              </p>
+            </article>
+            <article className="about-section__article grid--onDesktop-9-12">
+              <h3 className="article__title h3--semibold">
+                Якість і надійність
+              </h3>
+              <p className="article__text">
+                Усе, що ми робимо, — продумано до деталей. Від вибору матеріалів
+                до фінального штриха — ми прагнемо до досконалості.
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section className="home__services-section">

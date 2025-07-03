@@ -5,8 +5,14 @@ import { SurveyStep3 } from '../SurveySteps/SurveyStep3';
 import { SurveyStep4 } from '../SurveySteps/SurveyStep4';
 import { SurveyStep5 } from '../SurveySteps/SurveyStep5';
 import { SurveyStep6 } from '../SurveySteps/SurveyStep6';
+import { SurveyStep9 } from '../SurveySteps/SurveyStep9';
+import { SurveyStep7 } from '../SurveySteps/SurveyStep7';
+import { SurveyStep8 } from '../SurveySteps/SurveyStep8';
 
-export const SurveyQuestionsList = ({ currentSurveyStep }) => {
+export const SurveyQuestionsList = ({
+  currentSurveyStep,
+  setCurrentSurveyStep,
+}) => {
   switch (currentSurveyStep) {
     case 1:
       return <SurveyStep1 />;
@@ -20,6 +26,12 @@ export const SurveyQuestionsList = ({ currentSurveyStep }) => {
       return <SurveyStep5 />;
     case 6:
       return <SurveyStep6 />;
+    case 7:
+      return <SurveyStep7 />;
+    case 8:
+      return <SurveyStep8 setCurrentSurveyStep={setCurrentSurveyStep} />;
+    case 9:
+      return <SurveyStep9 />;
     default:
       return;
   }
@@ -27,4 +39,5 @@ export const SurveyQuestionsList = ({ currentSurveyStep }) => {
 
 SurveyQuestionsList.propTypes = {
   currentSurveyStep: PropTypes.number.isRequired,
+  setCurrentSurveyStep: PropTypes.func.isRequired,
 };

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ServiceContentList } from '../ServiceContentList';
 import { CtaButtonSecondary } from '../../../../components/ui/CtaButtonSecondary';
 
-export const ServicesItem = ({ service }) => {
+export const ServicesItem = ({ service, onScrollToSurvey }) => {
   const { title, href, price, minPrice, contentNote, serviceContent } = service;
 
   return (
@@ -11,7 +11,11 @@ export const ServicesItem = ({ service }) => {
         <div className="service-top">
           <div className="service-top__content-wrapper container">
             <h2 className="service__title h2--medium">{title}</h2>
-            <CtaButtonSecondary title="Розрахувати вартість" link={href} />
+            <CtaButtonSecondary
+              title="Розрахувати вартість"
+              link={href}
+              onClick={onScrollToSurvey}
+            />
           </div>
         </div>
         <div className="service-content grid container">
@@ -56,4 +60,5 @@ ServicesItem.propTypes = {
     contentNote: PropTypes.string,
     serviceContent: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
+  onScrollToSurvey: PropTypes.func.isRequired,
 };

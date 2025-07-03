@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { surveyStepsList } from '../../../../../data/surveyStepsList';
 
 export const SurveyStep4 = () => {
   const [selectedStyle, setSelectedStyle] = useState('');
@@ -12,8 +13,10 @@ export const SurveyStep4 = () => {
   ];
 
   return (
-    <div className="survey-step-4">
-      <h4 className="survey-step__title h4--bold">Який стиль тобі ближче?</h4>
+    <div className="survey-step survey-step-4">
+      <h4 className="survey-step__title h4--bold">
+        {surveyStepsList[3].title}
+      </h4>
       <ul className="survey-step-4__styles-list">
         {projectStyles.map(({ id, style }) => (
           <li className="survey-step-4__styles-item" key={id}>

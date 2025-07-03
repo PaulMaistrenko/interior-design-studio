@@ -16,10 +16,13 @@ export const SurveyStatusBar = ({
 
   return (
     <div className="survey-status-bar">
-      <button
-        className="survey-prev-step__button bg-image"
-        onClick={() => handleSurveyStep('prev')}
-      />
+      {currentSurveyStep > 1 && (
+        <button
+          className="survey-prev-step__button bg-image"
+          onClick={() => handleSurveyStep('prev')}
+        />
+      )}
+
       <ul className="survey-steps-status__list">
         {surveyStepsList.map((_, i) => (
           <li
@@ -31,7 +34,11 @@ export const SurveyStatusBar = ({
           />
         ))}
       </ul>
-      {currentSurveyStep === 6 && <div className="grey-point bg-image"></div>}
+      {currentSurveyStep <= 6 ? (
+        <div className="grey-point bg-image"></div>
+      ) : (
+        <div className="red-circle-point bg-image"></div>
+      )}
     </div>
   );
 };

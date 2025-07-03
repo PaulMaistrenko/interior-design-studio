@@ -1,7 +1,11 @@
+import { surveyStepsList } from '../../../../../data/surveyStepsList';
+
 export const SurveyStep1 = () => {
   return (
-    <div className="survey-step-1">
-      <h4 className="survey-step__title h4--bold">Яка площа приміщення?</h4>
+    <div className="survey-step survey-step-1">
+      <h4 className="survey-step__title h4--bold">
+        {surveyStepsList[0].title}
+      </h4>
       <div className="survey-step-1__content">
         <form>
           <input

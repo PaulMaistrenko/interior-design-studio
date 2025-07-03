@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { surveyStepsList } from '../../../../../data/surveyStepsList';
 
 export const SurveyStep3 = () => {
   const [selectedArea, setSelectedArea] = useState('');
@@ -12,9 +13,9 @@ export const SurveyStep3 = () => {
   ];
 
   return (
-    <div className="survey-step-3">
+    <div className="survey-step survey-step-3">
       <h4 className="survey-step__title h4--bold">
-        Обери приміщення для дизайну
+        {surveyStepsList[2].title}
       </h4>
       <ul className="survey-step-3__areas-list">
         {areasToDesign.map(({ id, area }) => (
