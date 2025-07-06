@@ -15,7 +15,7 @@ export const Portfolio = () => {
         <BreadCrumb
           items={[
             { title: 'Головна', href: '/' },
-            { title: currentPage, href: '/portfolio' },
+            { title: currentPage, href: '/projects' },
           ]}
         />
       </div>

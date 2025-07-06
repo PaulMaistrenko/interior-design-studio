@@ -49,3 +49,28 @@ export async function getProjectsList() {
     throw new Error('Не вдалося завантажити проекти. Спробуйте пізніше.');
   }
 }
+
+export async function getProjectById(id) {
+  try {
+    const response = await fetch(`${API_BASE}/core/projects/${id}/`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      credentials: 'same-origin',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(
+        errorData?.message || `HTTP error! status: ${response.status}`
+      );
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw new Error('Не вдалося завантажити проект. Спробуйте пізніше.');
+  }
+}
