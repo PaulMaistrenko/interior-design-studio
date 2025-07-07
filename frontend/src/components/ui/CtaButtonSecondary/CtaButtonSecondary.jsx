@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export const CtaButtonSecondary = ({
   title,
+  link,
   onClick,
   type = '',
   size = 'large',
@@ -13,14 +15,15 @@ export const CtaButtonSecondary = ({
       : `cta-button-secondary button--text ${size}-button`;
 
   return (
-    <button type={buttonType} className={classNames} onClick={onClick}>
+    <Link to={link} type={buttonType} className={classNames} onClick={onClick}>
       <span>{title}</span>
-    </button>
+    </Link>
   );
 };
 
 CtaButtonSecondary.propTypes = {
   title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   type: PropTypes.string,
   size: PropTypes.string,

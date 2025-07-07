@@ -11,9 +11,9 @@ import { ProjectCard } from '../../components/ui/ProjectCard';
 export const HomePage = () => {
   const { projects } = useMainContext();
   const [shownProjects, setShownProjects] = useState([]);
-  const [fadeState, setFadeState] = useState([false, false]); // fade out/in flags for each slide
-  const fadeDuration = 1000; // 1 second
-  const intervalDuration = 4000; // 4 seconds
+  const [fadeState, setFadeState] = useState([false, false]);
+  const fadeDuration = 1000;
+  const intervalDuration = 4000;
   const nextIndexRef = useRef(0);
 
   useEffect(() => {
@@ -24,7 +24,6 @@ export const HomePage = () => {
     nextIndexRef.current = 2 % projects.length;
 
     const toggleFade = (slideIdx) => {
-      // Start fade out
       setFadeState((prev) => {
         const newState = [...prev];
         newState[slideIdx] = true;
@@ -32,7 +31,6 @@ export const HomePage = () => {
       });
 
       setTimeout(() => {
-        // Change project after fade out
         setShownProjects((prev) => {
           const newProjects = [...prev];
           newProjects[slideIdx] = getNextProject(
@@ -41,7 +39,6 @@ export const HomePage = () => {
           );
           return newProjects;
         });
-        // Start fade in
         setFadeState((prev) => {
           const newState = [...prev];
           newState[slideIdx] = false;
@@ -54,7 +51,7 @@ export const HomePage = () => {
 
     const intervalId = setInterval(() => {
       toggleFade(slideToChange);
-      slideToChange = slideToChange === 0 ? 1 : 0; // alternate slides
+      slideToChange = slideToChange === 0 ? 1 : 0;
     }, intervalDuration);
 
     return () => clearInterval(intervalId);
