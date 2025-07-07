@@ -65,21 +65,19 @@ export const Project = () => {
                 }}
               ></div>
             </section>
-            {project && (
-              <section className="project-gallery">
-                <ul className="project-gallery__list">
-                  {project.gallery.map((item, index) => (
-                    <li
-                      className="project-gallery__item bg-image"
-                      key={index}
-                      style={{
-                        backgroundImage: `url(${item})`,
-                      }}
-                    ></li>
-                  ))}
-                </ul>
-              </section>
-            )}
+            <section className="project-gallery">
+              <ul className="project-gallery__list">
+                {project.gallery.map((item, index) => (
+                  <li
+                    className="project-gallery__item bg-image"
+                    key={index}
+                    style={{
+                      backgroundImage: `url(${item})`,
+                    }}
+                  ></li>
+                ))}
+              </ul>
+            </section>
           </article>
         )}
       </div>

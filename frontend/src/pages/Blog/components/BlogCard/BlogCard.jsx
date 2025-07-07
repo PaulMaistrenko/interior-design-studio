@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export const BlogCard = ({ article }) => {
-  const { title, content, image, created_at } = article;
+  const { id, title, content, image, created_at } = article;
   return (
     <div
       className="blog-card bg-image"
@@ -18,7 +18,7 @@ export const BlogCard = ({ article }) => {
             {content.slice(0, 100) + '...'}
           </p>
           <Link
-            to={`/blog/#`}
+            to={`/blog/${id}`}
             className="blog-card__full-text-link button--text-underline"
           >
             Читати більше
@@ -31,6 +31,7 @@ export const BlogCard = ({ article }) => {
 
 BlogCard.propTypes = {
   article: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     content: PropTypes.string,
     image: PropTypes.string,

@@ -8,6 +8,7 @@ import { Contact } from './pages/Contact';
 import { Project } from './pages/Project';
 import { MainProvider } from './context';
 import { ScrollToTop } from './components/routing/ScrollToTop';
+import { BlogPost } from './pages/BlogPost';
 
 export const Root = () => (
   <BrowserRouter basename="/interior-design-studio">
@@ -20,6 +21,7 @@ export const Root = () => (
           <Route path="projects" element={<Portfolio />} />
           <Route path="projects/:projectId" element={<Project />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:blogPostId" element={<BlogPost />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

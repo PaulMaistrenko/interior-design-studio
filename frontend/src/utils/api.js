@@ -74,3 +74,28 @@ export async function getProjectById(id) {
     throw new Error('Не вдалося завантажити проект. Спробуйте пізніше.');
   }
 }
+
+export async function getBlogPosttById(id) {
+  try {
+    const response = await fetch(`${API_BASE}/blog/articles/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      credentials: 'same-origin',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(
+        errorData?.message || `HTTP error! status: ${response.status}`
+      );
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw new Error('Не вдалося завантажити статтю. Спробуйте пізніше.');
+  }
+}
