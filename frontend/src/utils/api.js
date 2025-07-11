@@ -99,3 +99,28 @@ export async function getBlogPosttById(id) {
     throw new Error('Не вдалося завантажити статтю. Спробуйте пізніше.');
   }
 }
+
+export async function getQuestions() {
+  try {
+    const response = await fetch(`${API_BASE}/consultations/questions/`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      credentials: 'same-origin',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(
+        errorData?.message || `HTTP error! status: ${response.status}`
+      );
+    }
+
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw new Error('Не вдалося завантажити питання. Спробуйте пізніше.');
+  }
+}

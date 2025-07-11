@@ -1,39 +1,63 @@
-import { useState } from 'react';
-import { surveyStepsList } from '../../../../../data/surveyStepsList';
+import PropTypes from 'prop-types';
 
-export const SurveyStep3 = () => {
-  const [selectedArea, setSelectedArea] = useState('');
-  const areasToDesign = [
-    { id: 1, area: 'Квартира' },
-    { id: 2, area: 'Будинок' },
-    { id: 3, area: 'Котедж' },
-    { id: 4, area: 'Офіс' },
-    { id: 5, area: 'Кафе/Ресторан' },
-    { id: 6, area: 'Магазин' },
-  ];
+export const SurveyStep3 = ({ surveyStep3, formData, setFormData }) => {
+  const { text, choices } = surveyStep3;
+
+  const handleChange = (e) => {
+    const selectedOrder = Number(e.target.value);
+
+    setFormData((prevData) => {
+      const updatedAnswers = [...prevData.chosen_answers];
+      updatedAnswers[2] = { option: selectedOrder };
+
+      return { ...prevData, chosen_answers: updatedAnswers };
+    });
+  };
+
+  const selectedValue = formData.chosen_answers?.[2]?.option ?? '';
 
   return (
-    <div className="survey-step survey-step-3">
-      <h4 className="survey-step__title h4--bold">
-        {surveyStepsList[2].title}
-      </h4>
-      <ul className="survey-step-3__areas-list">
-        {areasToDesign.map(({ id, area }) => (
-          <li className="survey-step-3__areas-item" key={id}>
+    <div className="survey-step survey-step-2">
+      <h4 className="survey-step__title h4--bold">{text}</h4>
+      <ul className="survey-step-2__types-list">
+        {choices?.map((item) => (
+          <li className="survey-step-2__types-item" key={item.id}>
             <label>
               <input
                 type="radio"
-                name="areaToDesign"
-                className="survey-step-3__input"
-                value={area}
-                checked={selectedArea === area}
-                onChange={() => setSelectedArea(area)}
+                name="projectType"
+                className="survey-step-2__input"
+                value={item.order}
+                checked={selectedValue === item.order}
+                onChange={handleChange}
               />
-              {area}
+              {item.text}
             </label>
           </li>
         ))}
       </ul>
     </div>
   );
+};
+
+SurveyStep3.propTypes = {
+  surveyStep3: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    choices: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired,
+        text: PropTypes.string.isRequired,
+        order: PropTypes.number.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+  formData: PropTypes.shape({
+    chosen_answers: PropTypes.arrayOf(
+      PropTypes.shape({
+        option: PropTypes.number,
+      })
+    ).isRequired,
+  }).isRequired,
+  setFormData: PropTypes.func.isRequired,
 };
