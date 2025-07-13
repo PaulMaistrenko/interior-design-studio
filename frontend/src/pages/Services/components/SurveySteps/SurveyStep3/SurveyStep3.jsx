@@ -1,20 +1,30 @@
 import PropTypes from 'prop-types';
+import { useMainContext } from '../../../../../context/MainContext';
+import { useEffect } from 'react';
 
-export const SurveyStep3 = ({ surveyStep3, formData, setFormData }) => {
-  const { text, choices } = surveyStep3;
+export const SurveyStep3 = ({ surveyStep3 }) => {
+  const { formData, setFormData, setIsValid } = useMainContext();
+  const { id: questionId, text, choices } = surveyStep3;
+
+  const selectedValue = formData.chosen_answers?.[2]?.option ?? '';
+
+  useEffect(() => {
+    setIsValid(!!selectedValue);
+  }, [selectedValue, setIsValid]);
 
   const handleChange = (e) => {
-    const selectedOrder = Number(e.target.value);
+    const selectedChoiceId = Number(e.target.value);
 
     setFormData((prevData) => {
       const updatedAnswers = [...prevData.chosen_answers];
-      updatedAnswers[2] = { option: selectedOrder };
+      updatedAnswers[2] = {
+        question: questionId,
+        option: selectedChoiceId,
+      };
 
       return { ...prevData, chosen_answers: updatedAnswers };
     });
   };
-
-  const selectedValue = formData.chosen_answers?.[2]?.option ?? '';
 
   return (
     <div className="survey-step survey-step-2">
@@ -27,8 +37,8 @@ export const SurveyStep3 = ({ surveyStep3, formData, setFormData }) => {
                 type="radio"
                 name="projectType"
                 className="survey-step-2__input"
-                value={item.order}
-                checked={selectedValue === item.order}
+                value={item.id}
+                checked={selectedValue === item.id}
                 onChange={handleChange}
               />
               {item.text}
@@ -42,6 +52,7 @@ export const SurveyStep3 = ({ surveyStep3, formData, setFormData }) => {
 
 SurveyStep3.propTypes = {
   surveyStep3: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     choices: PropTypes.arrayOf(
       PropTypes.shape({
@@ -52,12 +63,4 @@ SurveyStep3.propTypes = {
       })
     ).isRequired,
   }).isRequired,
-  formData: PropTypes.shape({
-    chosen_answers: PropTypes.arrayOf(
-      PropTypes.shape({
-        option: PropTypes.number,
-      })
-    ).isRequired,
-  }).isRequired,
-  setFormData: PropTypes.func.isRequired,
 };

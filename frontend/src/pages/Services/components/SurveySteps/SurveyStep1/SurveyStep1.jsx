@@ -1,47 +1,73 @@
 import PropTypes from 'prop-types';
+import { useMainContext } from '../../../../../context/MainContext';
+import { useState, useEffect } from 'react';
 
-export const SurveyStep1 = ({ surveyStep1, formData, setFormData }) => {
+export const SurveyStep1 = ({ surveyStep1 }) => {
+  const { formData, setFormData, setIsValid } = useMainContext();
+  const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    const initialValue = formData.chosen_answers?.[0]?.custom_answer || '';
+    setInputValue(initialValue);
+    setIsValid(/^\d+$/.test(initialValue));
+  }, [formData]);
+
+  if (!surveyStep1) return null;
+
   const handleChange = (e) => {
     const value = e.target.value;
+    setInputValue(value);
 
-    setFormData((prevData) => {
-      const updatedAnswers = [...prevData.chosen_answers];
-      updatedAnswers[0] = {
-        question: surveyStep1.id,
-        custom_answer: value,
-      };
+    if (/^\d+$/.test(value) && value >= 20) {
+      setIsValid(true);
 
-      return { ...prevData, chosen_answers: updatedAnswers };
-    });
+      setFormData((prevData) => {
+        const updatedAnswers = [...prevData.chosen_answers];
+        updatedAnswers[0] = {
+          question: surveyStep1.id,
+          custom_answer: value,
+        };
+
+        return { ...prevData, chosen_answers: updatedAnswers };
+      });
+    } else {
+      setIsValid(false);
+    }
   };
-
-  const inputValue = formData.chosen_answers?.[0]?.custom_answer || '';
 
   return (
     <div className="survey-step survey-step-1">
       <h4 className="survey-step__title h4--bold">{surveyStep1.text}</h4>
       <div className="survey-step-1__content">
-        <form>
-          <input
-            type="text"
-            name="area"
-            placeholder="Вкажіть площу у м²"
-            aria-label="Area"
-            className="survey-step-1__input"
-            value={inputValue}
-            onChange={handleChange}
-          />
-        </form>
+        <input
+          type="text"
+          name="area"
+          placeholder="Вкажіть площу у м²"
+          aria-label="Area"
+          className="survey-step-1__input"
+          value={inputValue}
+          onChange={handleChange}
+        />
         <p className="survey-step-1__note">
           Мінімальна площа для розрахунку - 20 м²
         </p>
+        {inputValue.length > 0 && !/^\d+$/.test(inputValue) && (
+          <p style={{ color: '#8e3a1b' }}>Введіть лише цифри</p>
+        )}
+
+        {inputValue.length > 0 &&
+          /^\d+$/.test(inputValue) &&
+          +inputValue < 20 && (
+            <p style={{ color: '#8e3a1b' }}>Мінімальна площа — 20 м²</p>
+          )}
       </div>
     </div>
   );
 };
 
 SurveyStep1.propTypes = {
-  surveyStep1: PropTypes.object.isRequired,
-  formData: PropTypes.object.isRequired,
-  setFormData: PropTypes.func.isRequired,
+  surveyStep1: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+  }).isRequired,
 };

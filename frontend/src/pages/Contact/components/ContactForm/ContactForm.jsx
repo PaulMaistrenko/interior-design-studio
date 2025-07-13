@@ -1,12 +1,8 @@
 import { useState } from 'react';
+import { useMainContext } from '../../../../context/MainContext';
 
 export const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    customer_question: '',
-    customAnswer: '',
-  });
+  const { formData, setFormData } = useMainContext();
 
   const [status, setStatus] = useState(null);
 

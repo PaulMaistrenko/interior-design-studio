@@ -9,42 +9,16 @@ import { SurveyStep9 } from '../SurveySteps/SurveyStep9';
 import { SurveyStep7 } from '../SurveySteps/SurveyStep7';
 import { SurveyStep8 } from '../SurveySteps/SurveyStep8';
 import { useEffect, useState } from 'react';
+import { useMainContext } from '../../../../context/MainContext';
 import { getQuestions } from '../../../../utils/api';
 
 export const SurveyQuestionsList = ({
   currentSurveyStep,
   setCurrentSurveyStep,
 }) => {
-  const [formData, setFormData] = useState({
-    customer_name: '',
-    phone_number: '',
-    customer_question: '',
-    chosen_answers: [
-      {
-        question: 1,
-        custom_answer: '',
-      },
-      {
-        option: '',
-      },
-      {
-        option: '',
-      },
-      {
-        option: '',
-      },
-      {
-        option: '',
-      },
-    ],
-  });
-  const [surveyQuestions, setSurveyQuestions] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { formData, setFormData, setLoading, setError } = useMainContext();
 
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
+  const [surveyQuestions, setSurveyQuestions] = useState([]);
 
   useEffect(() => {
     const loadQuestions = async () => {
@@ -74,32 +48,24 @@ export const SurveyQuestionsList = ({
       return (
         <SurveyStep2
           surveyStep2={surveyQuestions.find((item) => item.order === 2) || {}}
-          formData={formData}
-          setFormData={setFormData}
         />
       );
     case 3:
       return (
         <SurveyStep3
           surveyStep3={surveyQuestions.find((item) => item.order === 3) || {}}
-          formData={formData}
-          setFormData={setFormData}
         />
       );
     case 4:
       return (
         <SurveyStep4
           surveyStep4={surveyQuestions.find((item) => item.order === 4) || {}}
-          formData={formData}
-          setFormData={setFormData}
         />
       );
     case 5:
       return (
         <SurveyStep5
           surveyStep5={surveyQuestions.find((item) => item.order === 5) || {}}
-          formData={formData}
-          setFormData={setFormData}
         />
       );
     case 6:
@@ -107,7 +73,13 @@ export const SurveyQuestionsList = ({
     case 7:
       return <SurveyStep7 />;
     case 8:
-      return <SurveyStep8 setCurrentSurveyStep={setCurrentSurveyStep} />;
+      return (
+        <SurveyStep8
+          setCurrentSurveyStep={setCurrentSurveyStep}
+          formData={formData}
+          setFormData={setFormData}
+        />
+      );
     case 9:
       return <SurveyStep9 />;
     default:

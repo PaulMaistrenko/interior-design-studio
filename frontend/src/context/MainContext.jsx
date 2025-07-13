@@ -8,6 +8,40 @@ export const MainProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isValid, setIsValid] = useState(false);
+
+  const [formData, setFormData] = useState({
+    customer_name: '',
+    phone_number: '',
+    customer_question: '',
+    chosen_answers: [
+      {
+        question: 1,
+        option: null,
+        custom_answer: '',
+      },
+      {
+        question: 2,
+        option: null,
+        custom_answer: null,
+      },
+      {
+        question: 3,
+        option: null,
+        custom_answer: null,
+      },
+      {
+        question: 4,
+        option: null,
+        custom_answer: null,
+      },
+      {
+        question: 5,
+        option: null,
+        custom_answer: null,
+      },
+    ],
+  });
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -31,6 +65,12 @@ export const MainProvider = ({ children }) => {
         projects,
         loading,
         error,
+        formData,
+        isValid,
+        setFormData,
+        setLoading,
+        setError,
+        setIsValid,
       }}
     >
       {children}
