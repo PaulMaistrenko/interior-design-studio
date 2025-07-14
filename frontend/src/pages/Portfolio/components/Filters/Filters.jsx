@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Filter } from '../Filter';
+import { useState } from 'react';
 
-export const Filters = () => {
-  const [selectedFilters, setSelectedFilters] = useState([]);
+export const Filters = ({ selectedFilters, setSelectedFilters }) => {
   const [openStates, setOpenStates] = useState({
     style: false,
     area: false,
@@ -41,7 +41,14 @@ export const Filters = () => {
         />
         <Filter
           title="Приміщення"
-          options={['Вітальня', 'Спальня', 'Санвузол', 'Кухня']}
+          options={[
+            'Вітальня',
+            'Спальня',
+            'Санвузол',
+            'Кухня',
+            'Гардеробна',
+            'Дитяча',
+          ]}
           isOpen={openStates['area']}
           setIsOpen={() => toggleFilter('area')}
           selected={selectedFilters}
@@ -56,4 +63,9 @@ export const Filters = () => {
       </button>
     </div>
   );
+};
+
+Filters.propTypes = {
+  selectedFilters: PropTypes.array.isRequired,
+  setSelectedFilters: PropTypes.func.isRequired,
 };

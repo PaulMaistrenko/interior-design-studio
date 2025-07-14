@@ -36,8 +36,6 @@ export const SurveyStep8 = ({
       }
 
       setStatus('success');
-
-      console.log(formData);
       setFormData({
         customer_name: '',
         phone_number: '',
@@ -45,7 +43,7 @@ export const SurveyStep8 = ({
         chosen_answers: [],
       });
 
-      setCurrentSurveyStep(9); // Переходим на следующий шаг после успешной отправки
+      setCurrentSurveyStep(9);
     } catch (error) {
       console.error('Помилка при відправленні:', error);
       setStatus('error');

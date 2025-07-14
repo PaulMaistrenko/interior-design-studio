@@ -26,8 +26,6 @@ export const Blog = () => {
     loadArticles();
   }, []);
 
-  console.log(articles);
-
   return (
     <div className="page blog-page">
       <div className="container">

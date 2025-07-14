@@ -2,18 +2,17 @@ import PropTypes from 'prop-types';
 import { ServiceContentList } from '../ServiceContentList';
 import { CtaButtonSecondary } from '../../../../components/ui/CtaButtonSecondary';
 
-export const ServicesItem = ({ service, onScrollToSurvey }) => {
-  const { title, href, price, minPrice, contentNote, serviceContent } = service;
+export const ServicesItem = ({ configuration, onScrollToSurvey }) => {
+  const { name, price, min_price, services } = configuration;
 
   return (
     <li className="services__item">
       <article className="service">
         <div className="service-top">
           <div className="service-top__content-wrapper container">
-            <h2 className="service__title h2--medium">{title}</h2>
+            <h2 className="service__title h2--medium">{name}</h2>
             <CtaButtonSecondary
               title="Розрахувати вартість"
-              link={href}
               onClick={onScrollToSurvey}
             />
           </div>
@@ -24,19 +23,16 @@ export const ServicesItem = ({ service, onScrollToSurvey }) => {
               <p className="service-price__title text-main--extrabold">
                 Вартість:
               </p>
-              <p className="service-price__value">{`$${price.value}/ м²`}</p>
+              <p className="service-price__value">{`$${price}/ м²`}</p>
             </div>
             <div className="service-min-price">
               <p className="service-min-price__title text-main--extrabold">
                 *мінімальна вартість:
               </p>
-              <p className="service-min-price__value">{`$${minPrice.value}`}</p>
+              <p className="service-min-price__value">{`$${min_price}`}</p>
             </div>
           </div>
-          <ServiceContentList
-            contentNote={contentNote}
-            serviceContent={serviceContent}
-          />
+          <ServiceContentList services={services} />
         </div>
       </article>
     </li>
@@ -44,21 +40,17 @@ export const ServicesItem = ({ service, onScrollToSurvey }) => {
 };
 
 ServicesItem.propTypes = {
-  service: PropTypes.shape({
+  configuration: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     href: PropTypes.string,
     price: PropTypes.shape({
       value: PropTypes.number.isRequired,
       unit: PropTypes.string,
       currency: PropTypes.string,
     }).isRequired,
-    minPrice: PropTypes.shape({
-      value: PropTypes.number,
-      currency: PropTypes.string,
-    }),
-    contentNote: PropTypes.string,
-    serviceContent: PropTypes.arrayOf(PropTypes.string).isRequired,
+    min_price: PropTypes.string.isRequired,
+    services: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   onScrollToSurvey: PropTypes.func.isRequired,
 };

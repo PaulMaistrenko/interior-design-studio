@@ -37,7 +37,7 @@ export const SurveyStep5 = ({ surveyStep5 }) => {
                 type="radio"
                 name="projectType"
                 className="survey-step-2__input"
-                value={item.id} // используем id для значения
+                value={item.id}
                 checked={selectedValue === item.id}
                 onChange={handleChange}
               />

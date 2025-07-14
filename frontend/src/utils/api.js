@@ -124,3 +124,30 @@ export async function getQuestions() {
     throw new Error('Не вдалося завантажити питання. Спробуйте пізніше.');
   }
 }
+
+export async function getProjectConfigurations() {
+  try {
+    const response = await fetch(`${API_BASE}/core/project-configurations/`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      credentials: 'same-origin',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(
+        errorData?.message || `HTTP error! status: ${response.status}`
+      );
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw new Error(
+      'Не вдалося завантажити данні проектів. Спробуйте пізніше.'
+    );
+  }
+}
