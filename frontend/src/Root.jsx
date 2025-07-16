@@ -15,7 +15,7 @@ export const Root = () => (
     <ScrollToTop />
     <MainProvider>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="*" element={<App />}>
           <Route index element={<HomePage />} />
           <Route path="services" element={<Services />} />
           <Route path="projects" element={<Portfolio />} />

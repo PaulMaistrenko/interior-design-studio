@@ -197,7 +197,15 @@ export const HomePage = () => {
                     }}
                     style={{ listStyle: 'none', flex: '1 1 45%' }}
                   >
-                    <ProjectCard project={project} parentName="Головна" />
+                    {idx === 0 ? (
+                      <FadeInWhenVisible direction="right">
+                        <ProjectCard project={project} parentName="Головна" />
+                      </FadeInWhenVisible>
+                    ) : (
+                      <FadeInWhenVisible direction="left">
+                        <ProjectCard project={project} parentName="Головна" />
+                      </FadeInWhenVisible>
+                    )}
                   </motion.li>
                 ))}
               </ul>
