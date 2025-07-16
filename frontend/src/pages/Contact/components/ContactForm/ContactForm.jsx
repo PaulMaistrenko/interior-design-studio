@@ -55,7 +55,7 @@ export const ContactForm = () => {
           type="text"
           name="name"
           className="name-input"
-          placeholder="Введи своє ім’я"
+          placeholder="Ім’я*"
           value={formData.name}
           onChange={handleChange}
           required
@@ -67,7 +67,7 @@ export const ContactForm = () => {
           type="tel"
           name="phone"
           className="phone-input"
-          placeholder="Номер телефону"
+          placeholder="Телефон*"
           value={formData.phone}
           onChange={handleChange}
           required

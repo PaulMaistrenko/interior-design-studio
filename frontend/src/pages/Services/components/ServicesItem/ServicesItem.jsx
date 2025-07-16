@@ -10,7 +10,7 @@ export const ServicesItem = ({ configuration, onScrollToSurvey }) => {
       <article className="service">
         <div className="service-top">
           <div className="service-top__content-wrapper container">
-            <h2 className="service__title h2--medium">{name}</h2>
+            <h2 className="service__title h2--medium">{`Проєкт "${name}"`}</h2>
             <CtaButtonSecondary
               title="Розрахувати вартість"
               onClick={onScrollToSurvey}
