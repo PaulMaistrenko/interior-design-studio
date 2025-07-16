@@ -1,3 +1,4 @@
+import { FadeInWhenVisible } from '../../../../../components/ui/FadeInWhenVisible';
 import { BonusInfo } from '../../BonusInfo';
 import { useMainContext } from '../../../../../context/MainContext';
 
@@ -32,17 +33,19 @@ export const SurveyStep7 = () => {
   const totalPrice = projectArea * pricePerSquareMeter;
 
   return (
-    <div className="survey-step survey-step-7">
-      <h4 className="survey-step__title h4--bold">
-        Результат розрахунку проекту
-      </h4>
-      <h1 className="result__title h1--bold">
-        {totalPrice > 0 ? `від ${totalPrice.toLocaleString('uk-UA')} $` : '—'}
-      </h1>
-      <BonusInfo />
-      <p className="survey-step-7__secondary-text text-secondary--regular">
-        Бажаєш обговорити проєкт? Запишись на консультацію
-      </p>
-    </div>
+    <FadeInWhenVisible direction="left">
+      <div className="survey-step survey-step-7">
+        <h4 className="survey-step__title h4--bold">
+          Результат розрахунку проекту
+        </h4>
+        <h1 className="result__title h1--bold">
+          {totalPrice > 0 ? `від ${totalPrice.toLocaleString('uk-UA')} $` : '—'}
+        </h1>
+        <BonusInfo />
+        <p className="survey-step-7__secondary-text text-secondary--regular">
+          Бажаєш обговорити проєкт? Запишись на консультацію
+        </p>
+      </div>
+    </FadeInWhenVisible>
   );
 };

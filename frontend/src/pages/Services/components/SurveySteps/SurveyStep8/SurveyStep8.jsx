@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { FadeInWhenVisible } from '../../../../../components/ui/FadeInWhenVisible';
 import { useState } from 'react';
 
 export const SurveyStep8 = ({
@@ -51,48 +52,50 @@ export const SurveyStep8 = ({
   };
 
   return (
-    <div className="survey-step survey-step-8">
-      <h4 className="survey-step__title h4--bold">
-        Давай творити разом. Напиши, як з тобою зв’язатися.
-      </h4>
-      <form className="survey-step-8__form-field" onSubmit={handleSubmit}>
-        <input
-          className="survey-step-8__input text-secondary--regular"
-          type="text"
-          id="name"
-          name="customer_name"
-          placeholder="Ім'я*"
-          value={formData.customer_name}
-          onChange={handleChange}
-          required
-        />
+    <FadeInWhenVisible direction="left">
+      <div className="survey-step survey-step-8">
+        <h4 className="survey-step__title h4--bold">
+          Давай творити разом. Напиши, як з тобою зв’язатися.
+        </h4>
+        <form className="survey-step-8__form-field" onSubmit={handleSubmit}>
+          <input
+            className="survey-step-8__input text-secondary--regular"
+            type="text"
+            id="name"
+            name="customer_name"
+            placeholder="Ім'я*"
+            value={formData.customer_name}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          className="survey-step-8__input text-secondary--regular"
-          type="tel"
-          id="phone"
-          name="phone_number"
-          placeholder="Телефон*"
-          value={formData.phone_number}
-          onChange={handleChange}
-          required
-        />
-        <button
-          className="survey-step-8__button button button--text"
-          type="submit"
-        >
-          Відправити
-        </button>
-      </form>
-      {status === 'success' && (
-        <p style={{ color: 'green' }}>Дякуємо! Ваші дані відправлено.</p>
-      )}
-      {status === 'error' && (
-        <p style={{ color: 'red' }}>
-          Помилка при відправленні. Будь ласка, спробуйте пізніше.
-        </p>
-      )}
-    </div>
+          <input
+            className="survey-step-8__input text-secondary--regular"
+            type="tel"
+            id="phone"
+            name="phone_number"
+            placeholder="Телефон*"
+            value={formData.phone_number}
+            onChange={handleChange}
+            required
+          />
+          <button
+            className="survey-step-8__button button button--text"
+            type="submit"
+          >
+            Відправити
+          </button>
+        </form>
+        {status === 'success' && (
+          <p style={{ color: 'green' }}>Дякуємо! Ваші дані відправлено.</p>
+        )}
+        {status === 'error' && (
+          <p style={{ color: 'red' }}>
+            Помилка при відправленні. Будь ласка, спробуйте пізніше.
+          </p>
+        )}
+      </div>
+    </FadeInWhenVisible>
   );
 };
 

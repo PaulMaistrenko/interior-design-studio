@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useMainContext } from '../../../../../context/MainContext';
 import { useState, useEffect } from 'react';
+import { FadeInWhenVisible } from '../../../../../components/ui/FadeInWhenVisible';
 
 export const SurveyStep1 = ({ surveyStep1 }) => {
   const { formData, setFormData, setIsValid } = useMainContext();
@@ -36,32 +37,34 @@ export const SurveyStep1 = ({ surveyStep1 }) => {
   };
 
   return (
-    <div className="survey-step survey-step-1">
-      <h4 className="survey-step__title h4--bold">{surveyStep1.text}</h4>
-      <div className="survey-step-1__content">
-        <input
-          type="text"
-          name="area"
-          placeholder="Вкажіть площу у м²"
-          aria-label="Area"
-          className="survey-step-1__input"
-          value={inputValue}
-          onChange={handleChange}
-        />
-        <p className="survey-step-1__note">
-          Мінімальна площа для розрахунку - 20 м²
-        </p>
-        {inputValue.length > 0 && !/^\d+$/.test(inputValue) && (
-          <p style={{ color: '#8e3a1b' }}>Введіть лише цифри</p>
-        )}
-
-        {inputValue.length > 0 &&
-          /^\d+$/.test(inputValue) &&
-          +inputValue < 20 && (
-            <p style={{ color: '#8e3a1b' }}>Мінімальна площа — 20 м²</p>
+    <FadeInWhenVisible direction="left">
+      <div className="survey-step survey-step-1">
+        <h4 className="survey-step__title h4--bold">{surveyStep1.text}</h4>
+        <div className="survey-step-1__content">
+          <input
+            type="text"
+            name="area"
+            placeholder="Вкажіть площу у м²"
+            aria-label="Area"
+            className="survey-step-1__input"
+            value={inputValue}
+            onChange={handleChange}
+          />
+          <p className="survey-step-1__note">
+            Мінімальна площа для розрахунку - 20 м²
+          </p>
+          {inputValue.length > 0 && !/^\d+$/.test(inputValue) && (
+            <p style={{ color: '#8e3a1b' }}>Введіть лише цифри</p>
           )}
+
+          {inputValue.length > 0 &&
+            /^\d+$/.test(inputValue) &&
+            +inputValue < 20 && (
+              <p style={{ color: '#8e3a1b' }}>Мінімальна площа — 20 м²</p>
+            )}
+        </div>
       </div>
-    </div>
+    </FadeInWhenVisible>
   );
 };
 
