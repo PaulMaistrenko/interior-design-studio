@@ -6,7 +6,7 @@ export const ProjectCard = ({ project, parentName }) => {
 
   return (
     <div
-      className="project-card bg-image"
+      className="project-card image-hover-scale image-hover bg-image"
       style={{
         backgroundImage: `url(${main_image})`,
       }}

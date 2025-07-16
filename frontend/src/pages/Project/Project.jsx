@@ -3,6 +3,7 @@ import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { getProjectById } from '../../utils/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { FadeInWhenVisible } from '../../components/ui/FadeInWhenVisible';
 
 export const Project = () => {
   const { projectId } = useParams();
@@ -55,21 +56,25 @@ export const Project = () => {
                   ))}
                 </ul>
                 <div className="project-description">
-                  {project.full_description}
+                  <p>{project.full_description}</p>
                 </div>
               </div>
-              <div
-                className="project__main-poster bg-image grid--onDesktop-7-12"
-                style={{
-                  backgroundImage: `url(${project.main_image})`,
-                }}
-              ></div>
+              <div className="project__main-poster grid--onDesktop-7-12">
+                <FadeInWhenVisible direction="left">
+                  <div
+                    className="project__main-poster bg-image"
+                    style={{
+                      backgroundImage: `url(${project.main_image})`,
+                    }}
+                  ></div>
+                </FadeInWhenVisible>
+              </div>
             </section>
             <section className="project-gallery">
               <ul className="project-gallery__list">
                 {project.gallery.map((item, index) => (
                   <li
-                    className="project-gallery__item bg-image"
+                    className="project-gallery__item image-hover-grayscale bg-image"
                     key={index}
                     style={{
                       backgroundImage: `url(${item})`,

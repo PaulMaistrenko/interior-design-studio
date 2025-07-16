@@ -6,7 +6,11 @@
   padding-block: 10px;
   background-color: $header-background-color;
   z-index: 100;
-  transition: top 0.3s ease;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $header-background-color-hover;
+  }
 
   @include onDesktop {
     padding-block: 11px;
@@ -40,6 +44,11 @@
 .header__nav-link {
   padding: 4px 8px;
   color: $gray-100;
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: $accent-color;
+  }
 }
 
 .header__nav-link--active {

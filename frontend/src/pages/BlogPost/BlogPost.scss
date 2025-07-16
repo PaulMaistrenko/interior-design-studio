@@ -50,6 +50,11 @@
   color: $gray-100;
   background-color: $white;
   border: 3px solid $accent-color;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: $hover-color;
+  }
 }
 
 .blog-post-cta__image {

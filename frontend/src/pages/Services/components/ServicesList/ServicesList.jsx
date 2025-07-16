@@ -3,6 +3,7 @@ import { useMainContext } from '../../../../context/MainContext';
 import { ServicesItem } from '../ServicesItem';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { FadeInWhenVisible } from '../../../../components/ui/FadeInWhenVisible';
 
 export const ServicesList = ({ onScrollToSurvey }) => {
   const [projectConfigurations, setProjectConfigurations] = useState([]);
@@ -26,11 +27,12 @@ export const ServicesList = ({ onScrollToSurvey }) => {
   return (
     <ul className="services__list">
       {projectConfigurations.map((configuration) => (
-        <ServicesItem
-          key={configuration.id}
-          configuration={configuration}
-          onScrollToSurvey={onScrollToSurvey}
-        />
+        <FadeInWhenVisible direction="up" key={configuration.id}>
+          <ServicesItem
+            configuration={configuration}
+            onScrollToSurvey={onScrollToSurvey}
+          />
+        </FadeInWhenVisible>
       ))}
     </ul>
   );

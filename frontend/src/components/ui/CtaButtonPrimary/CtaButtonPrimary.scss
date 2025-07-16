@@ -5,6 +5,7 @@
   border-radius: 2px;
   background-color: $accent-color;
   color: $white;
+  transition: all 0.4s ease;
 
   &__arrow-type {
     & span::after {
@@ -23,6 +24,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+
+  &:hover {
+    background-color: $hover-color;
+    color: $white;
   }
 }
 

@@ -3,6 +3,7 @@ import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { ServicesList } from './components/ServicesList';
 import { ServicesSurvey } from './components/ServicesSurvey';
 import { useRef } from 'react';
+import { FadeInWhenVisible } from '../../components/ui/FadeInWhenVisible';
 
 export const Services = () => {
   const currentPage = 'Послуги';
@@ -28,9 +29,11 @@ export const Services = () => {
       <section>
         <ServicesList onScrollToSurvey={scrollToSurvey} />
       </section>
-      <section className="services-survey-section container" ref={surveyRef}>
-        <ServicesSurvey />
-      </section>
+      <FadeInWhenVisible direction="up">
+        <section className="services-survey-section container" ref={surveyRef}>
+          <ServicesSurvey />
+        </section>
+      </FadeInWhenVisible>
     </main>
   );
 };

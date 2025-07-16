@@ -34,9 +34,11 @@
 }
 
 .project-description {
+  display: flex;
+  align-items: center;
   padding-left: 12px;
   border-left: 2px solid $gray-70;
-  height: 225px;
+  min-height: 225px;
   color: $gray-100;
 }
 

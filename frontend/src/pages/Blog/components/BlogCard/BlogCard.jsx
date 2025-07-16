@@ -5,7 +5,7 @@ export const BlogCard = ({ article }) => {
   const { id, title, content, image, created_at } = article;
   return (
     <div
-      className="blog-card bg-image"
+      className="blog-card image-hover-scale bg-image"
       style={{
         backgroundImage: `url(${image})`,
       }}
