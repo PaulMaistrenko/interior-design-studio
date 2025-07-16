@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState, useMemo } from 'react';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
@@ -50,30 +51,41 @@ export const Portfolio = () => {
   }, [projects, selectedFilters]);
 
   return (
-    <div className="page portfolio-page">
-      <div className="container">
-        <BreadCrumb
-          items={[
-            { title: 'Головна', href: '/' },
-            { title: currentPage, href: '/projects' },
-          ]}
-        />
-      </div>
-      <SectionHeader title="Портфоліо" slogan={`"Дім - це більше,ніж стіни"`} />
-      <div className="container">
-        <Filters
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
-
-        <div className="portfolio-page__content">
-          <ProjectsList
-            projects={filteredProjectsList}
-            parentName="Портфоліо"
+    <motion.main
+      className="page home-page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+    >
+      <main className="page portfolio-page">
+        <div className="container">
+          <BreadCrumb
+            items={[
+              { title: 'Головна', href: '/' },
+              { title: currentPage, href: '/projects' },
+            ]}
           />
         </div>
-      </div>
-      <CtaSection />
-    </div>
+        <SectionHeader
+          title="Портфоліо"
+          slogan={`"Дім - це більше,ніж стіни"`}
+        />
+        <div className="container">
+          <Filters
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+          />
+
+          <div className="portfolio-page__content">
+            <ProjectsList
+              projects={filteredProjectsList}
+              parentName="Портфоліо"
+            />
+          </div>
+        </div>
+        <CtaSection />
+      </main>
+    </motion.main>
   );
 };

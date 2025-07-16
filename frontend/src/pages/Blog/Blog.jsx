@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { useEffect, useState } from 'react';
@@ -27,19 +28,30 @@ export const Blog = () => {
   }, []);
 
   return (
-    <div className="page blog-page">
-      <div className="container">
-        <BreadCrumb
-          items={[
-            { title: 'Головна', href: '/' },
-            { title: currentPage, href: '/blog' },
-          ]}
+    <motion.main
+      className="page home-page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+    >
+      <main className="page blog-page">
+        <div className="container">
+          <BreadCrumb
+            items={[
+              { title: 'Головна', href: '/' },
+              { title: currentPage, href: '/blog' },
+            ]}
+          />
+        </div>
+        <SectionHeader
+          title="Блог"
+          slogan={`“Натхнення починається зі слова”`}
         />
-      </div>
-      <SectionHeader title="Блог" slogan={`“Натхнення починається зі слова”`} />
-      <div className="container">
-        <BlogList articles={articles} />
-      </div>
-    </div>
+        <div className="container">
+          <BlogList articles={articles} />
+        </div>
+      </main>
+    </motion.main>
   );
 };

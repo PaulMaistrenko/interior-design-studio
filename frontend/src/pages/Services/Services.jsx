@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { ServicesList } from './components/ServicesList';
@@ -16,24 +17,35 @@ export const Services = () => {
   };
 
   return (
-    <main className="page services-page">
-      <div className="container">
-        <BreadCrumb
-          items={[
-            { title: 'Головна', href: '/' },
-            { title: currentPage, href: '/services' },
-          ]}
-        />
-      </div>
-      <SectionHeader title="Послуги" slogan={`"Краса,що працює на вас"`} />
-      <section>
-        <ServicesList onScrollToSurvey={scrollToSurvey} />
-      </section>
-      <FadeInWhenVisible direction="up">
-        <section className="services-survey-section container" ref={surveyRef}>
-          <ServicesSurvey />
+    <motion.main
+      className="page home-page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+    >
+      <main className="page services-page">
+        <div className="container">
+          <BreadCrumb
+            items={[
+              { title: 'Головна', href: '/' },
+              { title: currentPage, href: '/services' },
+            ]}
+          />
+        </div>
+        <SectionHeader title="Послуги" slogan={`"Краса,що працює на вас"`} />
+        <section>
+          <ServicesList onScrollToSurvey={scrollToSurvey} />
         </section>
-      </FadeInWhenVisible>
-    </main>
+        <FadeInWhenVisible direction="up">
+          <section
+            className="services-survey-section container"
+            ref={surveyRef}
+          >
+            <ServicesSurvey />
+          </section>
+        </FadeInWhenVisible>
+      </main>
+    </motion.main>
   );
 };
