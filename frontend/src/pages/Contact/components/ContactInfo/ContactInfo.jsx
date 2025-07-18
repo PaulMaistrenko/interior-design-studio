@@ -20,7 +20,7 @@ export const ContactInfo = () => {
               +38 093 138 99 63
             </a>
             <span className="contact-info__divider">|</span>
-            <div className="contact-info__socials button--text-underline">
+            <div className="contact-info__socials button--text">
               <a
                 href="https://instagram.com/tavrdesignhouse"
                 target="_blank"

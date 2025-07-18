@@ -8,7 +8,11 @@ export const MainLogo = ({ className }) => {
   };
 
   return (
-    <Link to="/" className={`${className} bg-image`} onClick={handleClick} />
+    <Link
+      to="/"
+      className={`main-logo ${className} bg-image`}
+      onClick={handleClick}
+    />
   );
 };
 

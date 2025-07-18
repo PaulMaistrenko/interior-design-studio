@@ -1,8 +1,18 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+// Функция обрезки текста до 15 слов
+const truncateText = (text, wordLimit = 15) => {
+  if (!text) return '';
+  const words = text.trim().split(/\s+/);
+  return words.length <= wordLimit
+    ? text
+    : words.slice(0, wordLimit).join(' ') + ' ...';
+};
+
 export const BlogCard = ({ article }) => {
   const { id, title, content, image, created_at } = article;
+
   return (
     <div
       className="blog-card image-hover-scale bg-image"
@@ -14,9 +24,7 @@ export const BlogCard = ({ article }) => {
       <div className="blog-card__bottom">
         <div className="blog-card__content">
           <h4 className="blog-card__title h4--bold">{title}</h4>
-          <p className="blog-card__short-text">
-            {content.slice(0, 100) + '...'}
-          </p>
+          <p className="blog-card__short-text">{truncateText(content, 15)}</p>
           <Link
             to={`/blog/${id}`}
             className="blog-card__full-text-link button--text-underline"

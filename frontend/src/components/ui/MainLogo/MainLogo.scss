@@ -1,5 +1,12 @@
 @import '../../../styles/abstracts/_mixins';
 
+.main-logo {
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    filter: drop-shadow(0 0 5px #00ffff) drop-shadow(0 0 15px #00ffff);
+  }
+}
+
 .header__logo {
   display: block;
   height: 40px;

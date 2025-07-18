@@ -27,9 +27,16 @@
 
 .footer__nav-link {
   padding: 11px 16px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: $logo-secondary-color-dark;
+    filter: drop-shadow(0 0 1px #00ffff) drop-shadow(0 0 15px #00ffff);
+  }
 }
 
-.footer__nav-link, .footer__contacts-separator {
+.footer__nav-link,
+.footer__contacts-separator {
   color: $gray-10;
 }
 
@@ -55,5 +62,13 @@
     background-image: url('../../../assets/icons/phone-icon-light.svg');
     height: 24px;
     width: 24px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      filter: drop-shadow(0 0 1px #00ffff) drop-shadow(0 0 15px #00ffff);
+      background-image: url('../../../assets/icons/phone-icon-light-green.svg');
+    }
   }
 }

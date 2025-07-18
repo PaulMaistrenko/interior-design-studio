@@ -72,13 +72,13 @@ export const HomePage = () => {
           className="home__hero-section bg-image"
           style={{ height: '100vh', position: 'relative' }}
         >
-          <Parallax speed={-20}>
+          <Parallax speed={-10}>
             <p className="home__hero-section-title">
               МИ СТВОРЮЄМО ІНТЕР’ЄРИ,
               <br /> В ЯКИХ ХОЧЕТЬСЯ ЖИТИ
             </p>
           </Parallax>
-          <Parallax speed={-20}>
+          <Parallax speed={-10}>
             <div style={{ marginTop: '2rem' }}>
               <CtaButtonPrimary title={`Зв'язатися з нами`} link="/contact" />
             </div>
