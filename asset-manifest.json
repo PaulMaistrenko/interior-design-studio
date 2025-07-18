@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.55d1051d.css",
-    "main.js": "/interior-design-studio/static/js/main.6f327fd1.js",
+    "main.css": "/interior-design-studio/static/css/main.936285dd.css",
+    "main.js": "/interior-design-studio/static/js/main.1304196c.js",
     "static/media/main-poster.png": "/interior-design-studio/static/media/main-poster.a18b23ce2ce3c7f5b46b.png",
     "static/media/survey-poster.png": "/interior-design-studio/static/media/survey-poster.5c2976bc2f3d2857d876.png",
     "static/media/blog-1.png": "/interior-design-studio/static/media/blog-1.af1009976d087dfdc361.png",
@@ -15,6 +15,8 @@
     "static/media/pdf-file-download.svg": "/interior-design-studio/static/media/pdf-file-download.b5121d2b6cc977601640.svg",
     "static/media/info.svg": "/interior-design-studio/static/media/info.931bb69a0b391568fa6a.svg",
     "static/media/phone-icon-dark.svg": "/interior-design-studio/static/media/phone-icon-dark.ba3652f5f7d113cfc3e2.svg",
+    "static/media/phone-icon-light-accent.svg": "/interior-design-studio/static/media/phone-icon-light-accent.638902029cc40e456799.svg",
+    "static/media/phone-icon-light-green.svg": "/interior-design-studio/static/media/phone-icon-light-green.e5619265ab134008326d.svg",
     "static/media/phone-icon-light.svg": "/interior-design-studio/static/media/phone-icon-light.dff5e5f3dcefa1ede1bf.svg",
     "static/media/survey-step-active.svg": "/interior-design-studio/static/media/survey-step-active.23b9d8deada6d5b92f7d.svg",
     "static/media/survey-step-completed.svg": "/interior-design-studio/static/media/survey-step-completed.0d023727a65dc07bc095.svg",
@@ -31,11 +33,11 @@
     "static/media/survey-step-red-circle.svg": "/interior-design-studio/static/media/survey-step-red-circle.9ecb7b6d30f8812d2206.svg",
     "static/media/project-feature-separator.svg": "/interior-design-studio/static/media/project-feature-separator.2ac7449c56954c1e4aef.svg",
     "static/media/last-step-grey-point.svg": "/interior-design-studio/static/media/last-step-grey-point.075868f9a93676e07e55.svg",
-    "main.55d1051d.css.map": "/interior-design-studio/static/css/main.55d1051d.css.map",
-    "main.6f327fd1.js.map": "/interior-design-studio/static/js/main.6f327fd1.js.map"
+    "main.936285dd.css.map": "/interior-design-studio/static/css/main.936285dd.css.map",
+    "main.1304196c.js.map": "/interior-design-studio/static/js/main.1304196c.js.map"
   },
   "entrypoints": [
-    "static/css/main.55d1051d.css",
-    "static/js/main.6f327fd1.js"
+    "static/css/main.936285dd.css",
+    "static/js/main.1304196c.js"
   ]
 }
