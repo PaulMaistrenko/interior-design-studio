@@ -1,8 +1,9 @@
 .header {
   position: fixed;
-  top: 48px;
+  top: 16px;
   left: 0;
   right: 0;
+  max-width: 100vw;
   padding-block: 10px;
   background-color: $header-background-color;
   z-index: 100;
@@ -14,6 +15,7 @@
 
   @include onDesktop {
     padding-block: 11px;
+    top: 48px;
   }
 
   &--sticky {
@@ -56,14 +58,4 @@
   font-weight: 800;
   border: 1px solid $accent-color;
   border-left: 0;
-}
-
-.header__menu-open-button {
-  width: 44px;
-  height: 44px;
-  background-image: url('../../../assets/icons/menu-open-button.svg');
-
-  @include onDesktop {
-    display: none;
-  }
 }

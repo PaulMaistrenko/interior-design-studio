@@ -49,6 +49,8 @@
 @import '../pages/Contact/components/ContactForm/ContactForm.scss';
 @import '../pages/Contact/components/ContactInfo/ContactInfo.scss';
 
+@import '../pages/MobileMenu/MobileMenu.scss';
+
 
 @import '../components/layouts/Header/Header.scss';
 @import '../components/layouts/Footer/Footer.scss';
@@ -59,3 +61,4 @@
 @import '../components/ui/ProjectCard/ProjectCard.scss';
 @import '../components/ui/BreadCrumb/BreadCrumb.scss';
 @import '../components/ui/CtaSection/CtaSection.scss';
+@import '../components/ui/BurgerButton/BurgerButton.scss'

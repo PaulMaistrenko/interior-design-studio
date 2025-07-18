@@ -9,6 +9,7 @@ export const MainProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isValid, setIsValid] = useState(false);
+  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
   const [formData, setFormData] = useState({
     customer_name: '',
@@ -67,10 +68,12 @@ export const MainProvider = ({ children }) => {
         error,
         formData,
         isValid,
+        isOpenMobileMenu,
         setFormData,
         setLoading,
         setError,
         setIsValid,
+        setIsOpenMobileMenu,
       }}
     >
       {children}

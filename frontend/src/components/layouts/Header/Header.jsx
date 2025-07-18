@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { navLinks } from '../../../data/navLinks.js';
 import { MainLogo } from '../../ui/MainLogo';
+import { BurgerButton } from '../../ui/BurgerButton';
 
 export const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -46,11 +47,7 @@ export const Header = () => {
               </li>
             ))}
           </ul>
-          <button
-            type="button"
-            className="header__menu-open-button bg-image"
-            aria-label="Відкрити меню"
-          ></button>
+          <BurgerButton />
         </nav>
       </div>
     </header>
