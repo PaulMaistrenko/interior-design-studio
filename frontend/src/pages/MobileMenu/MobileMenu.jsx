@@ -45,6 +45,7 @@ export const MobileMenu = () => {
             </li>
           ))}
         </ul>
+        <div className="mobile-menu__devider"></div>
       </div>
     </aside>
   );

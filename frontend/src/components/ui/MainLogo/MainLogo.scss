@@ -20,12 +20,14 @@
 }
 
 .footer__logo {
+  margin-bottom: 24px;
   display: block;
   height: 40px;
   width: 40px;
   background-image: url('../../../assets/icons/main-logo-footer.svg');
 
   @include onDesktop {
+    margin-bottom: 0;
     height: 98px;
     width: 98px;
   }

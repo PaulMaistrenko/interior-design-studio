@@ -22,6 +22,12 @@
   font-family: $family;
 }
 
+@mixin onMobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 @mixin onDesktop {
   @media (min-width: 1280px) {
     @content;

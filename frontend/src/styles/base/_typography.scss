@@ -24,11 +24,18 @@
 
 .button--text {
   @include heading($fs-button, 700, $lh-120);
+
+  @include onMobile {
+    font-size: 14px;
+  }
 }
 
 .button--text-underline {
   @include heading($fs-button, 700, $lh-120);
-  text-decoration: underline;
+
+  @include onMobile {
+    font-size: 14px;
+  }
 }
 
 .h4--underline {

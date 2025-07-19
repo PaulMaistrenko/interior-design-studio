@@ -4,6 +4,7 @@ import { getBlogPosttById } from '../../utils/api';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BlogPostItem } from './components/BlogPostItem';
+import { BlogPostCtaSection } from './components/BlogPostCtaSection';
 
 export const BlogPost = () => {
   const { blogPostId } = useParams();
@@ -74,23 +75,7 @@ export const BlogPost = () => {
             </article>
           )}
         </div>
-        <section className="blog-post-page__cta-section grid">
-          <div className="blog-post-cta__text-content grid--onDesktop-1-5">
-            <h3 className="blog-post-cta__title h3--semibold">
-              Не знаєш, який стиль підійде саме тобі?
-            </h3>
-            <p className="blog-post-cta__text">
-              Залиши заявку - ми підберемо інтер’єр, який буде дійсно твоїм
-            </p>
-            <Link
-              to="/contact"
-              className="blog-post-cta__button button--text button"
-            >
-              Залишити заявку
-            </Link>
-          </div>
-          <div className="blog-post-cta__image bg-image grid--onDesktop-8-12"></div>
-        </section>
+        <BlogPostCtaSection />
       </main>
     </motion.main>
   );
