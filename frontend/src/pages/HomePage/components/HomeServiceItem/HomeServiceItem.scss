@@ -11,6 +11,7 @@
   }
 
   @include onMobile {
+    margin-bottom: 0;
     padding-bottom: 8px;
     flex-direction: column;
   }
