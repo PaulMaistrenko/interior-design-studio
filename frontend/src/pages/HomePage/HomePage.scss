@@ -32,6 +32,10 @@
 .home__about-section {
   margin-bottom: 80px;
   color: $gray-80;
+
+  @include onMobile {
+    margin-bottom: 50px;
+  }
 }
 
 .about-section__top {
@@ -54,6 +58,10 @@
 
 .about-section__bottom {
   row-gap: 40px;
+
+  & article {
+    margin-bottom: 12px;
+  }
 }
 
 .about-poster-1 {
@@ -84,6 +92,18 @@
     padding-inline: 0;
     margin-bottom: 16px;
     text-align: start;
+  }
+}
+
+.about-section__title {
+  @include onMobile {
+    margin-bottom: 12px;
+  }
+}
+
+.article__title {
+  @include onMobile {
+    margin-bottom: 4px;
   }
 }
 

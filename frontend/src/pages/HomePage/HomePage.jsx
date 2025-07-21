@@ -162,14 +162,14 @@ export const HomePage = () => {
                   <HomeServiceItem key={service.id} service={service} />
                 ))}
               </ul>
-              <div className="centered-block">
-                <CtaButtonSecondary
-                  title="Всі послуги"
-                  link="/services"
-                  type="with-arrow"
-                  size="small"
-                />
-              </div>
+            </div>
+            <div className="centered-block">
+              <CtaButtonSecondary
+                title="Всі послуги"
+                link="/services"
+                type="with-arrow"
+                size="small"
+              />
             </div>
           </section>
         </FadeInWhenVisible>

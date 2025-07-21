@@ -46,9 +46,19 @@
 .small-button {
   width: 207px;
   height: 48px;
+
+  @include onMobile {
+    width: 150px;
+    height: 44px;
+  }
 }
 
 .large-button {
   width: 320px;
   height: 56px;
+
+  @include onMobile {
+    width: 192px;
+    height: 44px;
+  }
 }
