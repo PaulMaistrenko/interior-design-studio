@@ -10,7 +10,7 @@ export const ContactInfo = () => {
               target="_blank"
               rel="noreferrer"
             >
-              tavrdesignhouse@gmail.com
+              <p>tavrdesignhouse@gmail.com</p>
             </a>
             <span className="contact-info__divider">|</span>
             <a
@@ -27,7 +27,7 @@ export const ContactInfo = () => {
                 rel="noopener noreferrer"
                 className="contact-info__social contact-info__social--instagram"
               >
-                instagram
+                <p>instagram</p>
               </a>
               <a
                 href="https://t.me/tavrdesignhouse"
@@ -35,7 +35,7 @@ export const ContactInfo = () => {
                 rel="noopener noreferrer"
                 className="contact-info__social contact-info__social--telegram"
               >
-                telegram
+                <p>telegram</p>
               </a>
               <a
                 href="viber://chat?number=+380931389963"
@@ -43,7 +43,7 @@ export const ContactInfo = () => {
                 rel="noopener noreferrer"
                 className="contact-info__social contact-info__social--viber"
               >
-                viber
+                <p>viber</p>
               </a>
             </div>
           </nav>

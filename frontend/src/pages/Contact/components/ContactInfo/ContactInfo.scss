@@ -4,6 +4,11 @@
   justify-content: center;
   gap: 8px;
 
+  @include onMobile {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   & a {
     color: $gray-80;
 
@@ -42,12 +47,34 @@
   }
 }
 
+.email p {
+  @include onMobile {
+    text-decoration: underline;
+  }
+}
+
 .contact-info__socials {
   display: flex;
   justify-content: space-between;
   gap: 21px;
+
+  @include onMobile {
+    gap: 10px;
+  }
 }
 
 .contact-info__social {
   padding-inline: 16px;
+}
+
+.contact-info__social p {
+  @include onMobile {
+    text-decoration: underline;
+  }
+}
+
+.contact-info__divider {
+  @include onMobile {
+    display: none;
+  }
 }

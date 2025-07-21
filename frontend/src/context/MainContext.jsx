@@ -10,6 +10,13 @@ export const MainProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [isValid, setIsValid] = useState(false);
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const [formData, setFormData] = useState({
     customer_name: '',
@@ -69,6 +76,7 @@ export const MainProvider = ({ children }) => {
         formData,
         isValid,
         isOpenMobileMenu,
+        width,
         setFormData,
         setLoading,
         setError,

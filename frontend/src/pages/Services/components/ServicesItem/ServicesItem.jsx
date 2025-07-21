@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
 import { ServiceContentList } from '../ServiceContentList';
 import { CtaButtonSecondary } from '../../../../components/ui/CtaButtonSecondary';
+import { useMainContext } from '../../../../context/MainContext';
 
 export const ServicesItem = ({ configuration, onScrollToSurvey }) => {
+  const { width } = useMainContext();
+  const isMobile = width < 767;
   const { name, price, min_price, services } = configuration;
 
   return (
@@ -11,10 +14,12 @@ export const ServicesItem = ({ configuration, onScrollToSurvey }) => {
         <div className="service-top">
           <div className="service-top__content-wrapper container">
             <h2 className="service__title h2--medium">{`Проєкт "${name}"`}</h2>
-            <CtaButtonSecondary
-              title="Розрахувати вартість"
-              onClick={onScrollToSurvey}
-            />
+            {!isMobile && (
+              <CtaButtonSecondary
+                title="Розрахувати вартість"
+                onClick={onScrollToSurvey}
+              />
+            )}
           </div>
         </div>
         <div className="service-content grid container">

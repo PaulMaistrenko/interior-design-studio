@@ -8,6 +8,10 @@
 
 .h2--medium {
   @include heading($fs-h2, 500, $lh-120);
+
+  @include onMobile {
+    font-size: 22px;
+  }
 }
 
 .h2--bold {

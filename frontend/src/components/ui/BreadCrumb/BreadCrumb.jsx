@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useMainContext } from '../../../context/MainContext';
 
 export const BreadCrumb = ({ items }) => {
+  const { width } = useMainContext();
+  const isMobile = width < 767;
+
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <div className="breadcrumb">
       {items.map((item, index) => {

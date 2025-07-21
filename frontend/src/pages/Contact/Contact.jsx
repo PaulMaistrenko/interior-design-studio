@@ -2,9 +2,13 @@ import { motion } from 'framer-motion';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { ContactInfo } from './components/ContactInfo';
 import { ContactForm } from './components/ContactForm';
+import { useMainContext } from '../../context/MainContext';
+import { GoBackButton } from './components/GoBackButton';
 
 export const Contact = () => {
   const currentPage = 'Контакти';
+  const { width } = useMainContext();
+  const isMobile = width < 767;
 
   return (
     <motion.main
@@ -22,14 +26,15 @@ export const Contact = () => {
               { title: currentPage, href: '/contacts' },
             ]}
           />
+          {isMobile && <GoBackButton />}
           <div className="contact-page__content grid">
-            <h1 className="contact-page__title h1--bold grid--onDesktop-2-11">
+            <h1 className="contact-page__title h2--bold grid--onDesktop-2-11">
               Кожен простір має свою історію. Давай напишемо твою разом.
             </h1>
-            <h4 className="contact-page__text h4--regular grid--onDesktop-2-11">
+            <p className="contact-page__text grid--onDesktop-2-11">
               Залиши повідомлення , і ми зв’яжемося з тобою, щоб обговорити
               деталі.
-            </h4>
+            </p>
             <div className="contact-form__wrapper grid--onDesktop-2-11">
               <ContactForm />
             </div>
