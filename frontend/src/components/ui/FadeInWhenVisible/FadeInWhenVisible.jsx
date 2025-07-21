@@ -1,7 +1,23 @@
 import { useAnimation, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+const useIsMobile = (breakpoint = 768) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => {
+      setIsMobile(window.innerWidth < breakpoint);
+    };
+
+    updateIsMobile();
+    window.addEventListener('resize', updateIsMobile);
+    return () => window.removeEventListener('resize', updateIsMobile);
+  }, [breakpoint]);
+
+  return isMobile;
+};
 
 export const FadeInWhenVisible = ({
   children,
@@ -10,12 +26,25 @@ export const FadeInWhenVisible = ({
 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold });
+  const isMobile = useIsMobile();
 
   const variants = {
     hidden: {
       opacity: 0,
-      y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
-      x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
+      y: isMobile
+        ? 0
+        : direction === 'up'
+          ? 100
+          : direction === 'down'
+            ? -100
+            : 0,
+      x: isMobile
+        ? 0
+        : direction === 'left'
+          ? 100
+          : direction === 'right'
+            ? -100
+            : 0,
     },
     visible: {
       opacity: 1,
@@ -35,6 +64,7 @@ export const FadeInWhenVisible = ({
       initial="hidden"
       animate={controls}
       variants={variants}
+      style={{ overflowX: 'hidden', overflowY: 'hidden' }}
     >
       {children}
     </motion.div>

@@ -1,13 +1,16 @@
 .home-services-item {
   margin-bottom: 48px;
   padding-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-bottom: 2px solid $gray-40;
 
   &:last-child {
     border-bottom: none;
+  }
+
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   @include onMobile {
@@ -44,10 +47,9 @@
 
 .home-services__poster {
   height: 243px;
-  width: 432px;
 
-  @include onMobile {
-    width: 288px;
+  @include onDesktop {
+    width: 432px;
   }
 }
 

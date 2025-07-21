@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   @include text-style($fs-main, 400, $lh-150);
   background-color: $gray-10;
