@@ -10,7 +10,8 @@
   background-image: url('../../assets/images/HomePage/main-poster.png');
 
   @include onMobile {
-  padding: 140px 0 123px;
+    padding: 140px 0 123px;
+    margin-bottom: 32px;
   }
 }
 
@@ -35,6 +36,20 @@
 
 .about-section__top {
   margin-bottom: 80px;
+
+  @include onMobile {
+    margin-bottom: 24px;
+  }
+}
+
+.about-section__top .about-poster-1 {
+  margin-bottom: 16px;
+}
+
+.about-section-top__slogan {
+  @include onMobile {
+    margin-bottom: 16px;
+  }
 }
 
 .about-section__bottom {
@@ -50,6 +65,10 @@
 .about-poster-2 {
   background-image: url('../../assets/images/HomePage/about-section/poster-2.png');
   grid-row: 2/5;
+
+  @include onMobile {
+    height: 249px;
+  }
 }
 
 .article__title {
@@ -60,6 +79,12 @@
   padding-inline: 56px;
   text-align: center;
   grid-row: 3/5;
+
+  @include onMobile {
+    padding-inline: 0;
+    margin-bottom: 16px;
+    text-align: start;
+  }
 }
 
 .home__services-section {

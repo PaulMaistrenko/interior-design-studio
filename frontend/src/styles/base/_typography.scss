@@ -10,16 +10,35 @@
   @include heading($fs-h2, 500, $lh-120);
 }
 
+.h2--bold {
+  @include heading($fs-h2, 700, $lh-120);
+
+  
+  @include onMobile {
+    font-size: 22px;
+    line-height: 130%
+  }
+}
+
 .h3--semibold {
   @include heading($fs-h3, 600, $lh-130);
 }
 
 .h4--bold {
   @include heading($fs-h4, 700, $lh-130);
+
+  @include onMobile {
+    font-size: 18px;
+  }
+
 }
 
 .h4--regular {
   @include heading($fs-h4, 400, $lh-130);
+
+  @include onMobile {
+    font-size: 18px;
+  }
 }
 
 .button--text {

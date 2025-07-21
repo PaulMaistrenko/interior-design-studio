@@ -1,6 +1,11 @@
 body {
   @include text-style($fs-main, 400, $lh-150);
   background-color: $gray-10;
+
+  @include onMobile {
+    font-size: 16px;
+    line-height: 150%;
+  }
 }
 
 .container {

@@ -6,7 +6,7 @@ export const SectionHeader = ({ title, slogan }) => {
       <div className="container">
         <div className="section-header__content-wrapper">
           <h4 className="section-header__title h4--regular">{title}</h4>
-          <p className="section-header__slogan h1--bold">{slogan}</p>
+          <p className="section-header__slogan h2--bold">{slogan}</p>
         </div>
       </div>
     </div>

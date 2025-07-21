@@ -92,18 +92,18 @@ export const HomePage = () => {
             />
             <div className="container">
               <div className="about-section__top grid">
-                <div className="grid--onDesktop-5-12 h4--bold">
+                <div className="about-section-top__slogan grid--onDesktop-5-12 h4--bold">
                   Tavr Design House — це не просто студія інтер’єру. Це історія,
                   вкорінена в землі Таврії — давньої назви нашого рідного
                   Херсона
                 </div>
+                <div className="about-poster-1 grid--onDesktop-1-3 bg-image"></div>
                 <div className="about-section__text grid--onDesktop-4-8">
                   У своїй роботі ми поєднуємо архітектурну міцність і візуальну
-                  виразність. Надихаючись символом таврового профілю —
+                  виразність. <br /> Надихаючись символом таврового профілю —
                   конструктивного елементу, що уособлює витривалість і
                   практичність, — ми створюємо інтер’єри, які служать роками.
                 </div>
-                <div className="about-poster-1 grid--onDesktop-1-3 bg-image"></div>
                 <div className="about-poster-2 grid--onDesktop-9-12 bg-image"></div>
               </div>
 
