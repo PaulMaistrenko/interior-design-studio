@@ -41,6 +41,7 @@ export const Header = () => {
                       ? 'header__nav-link header__nav-link--active'
                       : 'header__nav-link'
                   }
+                  end
                 >
                   {label}
                 </NavLink>
