@@ -39,6 +39,18 @@ export const ServicesItem = ({ configuration, onScrollToSurvey }) => {
           </div>
           <ServiceContentList services={services} />
         </div>
+        <div className="service-bottom">
+          <div className="container">
+            <div className="centered-block">
+              {isMobile && (
+                <CtaButtonSecondary
+                  title="Розрахувати вартість"
+                  onClick={onScrollToSurvey}
+                />
+              )}
+            </div>
+          </div>
+        </div>
       </article>
     </li>
   );

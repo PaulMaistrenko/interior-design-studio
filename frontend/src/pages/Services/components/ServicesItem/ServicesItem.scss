@@ -1,6 +1,11 @@
 .service-top {
   padding-block: 24px;
-  background: linear-gradient(to bottom, $gray-10 0%, $gray-40 100%);
+  background: linear-gradient(to top, $gray-40 0%, $gray-10 100%);
+}
+
+.service-bottom {
+  padding-top: 50px;
+  padding-bottom: 24px;
 }
 
 .service .service-top {

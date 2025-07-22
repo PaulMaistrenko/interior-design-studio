@@ -38,10 +38,7 @@ export const Services = () => {
           <ServicesList onScrollToSurvey={scrollToSurvey} />
         </section>
         <FadeInWhenVisible direction="up">
-          <section
-            className="services-survey-section container"
-            ref={surveyRef}
-          >
+          <section className="services-survey-section" ref={surveyRef}>
             <ServicesSurvey />
           </section>
         </FadeInWhenVisible>

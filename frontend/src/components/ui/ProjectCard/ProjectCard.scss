@@ -1,6 +1,10 @@
 .project-card {
   position: relative;
   height: 437px;
+
+  @include onMobile {
+    height: 192px;
+  }
 }
 
 .project-card__link {

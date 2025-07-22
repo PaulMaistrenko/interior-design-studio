@@ -3,8 +3,12 @@
 }
 
 .services-survey__poster {
-  height: 576px;
+  height: 600px;
   background-image: url('../../../../assets/images/Services/survey-poster.png');
+
+  @include onMobile {
+    height: 215px;
+  }
 }
 
 .services-survey__info {
