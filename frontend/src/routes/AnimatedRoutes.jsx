@@ -8,6 +8,7 @@ import { Project } from '../pages/Project';
 import { Blog } from '../pages/Blog';
 import { BlogPost } from '../pages/BlogPost';
 import { Contact } from '../pages/Contact';
+import { PageNotFound } from '../pages/PageNotFound';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const AnimatedRoutes = () => {
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:blogPostId" element={<BlogPost />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </AnimatePresence>
   );

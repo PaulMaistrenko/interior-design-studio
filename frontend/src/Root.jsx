@@ -9,6 +9,7 @@ import { Project } from './pages/Project';
 import { MainProvider } from './context';
 import { ScrollToTop } from './components/routing/ScrollToTop';
 import { BlogPost } from './pages/BlogPost';
+import { PageNotFound } from './pages/PageNotFound';
 
 export const Root = () => (
   <BrowserRouter basename="/interior-design-studio">
@@ -23,6 +24,7 @@ export const Root = () => (
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:blogPostId" element={<BlogPost />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </MainProvider>
