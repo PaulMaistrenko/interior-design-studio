@@ -1,5 +1,9 @@
 .h1--bold {
   @include heading($fs-h1, 700, $lh-135);
+
+  @include onMobile {
+    font-size: 32px;
+  }
 }
 
 .h1--medium {
@@ -73,4 +77,8 @@
 
 .text-secondary--regular {
   @include text-style($fs-secondary, 400, $lh-150);
+
+  @include onMobile {
+    font-size: 14px;
+  }
 }

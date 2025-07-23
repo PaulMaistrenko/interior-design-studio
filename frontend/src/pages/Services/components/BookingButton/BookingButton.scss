@@ -3,4 +3,8 @@
   height: 56px;
   color: $white;
   background-color: $accent-color;
+
+  @include onMobile {
+    width: auto;
+  }
 }

@@ -3,6 +3,10 @@
   padding: 8px 16px;
   border-radius: 2px;
   background-color: $info-color;
+
+  @include onMobile {
+    padding-inline: 8px;
+  }
 }
 
 .bonus-info__text {
@@ -24,5 +28,9 @@
     width: 24px;
     height: 24px;
     background-image: url('../../../../assets/icons/pdf-file-download.svg');
+  }
+
+  @include onMobile {
+    gap: 4px;
   }
 }

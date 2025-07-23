@@ -5,6 +5,11 @@
   & button {
     width: 207px;
     height: 56px;
+
+    @include onMobile {
+      width: 140px;
+      height: 44px;
+    }
   }
 }
 
