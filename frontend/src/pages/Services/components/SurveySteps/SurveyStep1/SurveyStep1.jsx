@@ -4,8 +4,10 @@ import { useState, useEffect } from 'react';
 import { FadeInWhenVisible } from '../../../../../components/ui/FadeInWhenVisible';
 
 export const SurveyStep1 = ({ surveyStep1 }) => {
-  const { formData, setFormData, setIsValid } = useMainContext();
+  const { formData, setFormData, setIsValid, width } = useMainContext();
   const [inputValue, setInputValue] = useState('');
+
+  const isMobile = width < 767;
 
   useEffect(() => {
     const initialValue = formData.chosen_answers?.[0]?.custom_answer || '';
@@ -50,9 +52,15 @@ export const SurveyStep1 = ({ surveyStep1 }) => {
             value={inputValue}
             onChange={handleChange}
           />
-          <p className="survey-step-1__note">
-            Мінімальна площа для розрахунку - 20 м²
-          </p>
+          {!isMobile ? (
+            <p className="survey-step-1__note">
+              Мінімальна площа для розрахунку - 20 м²
+            </p>
+          ) : (
+            <p className="survey-step-1__note">
+              Мін. площа для розрахунку - 20 м²
+            </p>
+          )}
           {inputValue.length > 0 && !/^\d+$/.test(inputValue) && (
             <p style={{ color: '#8e3a1b' }}>Введіть лише цифри</p>
           )}

@@ -31,6 +31,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.flex-block-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .centered-block {
   width: max-content;
   margin: 0 auto;

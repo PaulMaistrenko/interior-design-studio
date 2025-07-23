@@ -8,4 +8,8 @@
 
 .services-survey-section {
   margin-top: 56px;
+
+  @include onMobile {
+    margin-top: 0;
+  }
 }

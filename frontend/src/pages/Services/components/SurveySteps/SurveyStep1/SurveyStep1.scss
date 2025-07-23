@@ -1,15 +1,27 @@
 .survey-step {
   height: 350px;
+
+  @include onMobile {
+    padding: 16px 0 230px;
+  }
 }
 
 .survey-step__title {
   margin-bottom: 24px;
   color: $gray-100;
+
+  @include onMobile {
+    margin-bottom: 8px;
+  }
 }
 
 .survey-step-1 .survey-step__title {
   margin-bottom: 48px;
   color: $gray-100;
+
+  @include onMobile {
+    margin-bottom: 24px;
+  }
 }
 
 .survey-step-6 .survey-step__title {
@@ -28,6 +40,12 @@
   height: 48px;
   background-color: $gray-20;
 
+  @include onMobile {
+    margin-bottom: 4px;
+    width: 100%;
+    height: 44px;
+  }
+
   &::placeholder {
     color: $gray-70;
     @include text-style($fs-secondary, 400, $lh-150);
@@ -36,7 +54,7 @@
 
 .survey-step-1__note {
   display: flex;
-  align-items: center ;
+  align-items: center;
   gap: 2px;
   font-family: 'Comfortaa', sans-serif;
   font-size: 14px;
@@ -44,11 +62,21 @@
   line-height: 120%;
   color: $gray-70;
 
+  @include onMobile {
+    font-size: 12px;
+  }
+
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 24px;
     height: 24px;
     background-image: url('../../../../../assets/icons/info.svg');
+
+    @include onMobile {
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+    }
   }
 }

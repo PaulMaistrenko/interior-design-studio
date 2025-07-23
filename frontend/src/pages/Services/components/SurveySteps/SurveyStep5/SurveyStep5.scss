@@ -3,6 +3,10 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 32px;
+
+  @include onMobile {
+    row-gap: 8px;
+  }
 }
 
 .survey-step-5__types-item label {

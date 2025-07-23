@@ -6,6 +6,10 @@
 .service-bottom {
   padding-top: 50px;
   padding-bottom: 24px;
+
+  @include onMobile {
+    padding-bottom: 50px;
+  }
 }
 
 .service .service-top {

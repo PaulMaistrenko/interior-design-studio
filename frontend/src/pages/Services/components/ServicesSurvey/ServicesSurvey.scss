@@ -14,4 +14,8 @@
 .services-survey__info {
   display: flex;
   flex-direction: column;
+
+  @include onMobile {
+    padding-bottom: 24px;
+  }
 }

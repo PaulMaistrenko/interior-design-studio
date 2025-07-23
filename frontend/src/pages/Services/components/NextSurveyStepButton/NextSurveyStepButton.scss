@@ -7,15 +7,20 @@
   height: 48px;
   background-color: $accent-color;
   color: $white;
+
+  @include onMobile {
+    width: 150px;
+    height: 44px;
+  }
 }
 
 .next-survey-step-button p {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 20px;
 
   &::after {
-    position: absolute;
     left: 65px;
     content: '';
     display: block;
