@@ -36,66 +36,64 @@ export const Project = () => {
 
   return (
     <motion.main
-      className="page home-page"
+      className="page project-page"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <main className="page project-page">
-        <div className="container">
-          {project && (
-            <article className="project-content">
-              <BreadCrumb
-                items={[
-                  { title: 'Головна', href: '/' },
-                  { title: 'Портфоліо', href: '/projects' },
-                  { title: project.name },
-                ]}
-              />
-              <section className="project-page__top grid">
-                <div className="project-details grid--onDesktop-1-5">
-                  <h1 className="project-title h1--medium">{project.name}</h1>
-                  <ul className="project-features-list">
-                    {combineFeatures.map((item, index) => (
-                      <li className="project-feature" key={index}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="project-description">
-                    <p>{project.full_description}</p>
-                  </div>
-                </div>
-                <div className="project__main-poster grid--onDesktop-7-12">
-                  <FadeInWhenVisible direction="left">
-                    <div
-                      className="project__main-poster bg-image"
-                      style={{
-                        backgroundImage: `url(${project.main_image})`,
-                      }}
-                    ></div>
-                  </FadeInWhenVisible>
-                </div>
-              </section>
-              <section className="project-gallery">
-                <ul className="project-gallery__list">
-                  {project.gallery.map((item, index) => (
-                    <li
-                      className="project-gallery__item image-hover-grayscale bg-image"
-                      key={index}
-                      style={{
-                        backgroundImage: `url(${item})`,
-                      }}
-                    ></li>
+      <div className="container">
+        {project && (
+          <article className="project-content">
+            <BreadCrumb
+              items={[
+                { title: 'Головна', href: '/' },
+                { title: 'Портфоліо', href: '/projects' },
+                { title: project.name },
+              ]}
+            />
+            <section className="project-page__top grid">
+              <div className="project-details grid--onDesktop-1-5">
+                <h1 className="project-title h1--medium">{project.name}</h1>
+                <ul className="project-features-list">
+                  {combineFeatures.map((item, index) => (
+                    <li className="project-feature" key={index}>
+                      {item}
+                    </li>
                   ))}
                 </ul>
-              </section>
-            </article>
-          )}
-        </div>
-        <CtaSection />
-      </main>
+                <div className="project-description">
+                  <p>{project.full_description}</p>
+                </div>
+              </div>
+              <div className="project__main-poster grid--onDesktop-7-12">
+                <FadeInWhenVisible direction="left">
+                  <div
+                    className="project__main-poster bg-image"
+                    style={{
+                      backgroundImage: `url(${project.main_image})`,
+                    }}
+                  ></div>
+                </FadeInWhenVisible>
+              </div>
+            </section>
+            <section className="project-gallery">
+              <ul className="project-gallery__list">
+                {project.gallery.map((item, index) => (
+                  <li
+                    className="project-gallery__item image-hover-grayscale bg-image"
+                    key={index}
+                    style={{
+                      backgroundImage: `url(${item})`,
+                    }}
+                  ></li>
+                ))}
+              </ul>
+            </section>
+          </article>
+        )}
+      </div>
+      <CtaSection />
     </motion.main>
   );
 };

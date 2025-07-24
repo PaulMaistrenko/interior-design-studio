@@ -6,11 +6,15 @@ import { Filters } from './components/Filters';
 import { CtaSection } from '../../components/ui/CtaSection';
 import { ProjectsList } from './components/ProjectsList';
 import { useMainContext } from '../../context';
+import { MobileFiltersOpenButton } from './components/MobileOpenFiltersButton';
+import { MobileFilters } from '../MobileFilters';
 
 export const Portfolio = () => {
-  const { projects } = useMainContext();
+  const { projects, width } = useMainContext();
   const [selectedFilters, setSelectedFilters] = useState([]);
   const currentPage = 'Портфоліо';
+
+  const isMobile = width < 767;
 
   const getFilteredProjects = (projects, filters) => {
     if (!filters.length) return projects;
@@ -52,40 +56,41 @@ export const Portfolio = () => {
 
   return (
     <motion.main
-      className="page home-page"
+      className="page portfolio-page"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <main className="page portfolio-page">
-        <div className="container">
-          <BreadCrumb
-            items={[
-              { title: 'Головна', href: '/' },
-              { title: currentPage, href: '/projects' },
-            ]}
-          />
-        </div>
-        <SectionHeader
-          title="Портфоліо"
-          slogan={`"Дім - це більше,ніж стіни"`}
+      <div className="container">
+        <BreadCrumb
+          items={[
+            { title: 'Головна', href: '/' },
+            { title: currentPage, href: '/projects' },
+          ]}
         />
-        <div className="container">
+      </div>
+      <SectionHeader title="Портфоліо" slogan={`"Дім - це більше,ніж стіни"`} />
+      <div className="container">
+        {!isMobile ? (
           <Filters
             selectedFilters={selectedFilters}
             setSelectedFilters={setSelectedFilters}
           />
+        ) : (
+          <MobileFiltersOpenButton />
+        )}
 
-          <div className="portfolio-page__content">
-            <ProjectsList
-              projects={filteredProjectsList}
-              parentName="Портфоліо"
-            />
-          </div>
+        <MobileFilters />
+
+        <div className="portfolio-page__content">
+          <ProjectsList
+            projects={filteredProjectsList}
+            parentName="Портфоліо"
+          />
         </div>
-        <CtaSection />
-      </main>
+      </div>
+      <CtaSection />
     </motion.main>
   );
 };

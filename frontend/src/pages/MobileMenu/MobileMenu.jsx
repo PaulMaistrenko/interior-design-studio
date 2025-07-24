@@ -6,9 +6,8 @@ import { NavLink } from 'react-router-dom';
 export const MobileMenu = () => {
   const { isOpenMobileMenu, setIsOpenMobileMenu } = useMainContext();
 
-  const toggleMenu = ({ onClick }) => {
+  const toggleMenu = () => {
     setIsOpenMobileMenu((prev) => !prev);
-    if (onClick) onClick(!isOpenMobileMenu);
   };
 
   useEffect(() => {

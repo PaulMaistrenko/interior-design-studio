@@ -32,51 +32,49 @@ export const BlogPost = () => {
 
   return (
     <motion.main
-      className="page home-page"
+      className="page blog-post-page"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <main className="page blog-post-page">
-        <div className="container">
-          {blogPost && (
-            <article className="blog-post-content">
-              <BreadCrumb
-                items={[
-                  { title: 'Головна', href: '/' },
-                  { title: 'Блог', href: '/blog' },
-                  { title: blogPost.title },
-                ]}
-              />
-              <section className="blog-post-page__top grid">
-                <div
-                  className="blog-post__main-poster bg-image grid--onDesktop-1-12"
-                  style={{
-                    backgroundImage: `url(${blogPost.image})`,
-                  }}
-                ></div>
-                <h1 className="blog-post__title h1--bold grid--onDesktop-2-11">
-                  {blogPost.title}
-                </h1>
-                <div className="blog-post__description grid--onDesktop-2-11">
-                  {blogPost.content}
-                </div>
-              </section>
-              <section className="blog-post__main-content grid">
-                <ul className="blog-post__components-list grid--onDesktop-2-11">
-                  {blogPost.components.map((item) => (
-                    <li className="blog-post__components-item" key={item.id}>
-                      <BlogPostItem details={item} />
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            </article>
-          )}
-        </div>
-        <BlogPostCtaSection />
-      </main>
+      <div className="container">
+        {blogPost && (
+          <article className="blog-post-content">
+            <BreadCrumb
+              items={[
+                { title: 'Головна', href: '/' },
+                { title: 'Блог', href: '/blog' },
+                { title: blogPost.title },
+              ]}
+            />
+            <section className="blog-post-page__top grid">
+              <div
+                className="blog-post__main-poster bg-image grid--onDesktop-1-12"
+                style={{
+                  backgroundImage: `url(${blogPost.image})`,
+                }}
+              ></div>
+              <h1 className="blog-post__title h1--bold grid--onDesktop-2-11">
+                {blogPost.title}
+              </h1>
+              <div className="blog-post__description grid--onDesktop-2-11">
+                {blogPost.content}
+              </div>
+            </section>
+            <section className="blog-post__main-content grid">
+              <ul className="blog-post__components-list grid--onDesktop-2-11">
+                {blogPost.components.map((item) => (
+                  <li className="blog-post__components-item" key={item.id}>
+                    <BlogPostItem details={item} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </article>
+        )}
+      </div>
+      <BlogPostCtaSection />
     </motion.main>
   );
 };

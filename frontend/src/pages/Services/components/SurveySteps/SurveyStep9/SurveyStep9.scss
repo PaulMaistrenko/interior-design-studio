@@ -1,5 +1,9 @@
 .survey-step-9 {
   padding-top: 128px;
+
+  @include onMobile {
+    padding-top: 32px;
+  }
 }
 
 .survey-step-9 .survey-step__title {
@@ -10,4 +14,8 @@
 .survey-step-9 .survey-step__subtitle {
   margin-bottom: 72px;
   text-align: center;
+
+  @include onMobile {
+    font-size: 16px;
+  }
 }

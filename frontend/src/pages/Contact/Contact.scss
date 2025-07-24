@@ -9,16 +9,11 @@
 .contact-page__title {
   margin-bottom: 24px;
   color: #132323;
-
-  @include onMobile {
-    margin-bottom: 0;
-  }
 }
 
 .contact-page__text {
   margin-bottom: 48px;
   color: #344040;
-  text-indent: 1em;
 
   @include onMobile {
     margin-bottom: 27px;

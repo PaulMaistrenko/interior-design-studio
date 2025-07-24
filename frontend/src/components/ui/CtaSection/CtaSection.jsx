@@ -6,7 +6,7 @@ export const CtaSection = () => {
     <section className="cta-section">
       <div className="container">
         <div className="cta-section__grid-wrapper grid">
-          <div className="cta-section__poster grid--onDesktop-1-5"></div>
+          <div className="cta-section__poster bg-image grid--onDesktop-1-5"></div>
           <div className="cta-section__content grid--onDesktop-7-12">
             <div className="cta-section__text-content">
               <h1 className="cta-section__title h1--medium">

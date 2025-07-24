@@ -29,29 +29,24 @@ export const Blog = () => {
 
   return (
     <motion.main
-      className="page home-page"
+      className="page blog-page"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <main className="page blog-page">
-        <div className="container">
-          <BreadCrumb
-            items={[
-              { title: 'Головна', href: '/' },
-              { title: currentPage, href: '/blog' },
-            ]}
-          />
-        </div>
-        <SectionHeader
-          title="Блог"
-          slogan={`“Натхнення починається зі слова”`}
+      <div className="container">
+        <BreadCrumb
+          items={[
+            { title: 'Головна', href: '/' },
+            { title: currentPage, href: '/blog' },
+          ]}
         />
-        <div className="container">
-          <BlogList articles={articles} />
-        </div>
-      </main>
+      </div>
+      <SectionHeader title="Блог" slogan={`“Натхнення починається зі слова”`} />
+      <div className="container">
+        <BlogList articles={articles} />
+      </div>
     </motion.main>
   );
 };

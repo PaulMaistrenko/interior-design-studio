@@ -1,0 +1,42 @@
+.mobile-filters.open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-filters {
+  padding: 16px 0 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: $gray-10;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.mobile-filters-top {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-filters__title {
+  color: $gray-100;
+}
+
+.mobile-filters__close-button {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../assets/icons/cross.svg');
+}
+
+.mobile-filters__content-devider {
+  height: 1px;
+  width: 100%;
+  background-color: $gray-40;
+}

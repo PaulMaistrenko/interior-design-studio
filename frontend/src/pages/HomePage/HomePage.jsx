@@ -67,160 +67,149 @@ export const HomePage = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <main className="page home-page">
-        <section
-          className="home__hero-section bg-image"
-          style={{ height: '100vh', position: 'relative' }}
-        >
-          <Parallax speed={-10}>
-            <p className="home__hero-section-title">
-              МИ СТВОРЮЄМО ІНТЕР’ЄРИ,
-              <br /> В ЯКИХ ХОЧЕТЬСЯ ЖИТИ
-            </p>
-          </Parallax>
-          <Parallax speed={-10}>
-            <div style={{ marginTop: '2rem' }}>
-              <CtaButtonPrimary title={`Зв'язатися з нами`} link="/contact" />
+      <section
+        className="home__hero-section bg-image"
+        style={{ height: '100vh', position: 'relative' }}
+      >
+        <Parallax speed={-10}>
+          <p className="home__hero-section-title">
+            МИ СТВОРЮЄМО ІНТЕР’ЄРИ,
+            <br /> В ЯКИХ ХОЧЕТЬСЯ ЖИТИ
+          </p>
+        </Parallax>
+        <Parallax speed={-10}>
+          <div style={{ marginTop: '2rem' }}>
+            <CtaButtonPrimary title={`Зв'язатися з нами`} link="/contact" />
+          </div>
+        </Parallax>
+      </section>
+      <FadeInWhenVisible direction="up">
+        <section className="home__about-section">
+          <SectionHeader title="Про нас" slogan="“Наші корені — наша сила ”" />
+          <div className="container">
+            <div className="about-section__top grid">
+              <div className="about-section-top__slogan grid--onDesktop-5-12 h4--bold">
+                Tavr Design House — це не просто студія інтер’єру. Це історія,
+                вкорінена в землі Таврії — давньої назви нашого рідного Херсона
+              </div>
+              <div className="about-poster-1 grid--onDesktop-1-3 bg-image"></div>
+              <div className="about-section__text grid--onDesktop-4-8">
+                У своїй роботі ми поєднуємо архітектурну міцність і візуальну
+                виразність. <br /> Надихаючись символом таврового профілю —
+                конструктивного елементу, що уособлює витривалість і
+                практичність, — ми створюємо інтер’єри, які служать роками.
+              </div>
+              <div className="about-poster-2 grid--onDesktop-9-12 bg-image"></div>
             </div>
-          </Parallax>
+
+            <div className="about-section__bottom grid">
+              <h4 className="about-section__title h4--regular">Цінності</h4>
+              <article className="about-section__article grid--onDesktop-5-8">
+                <h3 className="article__title h3--semibold">Емоційність</h3>
+                <p className="article__text">
+                  Ми створюємо інтер’єри, які викликають щирі емоції, надихають
+                  та дарують відчуття спокою. Простір має душу й атмосферу.
+                </p>
+              </article>
+              <article className="about-section__article grid--onDesktop-9-12">
+                <h3 className="article__title h3--semibold">
+                  Індивідуальність
+                </h3>
+                <p className="article__text">
+                  Кожен наш проєкт — унікальний. Ми не працюємо за шаблонами —
+                  ми втілюємо саме вашу історію в інтер’єрі.
+                </p>
+              </article>
+              <article className="about-section__article grid--onDesktop-5-8">
+                <h3 className="article__title h3--semibold">
+                  Комфорт і гармонія
+                </h3>
+                <p className="article__text">
+                  Інтер’єр — це не набір меблів. Це — відчуття комфорту, тепла,
+                  гармонії. Простір має бути продовженням вашого світу.
+                </p>
+              </article>
+              <article className="about-section__article grid--onDesktop-9-12">
+                <h3 className="article__title h3--semibold">
+                  Якість і надійність
+                </h3>
+                <p className="article__text">
+                  Усе, що ми робимо, — продумано до деталей. Від вибору
+                  матеріалів до фінального штриха — ми прагнемо до досконалості.
+                </p>
+              </article>
+            </div>
+          </div>
         </section>
-        <FadeInWhenVisible direction="up">
-          <section className="home__about-section">
-            <SectionHeader
-              title="Про нас"
-              slogan="“Наші корені — наша сила ”"
-            />
-            <div className="container">
-              <div className="about-section__top grid">
-                <div className="about-section-top__slogan grid--onDesktop-5-12 h4--bold">
-                  Tavr Design House — це не просто студія інтер’єру. Це історія,
-                  вкорінена в землі Таврії — давньої назви нашого рідного
-                  Херсона
-                </div>
-                <div className="about-poster-1 grid--onDesktop-1-3 bg-image"></div>
-                <div className="about-section__text grid--onDesktop-4-8">
-                  У своїй роботі ми поєднуємо архітектурну міцність і візуальну
-                  виразність. <br /> Надихаючись символом таврового профілю —
-                  конструктивного елементу, що уособлює витривалість і
-                  практичність, — ми створюємо інтер’єри, які служать роками.
-                </div>
-                <div className="about-poster-2 grid--onDesktop-9-12 bg-image"></div>
-              </div>
+      </FadeInWhenVisible>
 
-              <div className="about-section__bottom grid">
-                <h4 className="about-section__title h4--regular">Цінності</h4>
-                <article className="about-section__article grid--onDesktop-5-8">
-                  <h3 className="article__title h3--semibold">Емоційність</h3>
-                  <p className="article__text">
-                    Ми створюємо інтер’єри, які викликають щирі емоції,
-                    надихають та дарують відчуття спокою. Простір має душу й
-                    атмосферу.
-                  </p>
-                </article>
-                <article className="about-section__article grid--onDesktop-9-12">
-                  <h3 className="article__title h3--semibold">
-                    Індивідуальність
-                  </h3>
-                  <p className="article__text">
-                    Кожен наш проєкт — унікальний. Ми не працюємо за шаблонами —
-                    ми втілюємо саме вашу історію в інтер’єрі.
-                  </p>
-                </article>
-                <article className="about-section__article grid--onDesktop-5-8">
-                  <h3 className="article__title h3--semibold">
-                    Комфорт і гармонія
-                  </h3>
-                  <p className="article__text">
-                    Інтер’єр — це не набір меблів. Це — відчуття комфорту,
-                    тепла, гармонії. Простір має бути продовженням вашого світу.
-                  </p>
-                </article>
-                <article className="about-section__article grid--onDesktop-9-12">
-                  <h3 className="article__title h3--semibold">
-                    Якість і надійність
-                  </h3>
-                  <p className="article__text">
-                    Усе, що ми робимо, — продумано до деталей. Від вибору
-                    матеріалів до фінального штриха — ми прагнемо до
-                    досконалості.
-                  </p>
-                </article>
-              </div>
-            </div>
-          </section>
-        </FadeInWhenVisible>
-
-        <FadeInWhenVisible direction="up">
-          <section className="home__services-section">
-            <SectionHeader
-              title="Послуги"
-              slogan="“Перший крок до інтер’єру мрії”"
+      <FadeInWhenVisible direction="up">
+        <section className="home__services-section">
+          <SectionHeader
+            title="Послуги"
+            slogan="“Перший крок до інтер’єру мрії”"
+          />
+          <div className="container">
+            <ul className="home__services-list">
+              {homeServicesData.map((service) => (
+                <HomeServiceItem key={service.id} service={service} />
+              ))}
+            </ul>
+          </div>
+          <div className="centered-block">
+            <CtaButtonSecondary
+              title="Всі послуги"
+              link="/services"
+              type="with-arrow"
+              size="small"
             />
-            <div className="container">
-              <ul className="home__services-list">
-                {homeServicesData.map((service) => (
-                  <HomeServiceItem key={service.id} service={service} />
-                ))}
-              </ul>
-            </div>
+          </div>
+        </section>
+      </FadeInWhenVisible>
+
+      <FadeInWhenVisible direction="up">
+        <section className="home__projects-section">
+          <SectionHeader title="Проєкти" slogan="“Інтер’єр, що живе з вами”" />
+          <div className="container">
+            <ul
+              className="home__projects-list"
+              style={{ display: 'flex', gap: '1rem' }}
+            >
+              {shownProjects.map((project, idx) => (
+                <motion.li
+                  key={project.id}
+                  className="projects-item"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: fadeState[idx] ? 0 : 1 }}
+                  transition={{
+                    duration: fadeDuration / 1000,
+                    ease: 'easeInOut',
+                  }}
+                  style={{ listStyle: 'none', flex: '1 1 45%' }}
+                >
+                  {idx === 0 ? (
+                    <FadeInWhenVisible direction="right">
+                      <ProjectCard project={project} parentName="Головна" />
+                    </FadeInWhenVisible>
+                  ) : (
+                    <FadeInWhenVisible direction="left">
+                      <ProjectCard project={project} parentName="Головна" />
+                    </FadeInWhenVisible>
+                  )}
+                </motion.li>
+              ))}
+            </ul>
             <div className="centered-block">
               <CtaButtonSecondary
-                title="Всі послуги"
-                link="/services"
+                title="Портфоліо"
+                link="/projects"
                 type="with-arrow"
                 size="small"
               />
             </div>
-          </section>
-        </FadeInWhenVisible>
-
-        <FadeInWhenVisible direction="up">
-          <section className="home__projects-section">
-            <SectionHeader
-              title="Проєкти"
-              slogan="“Інтер’єр, що живе з вами”"
-            />
-            <div className="container">
-              <ul
-                className="home__projects-list"
-                style={{ display: 'flex', gap: '1rem' }}
-              >
-                {shownProjects.map((project, idx) => (
-                  <motion.li
-                    key={project.id}
-                    className="projects-item"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: fadeState[idx] ? 0 : 1 }}
-                    transition={{
-                      duration: fadeDuration / 1000,
-                      ease: 'easeInOut',
-                    }}
-                    style={{ listStyle: 'none', flex: '1 1 45%' }}
-                  >
-                    {idx === 0 ? (
-                      <FadeInWhenVisible direction="right">
-                        <ProjectCard project={project} parentName="Головна" />
-                      </FadeInWhenVisible>
-                    ) : (
-                      <FadeInWhenVisible direction="left">
-                        <ProjectCard project={project} parentName="Головна" />
-                      </FadeInWhenVisible>
-                    )}
-                  </motion.li>
-                ))}
-              </ul>
-              <div className="centered-block">
-                <CtaButtonSecondary
-                  title="Портфоліо"
-                  link="/projects"
-                  type="with-arrow"
-                  size="small"
-                />
-              </div>
-            </div>
-          </section>
-        </FadeInWhenVisible>
-      </main>
+          </div>
+        </section>
+      </FadeInWhenVisible>
     </motion.main>
   );
 };

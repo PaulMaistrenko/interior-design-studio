@@ -18,31 +18,29 @@ export const Services = () => {
 
   return (
     <motion.main
-      className="page home-page"
+      className="page services-page"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <main className="page services-page">
-        <div className="container">
-          <BreadCrumb
-            items={[
-              { title: 'Головна', href: '/' },
-              { title: currentPage, href: '/services' },
-            ]}
-          />
-        </div>
-        <SectionHeader title="Послуги" slogan={`"Краса,що працює на вас"`} />
-        <section>
-          <ServicesList onScrollToSurvey={scrollToSurvey} />
+      <div className="container">
+        <BreadCrumb
+          items={[
+            { title: 'Головна', href: '/' },
+            { title: currentPage, href: '/services' },
+          ]}
+        />
+      </div>
+      <SectionHeader title="Послуги" slogan={`"Краса,що працює на вас"`} />
+      <section>
+        <ServicesList onScrollToSurvey={scrollToSurvey} />
+      </section>
+      <FadeInWhenVisible direction="up">
+        <section className="services-survey-section" ref={surveyRef}>
+          <ServicesSurvey />
         </section>
-        <FadeInWhenVisible direction="up">
-          <section className="services-survey-section" ref={surveyRef}>
-            <ServicesSurvey />
-          </section>
-        </FadeInWhenVisible>
-      </main>
+      </FadeInWhenVisible>
     </motion.main>
   );
 };

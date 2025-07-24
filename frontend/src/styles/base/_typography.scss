@@ -60,6 +60,7 @@
 
 .button--text-underline {
   @include heading($fs-button, 700, $lh-120);
+  text-decoration: underline;
 
   @include onMobile {
     font-size: 14px;

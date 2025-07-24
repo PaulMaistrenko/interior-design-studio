@@ -10,6 +10,7 @@ export const MainProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [isValid, setIsValid] = useState(false);
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+  const [isOpenMobileFilters, setIsOpenMobileFilters] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -76,12 +77,14 @@ export const MainProvider = ({ children }) => {
         formData,
         isValid,
         isOpenMobileMenu,
+        isOpenMobileFilters,
         width,
         setFormData,
         setLoading,
         setError,
         setIsValid,
         setIsOpenMobileMenu,
+        setIsOpenMobileFilters,
       }}
     >
       {children}
