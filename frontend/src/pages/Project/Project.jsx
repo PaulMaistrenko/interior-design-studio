@@ -5,9 +5,13 @@ import { getProjectById } from '../../utils/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FadeInWhenVisible } from '../../components/ui/FadeInWhenVisible';
+import { useMainContext } from '../../context/MainContext';
+import { GoBackButton } from '../../components/ui/GoBackButton';
 
 export const Project = () => {
   const { projectId } = useParams();
+  const { width } = useMainContext();
+  const isMobile = width < 767;
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,9 +46,9 @@ export const Project = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <div className="container">
-        {project && (
-          <article className="project-content">
+      {project && (
+        <article className="project-content">
+          <div className="container">
             <BreadCrumb
               items={[
                 { title: 'Головна', href: '/' },
@@ -52,31 +56,35 @@ export const Project = () => {
                 { title: project.name },
               ]}
             />
-            <section className="project-page__top grid">
-              <div className="project-details grid--onDesktop-1-5">
-                <h1 className="project-title h1--medium">{project.name}</h1>
-                <ul className="project-features-list">
-                  {combineFeatures.map((item, index) => (
-                    <li className="project-feature" key={index}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="project-description">
-                  <p>{project.full_description}</p>
-                </div>
+            {isMobile && <GoBackButton />}
+          </div>
+
+          <section className="project-page__top grid">
+            <div className="project__main-poster grid--onDesktop-7-12">
+              <FadeInWhenVisible direction="left">
+                <div
+                  className="project__main-poster bg-image"
+                  style={{
+                    backgroundImage: `url(${project.main_image})`,
+                  }}
+                ></div>
+              </FadeInWhenVisible>
+            </div>
+            <div className="project-details grid--onDesktop-1-5 container">
+              <h1 className="project-title h1--medium">{project.name}</h1>
+              <ul className="project-features-list">
+                {combineFeatures.map((item, index) => (
+                  <li className="project-feature" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="project-description">
+                <p>{project.full_description}</p>
               </div>
-              <div className="project__main-poster grid--onDesktop-7-12">
-                <FadeInWhenVisible direction="left">
-                  <div
-                    className="project__main-poster bg-image"
-                    style={{
-                      backgroundImage: `url(${project.main_image})`,
-                    }}
-                  ></div>
-                </FadeInWhenVisible>
-              </div>
-            </section>
+            </div>
+          </section>
+          <div className="container">
             <section className="project-gallery">
               <ul className="project-gallery__list">
                 {project.gallery.map((item, index) => (
@@ -90,9 +98,9 @@ export const Project = () => {
                 ))}
               </ul>
             </section>
-          </article>
-        )}
-      </div>
+          </div>
+        </article>
+      )}
       <CtaSection />
     </motion.main>
   );

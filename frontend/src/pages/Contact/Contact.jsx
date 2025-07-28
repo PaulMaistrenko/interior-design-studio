@@ -3,7 +3,7 @@ import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { ContactInfo } from './components/ContactInfo';
 import { ContactForm } from './components/ContactForm';
 import { useMainContext } from '../../context/MainContext';
-import { GoBackButton } from './components/GoBackButton';
+import { GoBackButton } from '../../components/ui/GoBackButton';
 
 export const Contact = () => {
   const currentPage = 'Контакти';

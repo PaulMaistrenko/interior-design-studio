@@ -44,6 +44,10 @@ body {
 .image-hover-grayscale {
   filter: grayscale(100%);
   transition: all 0.4s ease;
+
+  @include onMobile {
+    filter: grayscale(0%);
+  }
 }
 
 .image-hover-grayscale:hover {

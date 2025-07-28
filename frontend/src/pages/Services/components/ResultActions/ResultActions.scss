@@ -11,6 +11,10 @@
       height: 44px;
     }
   }
+
+  @include onMobile {
+    justify-content: center;
+  }
 }
 
 .result-button {
