@@ -1,16 +1,29 @@
 .blog-post-page {
   padding: 179px 0 88px;
+
+  @include onMobile {
+    padding: 92px 0 88px;
+  }
 }
 
 .blog-post__main-poster {
   margin-bottom: 60px;
   height: 747px;
+
+  @include onMobile {
+    margin-bottom: 16px;
+    height: 180px;
+  }
 }
 
 .blog-post__title {
   margin-bottom: 60px;
   color: $gray-100;
   text-align: center;
+
+  @include onMobile {
+    margin-bottom: 8px;
+  }
 }
 
 .blog-post__description {

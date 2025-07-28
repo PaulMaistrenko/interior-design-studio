@@ -2,7 +2,7 @@
   @include heading($fs-h1, 700, $lh-135);
 
   @include onMobile {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 
@@ -10,7 +10,7 @@
   @include heading($fs-h1, 500, $lh-120);
 
   @include onMobile {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 

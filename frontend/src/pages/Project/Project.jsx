@@ -59,31 +59,34 @@ export const Project = () => {
             {isMobile && <GoBackButton />}
           </div>
 
-          <section className="project-page__top grid">
-            <div className="project__main-poster grid--onDesktop-7-12">
-              <FadeInWhenVisible direction="left">
-                <div
-                  className="project__main-poster bg-image"
-                  style={{
-                    backgroundImage: `url(${project.main_image})`,
-                  }}
-                ></div>
-              </FadeInWhenVisible>
-            </div>
-            <div className="project-details grid--onDesktop-1-5 container">
-              <h1 className="project-title h1--medium">{project.name}</h1>
-              <ul className="project-features-list">
-                {combineFeatures.map((item, index) => (
-                  <li className="project-feature" key={index}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="project-description">
-                <p>{project.full_description}</p>
+          <div className="container">
+            <section className="project-page__top grid">
+              <div className="project__main-poster grid--onDesktop-7-12">
+                <FadeInWhenVisible direction="left">
+                  <div
+                    className="project__main-poster bg-image"
+                    style={{
+                      backgroundImage: `url(${project.main_image})`,
+                    }}
+                  ></div>
+                </FadeInWhenVisible>
               </div>
-            </div>
-          </section>
+              <div className="project-details grid--onDesktop-1-5">
+                <h1 className="project-title h1--medium">{project.name}</h1>
+                <ul className="project-features-list">
+                  {combineFeatures.map((item, index) => (
+                    <li className="project-feature" key={index}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="project-description">
+                  <p>{project.full_description}</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
           <div className="container">
             <section className="project-gallery">
               <ul className="project-gallery__list">

@@ -6,6 +6,11 @@
   flex-direction: column;
   justify-content: space-between;
   background-image: url('../../../../assets/images/Blog/blog-1.png');
+
+  @include onMobile {
+    height: 335px;
+    width: auto;
+  }
 }
 
 .blog-card__date {
@@ -28,6 +33,10 @@
   &:hover {
     background: rgba(225, 225, 225, 0.95);
   }
+
+  @include onMobile {
+    padding: 4px 8px;
+  }
 }
 
 .blog-card__short-text {
@@ -38,6 +47,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @include onMobile {
+    gap: 4px;
+  }
 
   & .blog-card__full-text-link {
     display: flex;

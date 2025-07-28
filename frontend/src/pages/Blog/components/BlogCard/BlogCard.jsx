@@ -1,8 +1,8 @@
+import { useMainContext } from '../../../../context/MainContext';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-// Функция обрезки текста до 15 слов
-const truncateText = (text, wordLimit = 15) => {
+const truncateText = (text, wordLimit = 10) => {
   if (!text) return '';
   const words = text.trim().split(/\s+/);
   return words.length <= wordLimit
@@ -12,6 +12,8 @@ const truncateText = (text, wordLimit = 15) => {
 
 export const BlogCard = ({ article }) => {
   const { id, title, content, image, created_at } = article;
+  const { width } = useMainContext();
+  const isMobile = width < 767;
 
   return (
     <div
@@ -24,7 +26,11 @@ export const BlogCard = ({ article }) => {
       <div className="blog-card__bottom">
         <div className="blog-card__content">
           <h4 className="blog-card__title h4--bold">{title}</h4>
-          <p className="blog-card__short-text">{truncateText(content, 15)}</p>
+          {isMobile ? (
+            <p className="blog-card__short-text">{truncateText(content, 5)}</p>
+          ) : (
+            <p className="blog-card__short-text">{truncateText(content, 10)}</p>
+          )}
           <Link
             to={`/blog/${id}`}
             className="blog-card__full-text-link button--text-underline"
