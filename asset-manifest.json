@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/interior-design-studio/static/css/main.302f3088.css",
-    "main.js": "/interior-design-studio/static/js/main.58c5e808.js",
+    "main.css": "/interior-design-studio/static/css/main.05c2de5e.css",
+    "main.js": "/interior-design-studio/static/js/main.d58d9943.js",
     "static/media/main-poster.png": "/interior-design-studio/static/media/main-poster.a18b23ce2ce3c7f5b46b.png",
     "static/media/survey-poster.png": "/interior-design-studio/static/media/survey-poster.5c2976bc2f3d2857d876.png",
     "static/media/blog-1.png": "/interior-design-studio/static/media/blog-1.af1009976d087dfdc361.png",
@@ -40,11 +40,11 @@
     "static/media/project-feature-separator.svg": "/interior-design-studio/static/media/project-feature-separator.2ac7449c56954c1e4aef.svg",
     "static/media/last-step-grey-point.svg": "/interior-design-studio/static/media/last-step-grey-point.075868f9a93676e07e55.svg",
     "static/media/survey-step-red-circle-mobile.svg": "/interior-design-studio/static/media/survey-step-red-circle-mobile.518aff2c28429cfe1402.svg",
-    "main.302f3088.css.map": "/interior-design-studio/static/css/main.302f3088.css.map",
-    "main.58c5e808.js.map": "/interior-design-studio/static/js/main.58c5e808.js.map"
+    "main.05c2de5e.css.map": "/interior-design-studio/static/css/main.05c2de5e.css.map",
+    "main.d58d9943.js.map": "/interior-design-studio/static/js/main.d58d9943.js.map"
   },
   "entrypoints": [
-    "static/css/main.302f3088.css",
-    "static/js/main.58c5e808.js"
+    "static/css/main.05c2de5e.css",
+    "static/js/main.d58d9943.js"
   ]
 }
