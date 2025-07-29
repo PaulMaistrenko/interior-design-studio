@@ -38,6 +38,7 @@ export const MobileMenu = () => {
                     ? 'mobile-menu__nav-link mobile-menu__nav-link--active'
                     : 'mobile-menu__nav-link'
                 }
+                end
               >
                 {label}
               </NavLink>
