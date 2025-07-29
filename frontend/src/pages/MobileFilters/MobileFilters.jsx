@@ -1,7 +1,12 @@
 import { useMainContext } from '../../context/MainContext';
 
 export const MobileFilters = () => {
-  const { isOpenMobileFilters, setIsOpenMobileFilters } = useMainContext();
+  const {
+    isOpenMobileFilters,
+    setIsOpenMobileFilters,
+    selectedFilters,
+    setSelectedFilters,
+  } = useMainContext();
 
   const stylesOptions = [
     'Еко-стиль',
@@ -23,6 +28,14 @@ export const MobileFilters = () => {
     setIsOpenMobileFilters((prev) => !prev);
   };
 
+  const toggleFilter = (value) => {
+    if (selectedFilters.includes(value)) {
+      setSelectedFilters(selectedFilters.filter((f) => f !== value));
+    } else {
+      setSelectedFilters([...selectedFilters, value]);
+    }
+  };
+
   return (
     <aside className={`mobile-filters ${isOpenMobileFilters ? 'open' : ''}`}>
       <div className="container">
@@ -35,35 +48,40 @@ export const MobileFilters = () => {
           ></button>
         </div>
       </div>
+
       <div className="mobile-filters__content-devider"></div>
+
       <div className="container">
         <div className="mobile-filters__block">
           <div className="mobile__filter">
             <h4 className="mobile-filter__title">ВИБЕРІТЬ СТИЛЬ:</h4>
             <ul className="mobile-filter__options" role="listbox">
               {stylesOptions.map((option) => (
-                <li
-                  key={option}
-                  className="mobile-filter__option text-secondary--regular"
-                >
+                <li key={option} className="mobile-filter__option">
                   <label>
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      checked={selectedFilters.includes(option)}
+                      onChange={() => toggleFilter(option)}
+                    />
                     {option}
                   </label>
                 </li>
               ))}
             </ul>
           </div>
+
           <div className="mobile__filter">
             <h4 className="mobile-filter__title">ВИБЕРІТЬ ПРИМІЩЕННЯ:</h4>
             <ul className="mobile-filter__options" role="listbox">
               {areaOptions.map((option) => (
-                <li
-                  key={option}
-                  className="mobile-filter__option text-secondary--regular"
-                >
+                <li key={option} className="mobile-filter__option">
                   <label>
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      checked={selectedFilters.includes(option)}
+                      onChange={() => toggleFilter(option)}
+                    />
                     {option}
                   </label>
                 </li>

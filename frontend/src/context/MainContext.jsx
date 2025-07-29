@@ -13,6 +13,9 @@ export const MainProvider = ({ children }) => {
   const [isOpenMobileFilters, setIsOpenMobileFilters] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
+  // 🔥 Новый state для фильтров
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -24,31 +27,11 @@ export const MainProvider = ({ children }) => {
     phone_number: '',
     customer_question: '',
     chosen_answers: [
-      {
-        question: 1,
-        option: null,
-        custom_answer: '',
-      },
-      {
-        question: 2,
-        option: null,
-        custom_answer: null,
-      },
-      {
-        question: 3,
-        option: null,
-        custom_answer: null,
-      },
-      {
-        question: 4,
-        option: null,
-        custom_answer: null,
-      },
-      {
-        question: 5,
-        option: null,
-        custom_answer: null,
-      },
+      { question: 1, option: null, custom_answer: '' },
+      { question: 2, option: null, custom_answer: null },
+      { question: 3, option: null, custom_answer: null },
+      { question: 4, option: null, custom_answer: null },
+      { question: 5, option: null, custom_answer: null },
     ],
   });
 
@@ -79,6 +62,8 @@ export const MainProvider = ({ children }) => {
         isOpenMobileMenu,
         isOpenMobileFilters,
         width,
+        selectedFilters,
+        setSelectedFilters,
         setFormData,
         setLoading,
         setError,

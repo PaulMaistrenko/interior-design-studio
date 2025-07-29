@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { BreadCrumb } from '../../components/ui/BreadCrumb';
 import { Filters } from './components/Filters';
@@ -10,10 +10,8 @@ import { MobileFiltersOpenButton } from './components/MobileOpenFiltersButton';
 import { MobileFilters } from '../MobileFilters';
 
 export const Portfolio = () => {
-  const { projects, width } = useMainContext();
-  const [selectedFilters, setSelectedFilters] = useState([]);
+  const { projects, width, selectedFilters } = useMainContext();
   const currentPage = 'Портфоліо';
-
   const isMobile = width < 767;
 
   const getFilteredProjects = (projects, filters) => {
@@ -70,16 +68,11 @@ export const Portfolio = () => {
           ]}
         />
       </div>
+
       <SectionHeader title="Портфоліо" slogan={`"Дім - це більше,ніж стіни"`} />
+
       <div className="container">
-        {!isMobile ? (
-          <Filters
-            selectedFilters={selectedFilters}
-            setSelectedFilters={setSelectedFilters}
-          />
-        ) : (
-          <MobileFiltersOpenButton />
-        )}
+        {!isMobile ? <Filters /> : <MobileFiltersOpenButton />}
 
         <MobileFilters />
 
@@ -90,6 +83,7 @@ export const Portfolio = () => {
           />
         </div>
       </div>
+
       <CtaSection />
     </motion.main>
   );
