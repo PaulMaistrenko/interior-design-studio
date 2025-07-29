@@ -54,32 +54,32 @@ export const BlogPost = () => {
             />
             {isMobile && <GoBackButton />}
           </div>
+          <div className={`${!isMobile ? 'container' : ''}`}>
+            <section className="blog-post-page__top">
+              <div
+                className="blog-post__main-poster bg-image"
+                style={{
+                  backgroundImage: `url(${blogPost.image})`,
+                }}
+              ></div>
+              <div className="container">
+                <h1 className="blog-post__title h1--bold">{blogPost.title}</h1>
+                <div className="blog-post__description">{blogPost.content}</div>
+              </div>
+            </section>
+          </div>
 
-          <div className="container"></div>
-
-          <section className="blog-post-page__top grid">
-            <div
-              className="blog-post__main-poster bg-image grid--onDesktop-1-12"
-              style={{
-                backgroundImage: `url(${blogPost.image})`,
-              }}
-            ></div>
-            <h1 className="blog-post__title h1--bold grid--onDesktop-2-11 container">
-              {blogPost.title}
-            </h1>
-            <div className="blog-post__description grid--onDesktop-2-11 container">
-              {blogPost.content}
-            </div>
-          </section>
-          <section className="blog-post__main-content grid">
-            <ul className="blog-post__components-list grid--onDesktop-2-11">
-              {blogPost.components.map((item) => (
-                <li className="blog-post__components-item" key={item.id}>
-                  <BlogPostItem details={item} />
-                </li>
-              ))}
-            </ul>
-          </section>
+          <div className="container">
+            <section className="blog-post__main-content grid">
+              <ul className="blog-post__components-list grid--onDesktop-2-11">
+                {blogPost.components.map((item) => (
+                  <li className="blog-post__components-item" key={item.id}>
+                    <BlogPostItem details={item} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
         </article>
       )}
 

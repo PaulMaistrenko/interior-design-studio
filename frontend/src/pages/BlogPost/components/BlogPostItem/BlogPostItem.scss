@@ -12,6 +12,10 @@
   margin-bottom: 24px;
   display: flex;
   gap: 16px;
+
+  @include onMobile {
+    flex-direction: column;
+  }
 }
 
 .post-item__advantages,
@@ -25,8 +29,16 @@
     list-style-type: disc;
     list-style-position: inside;
   }
+
+  @include onMobile {
+    width: 100%;
+  }
 }
 
 .post-item__image {
   height: 577px;
+
+  @include onMobile {
+    height: 151px;
+  }
 }
