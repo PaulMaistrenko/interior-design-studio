@@ -28,7 +28,7 @@
 .mobile-filter__options {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 14px;
 }
 
 .mobile-filter__option {
@@ -41,7 +41,7 @@
   & label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
   }
 
   & input {
@@ -60,7 +60,7 @@
 }
 
 .mobile-filter__title {
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   font-family: 'Comfortaa', sans-serif;
   color: $gray-100;
   font-size: 18px;
