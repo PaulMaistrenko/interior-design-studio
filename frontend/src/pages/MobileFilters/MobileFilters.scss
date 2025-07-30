@@ -81,3 +81,29 @@
   width: 100%;
   background-color: $gray-40;
 }
+
+.mobile-filters__block {
+  margin-bottom: 50px;
+}
+
+.filters-apply__button {
+  margin: 0 auto;
+  padding: 4px 8px;
+  width: 167px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 2px;
+  border: 2px solid $accent-color;
+  background: var(--White, #fff);
+  color: $gray-100;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../assets/icons/secondary-button-arrow-right.svg');
+  }
+}

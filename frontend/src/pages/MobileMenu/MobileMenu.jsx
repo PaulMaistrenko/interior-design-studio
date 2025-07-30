@@ -13,7 +13,7 @@ export const MobileMenu = () => {
   useEffect(() => {
     if (isOpenMobileMenu) {
       document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none'; // для iOS
+      document.body.style.touchAction = 'none';
     } else {
       document.body.style.overflow = '';
       document.body.style.touchAction = '';

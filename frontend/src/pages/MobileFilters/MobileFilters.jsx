@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useMainContext } from '../../context/MainContext';
 
 export const MobileFilters = () => {
@@ -7,6 +8,27 @@ export const MobileFilters = () => {
     selectedFilters,
     setSelectedFilters,
   } = useMainContext();
+
+  const [localFilters, setLocalFilters] = useState([]);
+
+  useEffect(() => {
+    if (isOpenMobileFilters) {
+      setLocalFilters(selectedFilters);
+    }
+
+    if (isOpenMobileFilters) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isOpenMobileFilters]);
 
   const stylesOptions = [
     'Еко-стиль',
@@ -28,12 +50,17 @@ export const MobileFilters = () => {
     setIsOpenMobileFilters((prev) => !prev);
   };
 
-  const toggleFilter = (value) => {
-    if (selectedFilters.includes(value)) {
-      setSelectedFilters(selectedFilters.filter((f) => f !== value));
+  const toggleLocalFilter = (value) => {
+    if (localFilters.includes(value)) {
+      setLocalFilters(localFilters.filter((f) => f !== value));
     } else {
-      setSelectedFilters([...selectedFilters, value]);
+      setLocalFilters([...localFilters, value]);
     }
+  };
+
+  const applyFilters = () => {
+    setSelectedFilters(localFilters);
+    setIsOpenMobileFilters(false);
   };
 
   return (
@@ -61,8 +88,8 @@ export const MobileFilters = () => {
                   <label>
                     <input
                       type="checkbox"
-                      checked={selectedFilters.includes(option)}
-                      onChange={() => toggleFilter(option)}
+                      checked={localFilters.includes(option)}
+                      onChange={() => toggleLocalFilter(option)}
                     />
                     {option}
                   </label>
@@ -79,8 +106,8 @@ export const MobileFilters = () => {
                   <label>
                     <input
                       type="checkbox"
-                      checked={selectedFilters.includes(option)}
-                      onChange={() => toggleFilter(option)}
+                      checked={localFilters.includes(option)}
+                      onChange={() => toggleLocalFilter(option)}
                     />
                     {option}
                   </label>
@@ -89,6 +116,13 @@ export const MobileFilters = () => {
             </ul>
           </div>
         </div>
+
+        <button
+          className="filters-apply__button button--text"
+          onClick={applyFilters}
+        >
+          Застосувати
+        </button>
       </div>
     </aside>
   );

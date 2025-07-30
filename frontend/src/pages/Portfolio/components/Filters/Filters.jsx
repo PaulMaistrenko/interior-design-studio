@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types';
 import { Filter } from '../Filter';
 import { useState } from 'react';
+import { FiltersResetButton } from '../../../../components/ui/FiltersResetButton';
+import { useMainContext } from '../../../../context/MainContext';
 
-export const Filters = ({ selectedFilters, setSelectedFilters }) => {
+export const Filters = () => {
+  const { selectedFilters, setSelectedFilters } = useMainContext();
   const [openStates, setOpenStates] = useState({
     style: false,
     area: false,
@@ -55,17 +57,7 @@ export const Filters = ({ selectedFilters, setSelectedFilters }) => {
           onSelect={setSelectedFilters}
         />
       </div>
-      <button
-        className="filters-reset__button button--text"
-        onClick={resetFilters}
-      >
-        Скинути фільтри
-      </button>
+      <FiltersResetButton resetFilters={resetFilters} />
     </div>
   );
-};
-
-Filters.propTypes = {
-  selectedFilters: PropTypes.array.isRequired,
-  setSelectedFilters: PropTypes.func.isRequired,
 };

@@ -8,6 +8,7 @@ import { ProjectsList } from './components/ProjectsList';
 import { useMainContext } from '../../context';
 import { MobileFiltersOpenButton } from './components/MobileOpenFiltersButton';
 import { MobileFilters } from '../MobileFilters';
+import { FiltersResetButton } from '../../components/ui/FiltersResetButton';
 
 export const Portfolio = () => {
   const { projects, width, selectedFilters } = useMainContext();
@@ -72,7 +73,14 @@ export const Portfolio = () => {
       <SectionHeader title="Портфоліо" slogan={`"Дім - це більше,ніж стіни"`} />
 
       <div className="container">
-        {!isMobile ? <Filters /> : <MobileFiltersOpenButton />}
+        {!isMobile ? (
+          <Filters />
+        ) : (
+          <div className="mobile-filters-block">
+            <MobileFiltersOpenButton />
+            <FiltersResetButton />
+          </div>
+        )}
 
         <MobileFilters />
 
